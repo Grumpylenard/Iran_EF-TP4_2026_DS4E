@@ -1,0 +1,9 @@
+.DS_Store
+.Rproj.user
+.Rhistory
+Rplots.pdf
+output/
+data_raw/Geodata/OGIM_v*.gpkg
+data_raw/.DS_Store
+data_processed/osm_*
+data_processed/incident_facility_links.csv

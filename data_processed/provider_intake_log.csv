@@ -1,0 +1,25 @@
+source_dataset,provider,source_file,source_layer,status,site_count,line_count,note
+ogim,OGIM,/Users/erichoffmann/Iran_War_Visualisation/data_raw/Geodata/OGIM_v2.5.1.gpkg,Crude_Oil_Refineries,success,50,0,
+ogim,OGIM,/Users/erichoffmann/Iran_War_Visualisation/data_raw/Geodata/OGIM_v2.5.1.gpkg,Equipment_and_Components,empty,0,0,
+ogim,OGIM,/Users/erichoffmann/Iran_War_Visualisation/data_raw/Geodata/OGIM_v2.5.1.gpkg,Gathering_and_Processing,success,61,0,
+ogim,OGIM,/Users/erichoffmann/Iran_War_Visualisation/data_raw/Geodata/OGIM_v2.5.1.gpkg,Injection_and_Disposal,success,7,0,
+ogim,OGIM,/Users/erichoffmann/Iran_War_Visualisation/data_raw/Geodata/OGIM_v2.5.1.gpkg,LNG_Facilities,success,45,0,
+ogim,OGIM,/Users/erichoffmann/Iran_War_Visualisation/data_raw/Geodata/OGIM_v2.5.1.gpkg,Natural_Gas_Compressor_Stations,empty,0,0,
+ogim,OGIM,/Users/erichoffmann/Iran_War_Visualisation/data_raw/Geodata/OGIM_v2.5.1.gpkg,Natural_Gas_Flaring_Detections,success,1355,0,
+ogim,OGIM,/Users/erichoffmann/Iran_War_Visualisation/data_raw/Geodata/OGIM_v2.5.1.gpkg,Offshore_Platforms,success,611,0,
+ogim,OGIM,/Users/erichoffmann/Iran_War_Visualisation/data_raw/Geodata/OGIM_v2.5.1.gpkg,Oil_Natural_Gas_Pipelines,success,0,4216,
+ogim,OGIM,/Users/erichoffmann/Iran_War_Visualisation/data_raw/Geodata/OGIM_v2.5.1.gpkg,Oil_and_Natural_Gas_Basins,success,37,0,
+ogim,OGIM,/Users/erichoffmann/Iran_War_Visualisation/data_raw/Geodata/OGIM_v2.5.1.gpkg,Oil_and_Natural_Gas_Fields,success,1553,0,
+ogim,OGIM,/Users/erichoffmann/Iran_War_Visualisation/data_raw/Geodata/OGIM_v2.5.1.gpkg,Oil_and_Natural_Gas_License_Blocks,success,3,0,
+ogim,OGIM,/Users/erichoffmann/Iran_War_Visualisation/data_raw/Geodata/OGIM_v2.5.1.gpkg,Oil_and_Natural_Gas_Wells,success,2724,0,
+ogim,OGIM,/Users/erichoffmann/Iran_War_Visualisation/data_raw/Geodata/OGIM_v2.5.1.gpkg,Petroleum_Terminals,success,141,0,
+ogim,OGIM,/Users/erichoffmann/Iran_War_Visualisation/data_raw/Geodata/OGIM_v2.5.1.gpkg,Stations_Other,empty,0,0,
+ogim,OGIM,/Users/erichoffmann/Iran_War_Visualisation/data_raw/Geodata/OGIM_v2.5.1.gpkg,Tank_Battery,empty,0,0,
+ogim,OGIM,/Users/erichoffmann/Iran_War_Visualisation/data_raw/Geodata/OGIM_v2.5.1.gpkg,Data_Catalog,empty,0,0,
+goit,GEM,/Users/erichoffmann/Iran_War_Visualisation/data_raw/Geodata/GEM-GOIT-Oil-NGL-Pipelines-2025-03.xlsx,Pipelines,no_geometry,0,0,
+ggit,GEM,/Users/erichoffmann/Iran_War_Visualisation/data_raw/Geodata/GEM-GGIT-Gas-Pipelines-2025-11.xlsx,Pipelines,no_geometry,0,0,
+ggit,GEM,/Users/erichoffmann/Iran_War_Visualisation/data_raw/Geodata/GEM-GGIT-LNG-Teminals-2025-09.xlsx,LNG Terminals,success,70,0,
+goget,GEM,,,missing,0,0,no files discovered
+gchi,GEM,,,missing,0,0,no files discovered
+gogi,NETL,,,missing,0,0,no files discovered
+osm_gapfill,OSM,,,missing,0,0,no files discovered
