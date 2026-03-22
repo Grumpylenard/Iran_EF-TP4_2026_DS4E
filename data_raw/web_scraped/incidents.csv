@@ -1,0 +1,5 @@
+lat,lon,date,location_name,target_type,source,report_url
+35.6892,51.389,2026-03-20,Tehran,missile base,CENTCOM,http://test1.com
+27.194,56.2808,2026-03-19,Bandar Abbas,weapons storage,CTP-ISW,http://test2.com
+27.2046,56.2708,2026-03-18,Hormozgan Province,radar site,CENTCOM,http://test3.com
+,,2026-03-17,Unknown Location,command center,CTP-ISW,http://test4.com
