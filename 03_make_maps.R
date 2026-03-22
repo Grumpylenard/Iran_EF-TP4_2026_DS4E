@@ -5,9 +5,10 @@ suppressPackageStartupMessages({
   library(rnaturalearth)
   library(sf)
 })
+ggrepel_available <- requireNamespace("ggrepel", quietly = TRUE)
 
 # Manual controls.
-map_mode <- Sys.getenv("MAP_MODE", unset = "infrastructure")   # "infrastructure", "sites", "candidate_sites", "firms_anomaly_grid", "firms_anomaly_sites", "firms_compare", or "validation"
+map_mode <- Sys.getenv("MAP_MODE", unset = "infrastructure")   # "infrastructure", "sites", "candidate_sites", "firms_anomaly_grid", "firms_anomaly_sites", "firms_compare", "validation", or "validation_capacity_labels"
 map_source <- Sys.getenv("MAP_SOURCE", unset = "review")       # "review" or "confirmed"
 write_output <- env_flag("WRITE_OUTPUT", FALSE)
 
@@ -45,7 +46,8 @@ paths <- list(
   firms_anomaly_grid_map_pdf = project_path("output", "energy_firms_anomaly_grid_map.pdf"),
   firms_anomaly_sites_map_pdf = project_path("output", "energy_firms_anomaly_sites_map.pdf"),
   firms_comparison_map_pdf = project_path("output", "energy_firms_comparison_map.pdf"),
-  validation_map_pdf = project_path("output", "incident_validation_map.pdf")
+  validation_map_pdf = project_path("output", "incident_validation_map.pdf"),
+  validation_capacity_labels_map_pdf = project_path("output", "incident_validation_capacity_labels_map.pdf")
 )
 
 empty_article_links <- function() {
@@ -69,6 +71,20 @@ empty_site_links <- function() {
     asset_class = character(),
     asset_label = character(),
     primary_provider = character(),
+    commodity_group = character(),
+    liquid_capacity_bpd = double(),
+    liquid_throughput_bpd = double(),
+    gas_capacity_mmcfd = double(),
+    gas_throughput_mmcfd = double(),
+    lng_capacity_mtpa = double(),
+    lng_capacity_bcmy = double(),
+    oil_production_bpd = double(),
+    capacity_kbd = double(),
+    production_kbd = double(),
+    primary_output_kind = character(),
+    primary_output_value = double(),
+    primary_output_unit = character(),
+    primary_output_basis = character(),
     distance_km = double(),
     link_rank = integer()
   )
@@ -84,6 +100,20 @@ empty_energy_sites <- function() {
     name = character(),
     status = character(),
     country = character(),
+    commodity_group = character(),
+    liquid_capacity_bpd = double(),
+    liquid_throughput_bpd = double(),
+    gas_capacity_mmcfd = double(),
+    gas_throughput_mmcfd = double(),
+    lng_capacity_mtpa = double(),
+    lng_capacity_bcmy = double(),
+    oil_production_bpd = double(),
+    capacity_kbd = double(),
+    production_kbd = double(),
+    primary_output_kind = character(),
+    primary_output_value = double(),
+    primary_output_unit = character(),
+    primary_output_basis = character(),
     lat = double(),
     lon = double(),
     geometry_role = character(),
@@ -225,6 +255,62 @@ empty_firms_facility_anomalies <- function() {
   )
 }
 
+empty_site_validation_summary <- function() {
+  tibble(
+    site_id = character(),
+    asset_class = character(),
+    asset_label = character(),
+    name = character(),
+    country = character(),
+    primary_provider = character(),
+    commodity_group = character(),
+    display_commodity_family = character(),
+    display_type_label = character(),
+    liquid_capacity_bpd = double(),
+    liquid_throughput_bpd = double(),
+    gas_capacity_mmcfd = double(),
+    gas_throughput_mmcfd = double(),
+    lng_capacity_mtpa = double(),
+    lng_capacity_bcmy = double(),
+    oil_production_bpd = double(),
+    capacity_kbd = double(),
+    production_kbd = double(),
+    primary_output_kind = character(),
+    primary_output_value = double(),
+    primary_output_unit = character(),
+    primary_output_basis = character(),
+    display_output_value = double(),
+    display_output_unit = character(),
+    display_output_basis = character(),
+    display_output_text = character(),
+    output_size_bucket = character(),
+    validation_color_group = character(),
+    incident_count = integer(),
+    nearest_incident_km = double(),
+    any_rank1_link = logical(),
+    any_high_confidence_incident = logical(),
+    first_high_confidence_incident_day = character(),
+    latest_high_confidence_incident_day = character(),
+    firms_anomaly_flag = logical(),
+    first_anomaly_date = character(),
+    latest_anomaly_date = character(),
+    nearest_anomaly_km = double(),
+    anomaly_day_count = integer(),
+    anomaly_cell_count = integer(),
+    anomaly_hotspot_count = integer(),
+    confirmation_source_count = integer(),
+    confirmation_sources_display = character(),
+    confirmation_status = character(),
+    provisional_triple_confirmed = logical(),
+    display_hit_date = character(),
+    label_rank_group = character(),
+    label_rank_value = double(),
+    label_rank_priority = integer(),
+    lat = double(),
+    lon = double()
+  )
+}
+
 write_gpkg_layer <- function(data, dsn, layer, append = TRUE, aspatial = FALSE) {
   if (aspatial) {
     sf::st_write(
@@ -271,6 +357,29 @@ save_side_by_side_map_pdf <- function(left_plot, right_plot, path, title = NULL,
   grDevices::pdf(path, width = width, height = height, onefile = TRUE)
   on.exit(grDevices::dev.off(), add = TRUE)
   draw_side_by_side_maps(left_plot, right_plot, title = title)
+}
+
+next_numbered_output_path <- function(path) {
+  dir_path <- dirname(path)
+  stem <- tools::file_path_sans_ext(basename(path))
+  ext <- tools::file_ext(path)
+  suffix <- if (nzchar(ext)) paste0(".", ext) else ""
+  prefix <- paste0(stem, "_")
+
+  dir.create(dir_path, recursive = TRUE, showWarnings = FALSE)
+  existing_files <- list.files(dir_path, all.files = FALSE, no.. = TRUE)
+  existing_numbers <- integer()
+
+  for (file_name in existing_files) {
+    if (!startsWith(file_name, prefix) || !endsWith(file_name, suffix)) next
+    middle <- substr(file_name, nchar(prefix) + 1, nchar(file_name) - nchar(suffix))
+    if (grepl("^[0-9]{2}$", middle)) {
+      existing_numbers <- c(existing_numbers, as.integer(middle))
+    }
+  }
+
+  next_number <- if (length(existing_numbers) == 0) 1L else max(existing_numbers) + 1L
+  file.path(dir_path, paste0(stem, "_", sprintf("%02d", next_number), suffix))
 }
 
 prepare_incidents <- function(path) {
@@ -340,6 +449,20 @@ prepare_site_links <- function(path) {
     empty_site_links(),
     read_csv_if_exists(path) %>%
       mutate(
+        commodity_group = as.character(commodity_group),
+        liquid_capacity_bpd = as.numeric(liquid_capacity_bpd),
+        liquid_throughput_bpd = as.numeric(liquid_throughput_bpd),
+        gas_capacity_mmcfd = as.numeric(gas_capacity_mmcfd),
+        gas_throughput_mmcfd = as.numeric(gas_throughput_mmcfd),
+        lng_capacity_mtpa = as.numeric(lng_capacity_mtpa),
+        lng_capacity_bcmy = as.numeric(lng_capacity_bcmy),
+        oil_production_bpd = as.numeric(oil_production_bpd),
+        capacity_kbd = as.numeric(capacity_kbd),
+        production_kbd = as.numeric(production_kbd),
+        primary_output_kind = as.character(primary_output_kind),
+        primary_output_value = as.numeric(primary_output_value),
+        primary_output_unit = as.character(primary_output_unit),
+        primary_output_basis = as.character(primary_output_basis),
         distance_km = as.numeric(distance_km),
         link_rank = as.integer(link_rank)
       )
@@ -365,6 +488,20 @@ prepare_energy_sites <- function(path) {
     mutate(
       asset_rank = as.integer(asset_rank),
       provider_priority = as.integer(provider_priority),
+      commodity_group = as.character(commodity_group),
+      liquid_capacity_bpd = as.numeric(liquid_capacity_bpd),
+      liquid_throughput_bpd = as.numeric(liquid_throughput_bpd),
+      gas_capacity_mmcfd = as.numeric(gas_capacity_mmcfd),
+      gas_throughput_mmcfd = as.numeric(gas_throughput_mmcfd),
+      lng_capacity_mtpa = as.numeric(lng_capacity_mtpa),
+      lng_capacity_bcmy = as.numeric(lng_capacity_bcmy),
+      oil_production_bpd = as.numeric(oil_production_bpd),
+      capacity_kbd = as.numeric(capacity_kbd),
+      production_kbd = as.numeric(production_kbd),
+      primary_output_kind = as.character(primary_output_kind),
+      primary_output_value = as.numeric(primary_output_value),
+      primary_output_unit = as.character(primary_output_unit),
+      primary_output_basis = as.character(primary_output_basis),
       record_count = as.integer(record_count),
       lat = as.numeric(lat),
       lon = as.numeric(lon)
@@ -674,7 +811,291 @@ build_candidate_sites <- function(site_links, incidents, energy_sites) {
   bind_rows(empty_candidate_sites(), summaries)
 }
 
-package_path <- if (write_output) paths$map_gpkg else tempfile(fileext = ".gpkg")
+safe_any <- function(x) {
+  if (length(x) == 0 || all(is.na(x))) return(FALSE)
+  any(x, na.rm = TRUE)
+}
+
+safe_min_num <- function(x) {
+  x <- x[!is.na(x)]
+  if (length(x) == 0) return(NA_real_)
+  min(x)
+}
+
+safe_min_date_chr <- function(x) {
+  x <- x[!is.na(x) & nzchar(x)]
+  if (length(x) == 0) return(NA_character_)
+  as.character(min(as.Date(x)))
+}
+
+safe_max_date_chr <- function(x) {
+  x <- x[!is.na(x) & nzchar(x)]
+  if (length(x) == 0) return(NA_character_)
+  as.character(max(as.Date(x)))
+}
+
+normalize_site_name <- function(x) {
+  y <- trimws(dplyr::coalesce(as.character(x), ""))
+  dplyr::if_else(!nzchar(y) | toupper(y) == "N/A", "Unnamed site", y)
+}
+
+derive_commodity_family <- function(commodity_group, asset_class) {
+  commodity_norm <- tolower(trimws(dplyr::coalesce(as.character(commodity_group), "")))
+  asset_norm <- tolower(trimws(dplyr::coalesce(as.character(asset_class), "")))
+
+  case_when(
+    commodity_norm == "oil" ~ "Oil / Liquids",
+    commodity_norm == "gas" ~ "Gas / LNG",
+    commodity_norm == "mixed" ~ "Mixed",
+    asset_norm %in% c("refinery", "petroleum_terminal", "tank_battery") ~ "Oil / Liquids",
+    asset_norm %in% c("lng_facility", "processing_facility", "compressor_station") ~ "Gas / LNG",
+    TRUE ~ "Other / Unknown"
+  )
+}
+
+format_output_text <- function(value, unit, basis) {
+  ifelse(
+    is.na(value) | !nzchar(dplyr::coalesce(unit, "")),
+    NA_character_,
+    paste0(
+      scales::label_number(accuracy = 0.1, trim = TRUE)(value),
+      " ",
+      unit,
+      ifelse(
+        nzchar(dplyr::coalesce(basis, "")),
+        paste0(" ", basis),
+        ""
+      )
+    )
+  )
+}
+
+derive_output_size_bucket <- function(display_commodity_family, display_output_value, display_output_unit) {
+  unit_norm <- tolower(trimws(dplyr::coalesce(display_output_unit, "")))
+  bucket <- case_when(
+    is.na(display_output_value) | display_output_value <= 0 ~ "No output data",
+    display_commodity_family == "Oil / Liquids" & display_output_value >= 200 ~ "High output",
+    display_commodity_family == "Oil / Liquids" & display_output_value >= 50 ~ "Medium output",
+    display_commodity_family == "Oil / Liquids" ~ "Low output",
+    unit_norm == "mtpa" & display_output_value >= 5 ~ "High output",
+    unit_norm == "mtpa" & display_output_value >= 1 ~ "Medium output",
+    unit_norm == "mtpa" ~ "Low output",
+    unit_norm %in% c("bcm/y", "bcmy") & display_output_value >= 7 ~ "High output",
+    unit_norm %in% c("bcm/y", "bcmy") & display_output_value >= 2 ~ "Medium output",
+    unit_norm %in% c("bcm/y", "bcmy") ~ "Low output",
+    unit_norm == "mmcfd" & display_output_value >= 500 ~ "High output",
+    unit_norm == "mmcfd" & display_output_value >= 100 ~ "Medium output",
+    unit_norm == "mmcfd" ~ "Low output",
+    TRUE ~ "Low output"
+  )
+
+  factor(bucket, levels = c("No output data", "Low output", "Medium output", "High output"))
+}
+
+build_site_validation_summary <- function(site_links, incidents, energy_sites, firms_facility_anomalies, settings) {
+  base_sites <- energy_sites %>%
+    mutate(
+      name = normalize_site_name(name),
+      display_commodity_family = derive_commodity_family(commodity_group, asset_class),
+      display_type_label = case_when(
+        display_commodity_family == "Oil / Liquids" ~ paste(asset_label, "Oil", sep = " | "),
+        display_commodity_family == "Gas / LNG" ~ paste(asset_label, "Gas/LNG", sep = " | "),
+        display_commodity_family == "Mixed" ~ paste(asset_label, "Mixed", sep = " | "),
+        TRUE ~ paste(asset_label, "Other", sep = " | ")
+      ),
+      display_output_value = case_when(
+        display_commodity_family == "Oil / Liquids" & !is.na(capacity_kbd) ~ capacity_kbd,
+        display_commodity_family == "Oil / Liquids" & !is.na(production_kbd) ~ production_kbd,
+        display_commodity_family == "Gas / LNG" & !is.na(lng_capacity_mtpa) ~ lng_capacity_mtpa,
+        display_commodity_family == "Gas / LNG" & !is.na(lng_capacity_bcmy) ~ lng_capacity_bcmy,
+        display_commodity_family == "Gas / LNG" & !is.na(gas_capacity_mmcfd) ~ gas_capacity_mmcfd,
+        display_commodity_family == "Gas / LNG" & !is.na(gas_throughput_mmcfd) ~ gas_throughput_mmcfd,
+        !is.na(primary_output_value) ~ primary_output_value,
+        TRUE ~ NA_real_
+      ),
+      display_output_unit = case_when(
+        display_commodity_family == "Oil / Liquids" & !is.na(capacity_kbd) ~ "kbd",
+        display_commodity_family == "Oil / Liquids" & !is.na(production_kbd) ~ "kbd",
+        display_commodity_family == "Gas / LNG" & !is.na(lng_capacity_mtpa) ~ "mtpa",
+        display_commodity_family == "Gas / LNG" & !is.na(lng_capacity_bcmy) ~ "bcm/y",
+        display_commodity_family == "Gas / LNG" & !is.na(gas_capacity_mmcfd) ~ "mmcfd",
+        display_commodity_family == "Gas / LNG" & !is.na(gas_throughput_mmcfd) ~ "mmcfd",
+        TRUE ~ primary_output_unit
+      ),
+      display_output_basis = case_when(
+        display_commodity_family == "Oil / Liquids" & !is.na(capacity_kbd) ~ "capacity",
+        display_commodity_family == "Oil / Liquids" & !is.na(production_kbd) ~ "production",
+        display_commodity_family == "Gas / LNG" & !is.na(lng_capacity_mtpa) ~ "capacity",
+        display_commodity_family == "Gas / LNG" & !is.na(lng_capacity_bcmy) ~ "capacity",
+        display_commodity_family == "Gas / LNG" & !is.na(gas_capacity_mmcfd) ~ "capacity",
+        display_commodity_family == "Gas / LNG" & !is.na(gas_throughput_mmcfd) ~ "throughput",
+        TRUE ~ primary_output_basis
+      ),
+      validation_color_group = case_when(
+        display_commodity_family == "Oil / Liquids" ~ "Oil / Liquids",
+        display_commodity_family == "Gas / LNG" ~ "Gas / LNG",
+        display_commodity_family == "Mixed" ~ "Mixed",
+        TRUE ~ "Other / Unknown"
+      )
+    )
+
+  incident_lookup <- incidents %>%
+    select(incident_id, incident_day, confidence_tier) %>%
+    filter(
+      !is.na(incident_day),
+      as.Date(incident_day) >= settings$study_start,
+      as.Date(incident_day) <= settings$study_end
+    ) %>%
+    distinct()
+
+  incident_evidence <- if (nrow(site_links) > 0 && nrow(incident_lookup) > 0) {
+    site_links %>%
+      left_join(incident_lookup, by = "incident_id") %>%
+      group_by(site_id) %>%
+      summarise(
+        incident_count = n_distinct(incident_id),
+        nearest_incident_km = safe_min_num(distance_km),
+        any_rank1_link = safe_any(link_rank == 1),
+        any_high_confidence_incident = safe_any(confidence_tier == "high"),
+        first_high_confidence_incident_day = safe_min_date_chr(incident_day[confidence_tier == "high"]),
+        latest_high_confidence_incident_day = safe_max_date_chr(incident_day[confidence_tier == "high"]),
+        .groups = "drop"
+      )
+  } else {
+    empty_site_validation_summary()[0, c(
+      "site_id", "incident_count", "nearest_incident_km", "any_rank1_link",
+      "any_high_confidence_incident", "first_high_confidence_incident_day",
+      "latest_high_confidence_incident_day"
+    )]
+  }
+
+  firms_evidence <- if (nrow(firms_facility_anomalies) > 0) {
+    firms_facility_anomalies %>%
+      transmute(
+        site_id,
+        firms_anomaly_flag = TRUE,
+        first_anomaly_date,
+        latest_anomaly_date,
+        nearest_anomaly_km,
+        anomaly_day_count,
+        anomaly_cell_count,
+        anomaly_hotspot_count
+      )
+  } else {
+    empty_site_validation_summary()[0, c(
+      "site_id", "firms_anomaly_flag", "first_anomaly_date", "latest_anomaly_date",
+      "nearest_anomaly_km", "anomaly_day_count", "anomaly_cell_count", "anomaly_hotspot_count"
+    )]
+  }
+
+  summary_tbl <- base_sites %>%
+    left_join(incident_evidence, by = "site_id") %>%
+    left_join(firms_evidence, by = "site_id") %>%
+    mutate(
+      incident_count = dplyr::coalesce(incident_count, 0L),
+      any_rank1_link = dplyr::coalesce(any_rank1_link, FALSE),
+      any_high_confidence_incident = dplyr::coalesce(any_high_confidence_incident, FALSE),
+      firms_anomaly_flag = dplyr::coalesce(firms_anomaly_flag, FALSE),
+      anomaly_day_count = dplyr::coalesce(anomaly_day_count, 0L),
+      anomaly_cell_count = dplyr::coalesce(anomaly_cell_count, 0L),
+      anomaly_hotspot_count = dplyr::coalesce(anomaly_hotspot_count, 0L),
+      display_output_text = format_output_text(display_output_value, display_output_unit, display_output_basis),
+      output_size_bucket = derive_output_size_bucket(display_commodity_family, display_output_value, display_output_unit),
+      confirmation_source_count = as.integer(incident_count > 0) + as.integer(any_high_confidence_incident) + as.integer(firms_anomaly_flag),
+      provisional_triple_confirmed = incident_count > 0 & any_high_confidence_incident & firms_anomaly_flag,
+      confirmation_sources_display = case_when(
+        provisional_triple_confirmed ~ "TP4 incident link; high-confidence incident; FIRMS anomaly",
+        any_high_confidence_incident & incident_count > 0 ~ "TP4 incident link; high-confidence incident",
+        incident_count > 0 & firms_anomaly_flag ~ "TP4 incident link; FIRMS anomaly",
+        incident_count > 0 ~ "TP4 incident link",
+        firms_anomaly_flag ~ "FIRMS anomaly",
+        TRUE ~ "No confirmation signals"
+      ),
+      confirmation_status = case_when(
+        provisional_triple_confirmed ~ "Provisional triple-confirmed",
+        incident_count > 0 ~ "Incident-linked",
+        firms_anomaly_flag ~ "FIRMS anomaly near site",
+        TRUE ~ "Background site"
+      ),
+      display_hit_date = if_else(any_high_confidence_incident, first_high_confidence_incident_day, NA_character_),
+      label_rank_group = case_when(
+        display_commodity_family == "Oil / Liquids" ~ "oil",
+        display_commodity_family == "Gas / LNG" ~ "gas",
+        TRUE ~ "other"
+      ),
+      label_rank_value = case_when(
+        label_rank_group == "oil" & !is.na(capacity_kbd) ~ capacity_kbd,
+        label_rank_group == "oil" & !is.na(production_kbd) ~ production_kbd,
+        TRUE ~ display_output_value
+      ),
+      label_rank_priority = case_when(
+        label_rank_group == "oil" ~ 1L,
+        tolower(trimws(dplyr::coalesce(display_output_unit, ""))) == "mtpa" ~ 1L,
+        tolower(trimws(dplyr::coalesce(display_output_unit, ""))) %in% c("bcm/y", "bcmy") ~ 2L,
+        tolower(trimws(dplyr::coalesce(display_output_unit, ""))) == "mmcfd" ~ 3L,
+        TRUE ~ 4L
+      )
+    ) %>%
+    select(all_of(names(empty_site_validation_summary())))
+
+  bind_rows(empty_site_validation_summary(), summary_tbl)
+}
+
+select_validation_label_sites <- function(site_validation_summary, label_limit = 25L) {
+  eligible <- site_validation_summary %>%
+    filter(
+      incident_count > 0,
+      !is.na(lat),
+      !is.na(lon),
+      !is.na(display_output_value),
+      name != "Unnamed site"
+    ) %>%
+    mutate(
+      label_metric_priority = case_when(
+        !is.na(capacity_kbd) ~ 1L,
+        !is.na(production_kbd) ~ 2L,
+        TRUE ~ 3L
+      ),
+      label_metric_value = case_when(
+        !is.na(capacity_kbd) ~ capacity_kbd,
+        !is.na(production_kbd) ~ production_kbd,
+        TRUE ~ label_rank_value
+      )
+    )
+
+  if (nrow(eligible) == 0) {
+    return(empty_site_validation_summary())
+  }
+
+  eligible %>%
+    arrange(label_metric_priority, desc(label_metric_value), nearest_incident_km, name) %>%
+    slice_head(n = label_limit)
+}
+
+prepare_label_points <- function(label_sites_sf, focus_bbox) {
+  if (nrow(label_sites_sf) == 0) {
+    return(tibble())
+  }
+
+  coords <- sf::st_coordinates(label_sites_sf)
+  mid_lon <- mean(c(focus_bbox$west, focus_bbox$east))
+  bind_cols(
+    sf::st_drop_geometry(label_sites_sf),
+    tibble(X = coords[, "X"], Y = coords[, "Y"])
+  ) %>%
+    mutate(
+      label_side = if_else(X <= mid_lon, "left", "right"),
+      label_nudge_x = if_else(label_side == "left", -1.1, 1.1),
+      label_hjust = if_else(label_side == "left", 1, 0),
+      label_text = paste(
+        name,
+        paste(country, dplyr::coalesce(display_output_text, "No capacity data"), sep = " | "),
+        sep = "\n"
+      )
+    )
+}
+
+package_path <- if (write_output) next_numbered_output_path(paths$map_gpkg) else tempfile(fileext = ".gpkg")
 
 incidents <- if (map_source == "confirmed") {
   prepare_incidents(paths$confirmed_csv)
@@ -689,7 +1110,7 @@ if (nrow(firms_grid_anomalies) == 0) {
     filter(!is.na(anomaly_flag), anomaly_flag)
 }
 firms_facility_anomalies <- prepare_firms_facility_anomalies(paths$firms_facility_anomalies_csv)
-gdelt <- prepare_gdelt(paths$gdelt_csv)
+gdelt <- tibble()
 energy_sites <- prepare_energy_sites(paths$energy_sites_csv)
 energy_lines <- prepare_energy_lines(paths$energy_lines_geojson)
 incident_site_links <- prepare_site_links(paths$site_links_csv)
@@ -697,6 +1118,7 @@ incident_article_links <- prepare_article_links(paths$article_links_csv)
 provider_log <- prepare_provider_log(paths$provider_log_csv)
 candidate_sites <- build_candidate_sites(incident_site_links, incidents, energy_sites)
 firms_anomalous_hotspots <- build_firms_anomalous_hotspots(firms, firms_grid_anomalies, settings)
+site_validation_summary <- build_site_validation_summary(incident_site_links, incidents, energy_sites, firms_facility_anomalies, settings)
 
 if (nrow(energy_sites) + nrow(energy_lines) == 0) {
   stop("No compiled energy infrastructure layers found. Run 01_ingest_sources.R and 02_build_incidents.R first.")
@@ -756,6 +1178,14 @@ firms_facility_anomalies_sf <- if (nrow(firms_facility_anomalies) > 0) {
   sf::st_sf(empty_firms_facility_anomalies(), geometry = sf::st_sfc(crs = 4326))
 }
 
+site_validation_summary_sf <- if (nrow(site_validation_summary) > 0) {
+  site_validation_summary %>%
+    filter(!is.na(lat), !is.na(lon)) %>%
+    sf::st_as_sf(coords = c("lon", "lat"), crs = 4326, remove = FALSE)
+} else {
+  sf::st_sf(empty_site_validation_summary(), geometry = sf::st_sfc(crs = 4326))
+}
+
 if (write_output) {
   ensure_dir(project_path("output"))
 }
@@ -772,6 +1202,7 @@ write_gpkg_layer(firms_grid_anomalies_sf, package_path, "firms_grid_anomalies", 
 write_gpkg_layer(firms_anomalous_hotspots_sf, package_path, "firms_anomalous_hotspots", append = TRUE, aspatial = FALSE)
 write_gpkg_layer(firms_facility_anomalies_sf, package_path, "firms_facility_anomalies", append = TRUE, aspatial = FALSE)
 write_gpkg_layer(candidate_sites_sf, package_path, "candidate_sites", append = TRUE, aspatial = FALSE)
+write_gpkg_layer(site_validation_summary, package_path, "site_validation_summary", append = TRUE, aspatial = TRUE)
 write_gpkg_layer(gdelt, package_path, "gdelt_articles", append = TRUE, aspatial = TRUE)
 write_gpkg_layer(incident_site_links, package_path, "incident_site_links", append = TRUE, aspatial = TRUE)
 write_gpkg_layer(incident_article_links, package_path, "incident_article_links", append = TRUE, aspatial = TRUE)
@@ -873,6 +1304,16 @@ firms_hotspots_from_package <- if (nrow(firms_hotspots_from_package) > 0) {
 } else {
   firms_hotspots_from_package
 }
+incidents_from_package <- if (nrow(incidents_sf) > 0) {
+  sf::st_crop(incidents_sf, label_bbox)
+} else {
+  incidents_sf
+}
+site_validation_summary_from_package <- if (nrow(site_validation_summary_sf) > 0) {
+  sf::st_crop(site_validation_summary_sf, label_bbox)
+} else {
+  site_validation_summary_sf
+}
 
 line_legend_label <- "Pipeline Network"
 site_colors <- asset_registry %>%
@@ -893,6 +1334,27 @@ map_theme <- theme_minimal() +
     plot.title = element_text(face = "bold", size = 14, color = "#20313c"),
     plot.subtitle = element_text(size = 10, color = "#36505f")
   )
+
+validation_family_colors <- c(
+  "Oil / Liquids" = "#8c510a",
+  "Gas / LNG" = "#1b7837",
+  "Mixed" = "#5ab4ac",
+  "Other / Unknown" = "#7f7f7f"
+)
+validation_size_values <- c(
+  "No output data" = 1.0,
+  "Low output" = 1.45,
+  "Medium output" = 2.15,
+  "High output" = 3.0
+)
+validation_overlay_fills <- c(
+  "Incident-linked site" = "#f7f0e1",
+  "Double-Confirmation through FIRMS Thermal Anomaly detection" = "#f26b1d"
+)
+validation_status_shapes <- c(
+  "Incident-linked" = 1,
+  "Provisional triple-confirmed" = 4
+)
 
 if (map_mode == "infrastructure") {
   if (nrow(energy_lines_from_package) > 0) {
@@ -946,7 +1408,7 @@ if (map_mode == "infrastructure") {
   print(infrastructure_map)
 
   if (write_output) {
-    ggsave(paths$infrastructure_map_pdf, infrastructure_map, width = 11, height = 7, device = grDevices::pdf)
+    ggsave(next_numbered_output_path(paths$infrastructure_map_pdf), infrastructure_map, width = 11, height = 7, device = grDevices::pdf)
     message("GeoPackage and infrastructure map written to output/")
   } else {
     message("Preview only. Set WRITE_OUTPUT=TRUE to save map_inputs.gpkg and energy_infrastructure_map.pdf.")
@@ -978,7 +1440,7 @@ if (map_mode == "infrastructure") {
   print(sites_map)
 
   if (write_output) {
-    ggsave(paths$facilities_map_pdf, sites_map, width = 11, height = 7, device = grDevices::pdf)
+    ggsave(next_numbered_output_path(paths$facilities_map_pdf), sites_map, width = 11, height = 7, device = grDevices::pdf)
     message("GeoPackage and site map written to output/")
   } else {
     message("Preview only. Set WRITE_OUTPUT=TRUE to save map_inputs.gpkg and energy_facilities_map.pdf.")
@@ -1034,7 +1496,7 @@ if (map_mode == "infrastructure") {
   print(candidate_map)
 
   if (write_output) {
-    ggsave(paths$candidate_sites_map_pdf, candidate_map, width = 11, height = 7, device = grDevices::pdf)
+    ggsave(next_numbered_output_path(paths$candidate_sites_map_pdf), candidate_map, width = 11, height = 7, device = grDevices::pdf)
     message("GeoPackage and candidate-sites map written to output/")
   } else {
     message("Preview only. Set WRITE_OUTPUT=TRUE to save map_inputs.gpkg and energy_candidate_sites_map.pdf.")
@@ -1099,7 +1561,7 @@ if (map_mode == "infrastructure") {
   print(firms_anomaly_grid_map)
 
   if (write_output) {
-    ggsave(paths$firms_anomaly_grid_map_pdf, firms_anomaly_grid_map, width = 11, height = 7, device = grDevices::pdf)
+    ggsave(next_numbered_output_path(paths$firms_anomaly_grid_map_pdf), firms_anomaly_grid_map, width = 11, height = 7, device = grDevices::pdf)
     message("GeoPackage and FIRMS anomaly-grid map written to output/")
   } else {
     message("Preview only. Set WRITE_OUTPUT=TRUE to save map_inputs.gpkg and energy_firms_anomaly_grid_map.pdf.")
@@ -1170,7 +1632,7 @@ if (map_mode == "infrastructure") {
   print(firms_anomaly_sites_map)
 
   if (write_output) {
-    ggsave(paths$firms_anomaly_sites_map_pdf, firms_anomaly_sites_map, width = 11, height = 7, device = grDevices::pdf)
+    ggsave(next_numbered_output_path(paths$firms_anomaly_sites_map_pdf), firms_anomaly_sites_map, width = 11, height = 7, device = grDevices::pdf)
     message("GeoPackage and FIRMS anomaly-sites map written to output/")
   } else {
     message("Preview only. Set WRITE_OUTPUT=TRUE to save map_inputs.gpkg and energy_firms_anomaly_sites_map.pdf.")
@@ -1340,7 +1802,7 @@ if (map_mode == "infrastructure") {
     save_side_by_side_map_pdf(
       legacy_overlay_map,
       anomaly_compare_map,
-      paths$firms_comparison_map_pdf,
+      next_numbered_output_path(paths$firms_comparison_map_pdf),
       title = "FIRMS Comparison: Raw Proximity Overlay vs Anomaly Filter"
     )
     message("GeoPackage and FIRMS comparison map written to output/")
@@ -1352,31 +1814,197 @@ if (map_mode == "infrastructure") {
     )
     message("Preview only. Set WRITE_OUTPUT=TRUE to save map_inputs.gpkg and energy_firms_comparison_map.pdf.")
   }
+} else if (map_mode == "validation_capacity_labels") {
+  label_sites <- select_validation_label_sites(sf::st_drop_geometry(site_validation_summary_from_package))
+  label_sites_sf <- if (nrow(label_sites) > 0) {
+    label_sites %>%
+      sf::st_as_sf(coords = c("lon", "lat"), crs = 4326, remove = FALSE)
+  } else {
+    sf::st_sf(empty_site_validation_summary(), geometry = sf::st_sfc(crs = 4326))
+  }
+  label_points <- prepare_label_points(label_sites_sf, focus_bbox)
+  incident_overlay_sites <- site_validation_summary_from_package %>%
+    filter(incident_count > 0) %>%
+    mutate(
+      overlay_status = if_else(
+        firms_anomaly_flag,
+        "Double-Confirmation through FIRMS Thermal Anomaly detection",
+        "Incident-linked site"
+      )
+    )
+
+  validation_labels_map <- ggplot() +
+    geom_sf(data = background_land, fill = "#efe7d6", color = "#d0c5b4", linewidth = 0.2) +
+    geom_sf_text(data = country_labels, aes(label = admin), color = "#5f594b", size = 2.6, check_overlap = TRUE)
+
+  if (nrow(site_validation_summary_from_package) > 0) {
+    validation_labels_map <- validation_labels_map +
+      geom_sf(
+        data = site_validation_summary_from_package,
+        aes(color = validation_color_group, size = output_size_bucket),
+        alpha = 0.28,
+        inherit.aes = FALSE
+      )
+  }
+
+  if (nrow(incident_overlay_sites) > 0) {
+    validation_labels_map <- validation_labels_map +
+      geom_sf(
+        data = incident_overlay_sites,
+        aes(fill = overlay_status),
+        shape = 21,
+        color = "#1f1f1f",
+        size = 3.25,
+        stroke = 0.45,
+        alpha = 0.68,
+        inherit.aes = FALSE
+      )
+  }
+
+  if (nrow(label_sites_sf) > 0) {
+    validation_labels_map <- validation_labels_map +
+      geom_sf(
+        data = label_sites_sf,
+        aes(color = validation_color_group, size = output_size_bucket),
+        shape = 16,
+        alpha = 0.72,
+        inherit.aes = FALSE,
+        show.legend = FALSE
+      )
+  }
+
+  if (nrow(label_points) > 0) {
+    if (ggrepel_available) {
+      validation_labels_map <- validation_labels_map +
+        ggrepel::geom_label_repel(
+          data = label_points,
+          aes(x = X, y = Y, label = label_text),
+          size = 2.5,
+          fill = scales::alpha("#fffaf0", 0.96),
+          color = "#20313c",
+          label.size = 0.18,
+          label.padding = grid::unit(0.12, "lines"),
+          box.padding = grid::unit(0.25, "lines"),
+          point.padding = grid::unit(0.16, "lines"),
+          nudge_x = label_points$label_nudge_x,
+          hjust = label_points$label_hjust,
+          direction = "y",
+          segment.color = "#5e6b74",
+          segment.alpha = 0.7,
+          min.segment.length = 0,
+          seed = 42,
+          show.legend = FALSE
+        )
+    } else {
+      validation_labels_map <- validation_labels_map +
+        geom_label(
+          data = label_points,
+          aes(x = X, y = Y, label = label_text),
+          size = 2.4,
+          hjust = 0,
+          vjust = 0,
+          fill = scales::alpha("#fffaf0", 0.96),
+          color = "#20313c",
+          label.size = 0.18,
+          show.legend = FALSE
+        )
+    }
+  }
+
+  validation_labels_map <- validation_labels_map +
+    coord_sf(
+      xlim = c(focus_bbox$west, focus_bbox$east),
+      ylim = c(focus_bbox$south, focus_bbox$north),
+      expand = FALSE,
+      clip = "off"
+    ) +
+    scale_color_manual(values = validation_family_colors, drop = TRUE, na.value = "#7f7f7f") +
+    scale_fill_manual(values = validation_overlay_fills, drop = FALSE) +
+    scale_size_manual(values = validation_size_values, drop = FALSE) +
+    labs(
+      title = "Highest-Capacity Incident-Linked Energy Sites",
+      subtitle = paste0(
+        "Top 25 incident-linked sites by available capacity metric; orange-filled circles indicate Double-Confirmation through FIRMS Thermal Anomaly detection"
+      ),
+      color = "Commodity family",
+      fill = "Incident-site status",
+      size = "Output bucket"
+    ) +
+    map_theme +
+    theme(
+      legend.position = "bottom",
+      legend.box = "vertical",
+      plot.margin = margin(12, 120, 12, 120)
+    )
+
+  print(validation_labels_map)
+
+  if (write_output) {
+    ggsave(next_numbered_output_path(paths$validation_capacity_labels_map_pdf), validation_labels_map, width = 13, height = 8.5, device = grDevices::pdf)
+    message("GeoPackage and validation capacity-labels map written to output/")
+  } else {
+    message("Preview only. Set WRITE_OUTPUT=TRUE to save map_inputs.gpkg and incident_validation_capacity_labels_map.pdf.")
+  }
 } else {
-  incidents_from_package <- sf::st_read(package_path, layer = "incidents", quiet = TRUE)
-  firms_from_package <- sf::st_read(package_path, layer = "firms_hotspots", quiet = TRUE)
-  incidents_from_package <- sf::st_crop(incidents_from_package, label_bbox)
-  firms_from_package <- sf::st_crop(firms_from_package, label_bbox)
+  incident_overlay_sites <- site_validation_summary_from_package %>%
+    filter(incident_count > 0) %>%
+    mutate(
+      overlay_status = if_else(
+        firms_anomaly_flag,
+        "Double-Confirmation through FIRMS Thermal Anomaly detection",
+        "Incident-linked site"
+      )
+    )
 
   validation_map <- ggplot() +
     geom_sf(data = background_land, fill = "#efe7d6", color = "#d0c5b4", linewidth = 0.2) +
     geom_sf_text(data = country_labels, aes(label = admin), color = "#5f594b", size = 2.8, check_overlap = TRUE)
 
-  if (nrow(energy_lines_from_package) > 0) {
+  if (nrow(firms_grid_anomalies_from_package) > 0) {
     validation_map <- validation_map +
-      geom_sf(data = energy_lines_from_package, color = "#6f8093", linewidth = 0.18, alpha = 0.16, lineend = "round")
+      geom_sf(
+        data = firms_grid_anomalies_from_package,
+        fill = "#f26b1d",
+        color = NA,
+        alpha = 0.1,
+        inherit.aes = FALSE
+      )
   }
-  if (nrow(energy_sites_from_package) > 0) {
+
+  if (nrow(site_validation_summary_from_package) > 0) {
     validation_map <- validation_map +
-      geom_sf(data = energy_sites_from_package, color = "#2b8cbe", size = 0.8, alpha = 0.35)
+      geom_sf(
+        data = site_validation_summary_from_package,
+        aes(color = validation_color_group, size = output_size_bucket),
+        alpha = 0.3,
+        inherit.aes = FALSE
+      )
   }
-  if (nrow(firms_from_package) > 0) {
+
+  if (nrow(incident_overlay_sites) > 0) {
     validation_map <- validation_map +
-      geom_sf(data = firms_from_package, color = "#d95f02", size = 1.1, alpha = 0.55)
+      geom_sf(
+        data = incident_overlay_sites,
+        aes(fill = overlay_status),
+        shape = 21,
+        color = "#202020",
+        size = 3.15,
+        stroke = 0.45,
+        alpha = 0.72,
+        inherit.aes = FALSE
+      )
   }
+
   if (nrow(incidents_from_package) > 0) {
     validation_map <- validation_map +
-      geom_sf(data = incidents_from_package, aes(shape = confidence_tier), color = "#1b9e77", size = 2.3)
+      geom_sf(
+        data = incidents_from_package,
+        color = "#1e252b",
+        size = 0.75,
+        alpha = 0.58,
+        inherit.aes = FALSE,
+        show.legend = FALSE
+      )
   }
 
   validation_map <- validation_map +
@@ -1385,17 +2013,29 @@ if (map_mode == "infrastructure") {
       ylim = c(focus_bbox$south, focus_bbox$north),
       expand = FALSE
     ) +
+    scale_color_manual(values = validation_family_colors, drop = TRUE, na.value = "#7f7f7f") +
+    scale_fill_manual(values = validation_overlay_fills, drop = FALSE) +
+    scale_size_manual(values = validation_size_values, drop = FALSE) +
     labs(
       title = "Incident Validation Map",
-      subtitle = paste("Source:", map_source),
-      shape = "Confidence tier"
+      subtitle = paste(
+        "Source:", map_source,
+        "| Incident points overlay linked sites; orange-filled circles mark Double-Confirmation through FIRMS Thermal Anomaly detection"
+      ),
+      color = "Commodity family",
+      fill = "Incident-site status",
+      size = "Output bucket"
     ) +
-    map_theme
+    map_theme +
+    theme(
+      legend.position = "bottom",
+      legend.box = "vertical"
+    )
 
   print(validation_map)
 
   if (write_output) {
-    ggsave(paths$validation_map_pdf, validation_map, width = 10, height = 7, device = grDevices::pdf)
+    ggsave(next_numbered_output_path(paths$validation_map_pdf), validation_map, width = 11.5, height = 7.5, device = grDevices::pdf)
     message("GeoPackage and validation map written to output/")
   } else {
     message("Preview only. Set WRITE_OUTPUT=TRUE to save map_inputs.gpkg and incident_validation_map.pdf.")

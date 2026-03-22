@@ -15,6 +15,8 @@ provider_registry <- build_provider_registry()
 
 paths <- list(
   tp4_csv = project_path("data_processed", "tp4_incidents_raw.csv"),
+  acled_csv = project_path("data_processed", "acled_incidents_raw.csv"),
+  scraped_csv = project_path("data_processed", "scraped_incidents_raw.csv"),
   gdelt_csv = project_path("data_processed", "gdelt_articles_raw.csv"),
   review_csv = project_path("data_processed", "incidents_review.csv"),
   confirmed_csv = project_path("data_processed", "incidents_confirmed.csv"),
@@ -39,6 +41,20 @@ empty_provider_sites <- function() {
     name = character(),
     status = character(),
     country = character(),
+    commodity_group = character(),
+    liquid_capacity_bpd = double(),
+    liquid_throughput_bpd = double(),
+    gas_capacity_mmcfd = double(),
+    gas_throughput_mmcfd = double(),
+    lng_capacity_mtpa = double(),
+    lng_capacity_bcmy = double(),
+    oil_production_bpd = double(),
+    capacity_kbd = double(),
+    production_kbd = double(),
+    primary_output_kind = character(),
+    primary_output_value = double(),
+    primary_output_unit = character(),
+    primary_output_basis = character(),
     geometry_role = character(),
     provider_priority = integer(),
     lat = double(),
@@ -74,6 +90,20 @@ empty_site_links <- function() {
     asset_class = character(),
     asset_label = character(),
     primary_provider = character(),
+    commodity_group = character(),
+    liquid_capacity_bpd = double(),
+    liquid_throughput_bpd = double(),
+    gas_capacity_mmcfd = double(),
+    gas_throughput_mmcfd = double(),
+    lng_capacity_mtpa = double(),
+    lng_capacity_bcmy = double(),
+    oil_production_bpd = double(),
+    capacity_kbd = double(),
+    production_kbd = double(),
+    primary_output_kind = character(),
+    primary_output_value = double(),
+    primary_output_unit = character(),
+    primary_output_basis = character(),
     distance_km = double(),
     link_rank = integer()
   )
@@ -89,6 +119,20 @@ empty_energy_sites <- function() {
     name = character(),
     status = character(),
     country = character(),
+    commodity_group = character(),
+    liquid_capacity_bpd = double(),
+    liquid_throughput_bpd = double(),
+    gas_capacity_mmcfd = double(),
+    gas_throughput_mmcfd = double(),
+    lng_capacity_mtpa = double(),
+    lng_capacity_bcmy = double(),
+    oil_production_bpd = double(),
+    capacity_kbd = double(),
+    production_kbd = double(),
+    primary_output_kind = character(),
+    primary_output_value = double(),
+    primary_output_unit = character(),
+    primary_output_basis = character(),
     lat = double(),
     lon = double(),
     geometry_role = character(),
@@ -138,11 +182,22 @@ coerce_provider_sites_schema <- function(data) {
         c(
           provider, source_dataset, source_file, source_layer, source_id,
           asset_class, asset_label, provider_class, subclass, name,
-          status, country, geometry_role
+          status, country, commodity_group, primary_output_kind,
+          primary_output_unit, primary_output_basis, geometry_role
         ),
         as.character
       ),
       provider_priority = as.integer(provider_priority),
+      liquid_capacity_bpd = as.numeric(liquid_capacity_bpd),
+      liquid_throughput_bpd = as.numeric(liquid_throughput_bpd),
+      gas_capacity_mmcfd = as.numeric(gas_capacity_mmcfd),
+      gas_throughput_mmcfd = as.numeric(gas_throughput_mmcfd),
+      lng_capacity_mtpa = as.numeric(lng_capacity_mtpa),
+      lng_capacity_bcmy = as.numeric(lng_capacity_bcmy),
+      oil_production_bpd = as.numeric(oil_production_bpd),
+      capacity_kbd = as.numeric(capacity_kbd),
+      production_kbd = as.numeric(production_kbd),
+      primary_output_value = as.numeric(primary_output_value),
       lat = as.numeric(lat),
       lon = as.numeric(lon)
     )
@@ -215,6 +270,20 @@ merge_energy_sites <- function(provider_sites, asset_registry) {
       name = first_non_missing_chr(name),
       status = first_non_missing_chr(status),
       country = first_non_missing_chr(country),
+      commodity_group = first_non_missing_chr(commodity_group),
+      liquid_capacity_bpd = first_non_missing_num(liquid_capacity_bpd),
+      liquid_throughput_bpd = first_non_missing_num(liquid_throughput_bpd),
+      gas_capacity_mmcfd = first_non_missing_num(gas_capacity_mmcfd),
+      gas_throughput_mmcfd = first_non_missing_num(gas_throughput_mmcfd),
+      lng_capacity_mtpa = first_non_missing_num(lng_capacity_mtpa),
+      lng_capacity_bcmy = first_non_missing_num(lng_capacity_bcmy),
+      oil_production_bpd = first_non_missing_num(oil_production_bpd),
+      capacity_kbd = first_non_missing_num(capacity_kbd),
+      production_kbd = first_non_missing_num(production_kbd),
+      primary_output_kind = first_non_missing_chr(primary_output_kind),
+      primary_output_value = first_non_missing_num(primary_output_value),
+      primary_output_unit = first_non_missing_chr(primary_output_unit),
+      primary_output_basis = first_non_missing_chr(primary_output_basis),
       lat = first_non_missing_num(lat),
       lon = first_non_missing_num(lon),
       geometry_role = "site",
@@ -244,6 +313,20 @@ merge_energy_sites <- function(provider_sites, asset_registry) {
       name,
       status,
       country,
+      commodity_group,
+      liquid_capacity_bpd,
+      liquid_throughput_bpd,
+      gas_capacity_mmcfd,
+      gas_throughput_mmcfd,
+      lng_capacity_mtpa,
+      lng_capacity_bcmy,
+      oil_production_bpd,
+      capacity_kbd,
+      production_kbd,
+      primary_output_kind,
+      primary_output_value,
+      primary_output_unit,
+      primary_output_basis,
       lat,
       lon,
       geometry_role,
@@ -387,27 +470,103 @@ match_energy_sites <- function(incident_row, energy_sites, settings) {
       asset_class,
       asset_label,
       primary_provider,
+      commodity_group,
+      liquid_capacity_bpd,
+      liquid_throughput_bpd,
+      gas_capacity_mmcfd,
+      gas_throughput_mmcfd,
+      lng_capacity_mtpa,
+      lng_capacity_bcmy,
+      oil_production_bpd,
+      capacity_kbd,
+      production_kbd,
+      primary_output_kind,
+      primary_output_value,
+      primary_output_unit,
+      primary_output_basis,
       distance_km,
       link_rank
     )
 }
 
+coerce_incident_schema <- function(data) {
+  if (nrow(data) == 0) {
+    return(data)
+  }
+
+  data %>%
+    mutate(
+      incident_id = as.character(incident_id),
+      source_system = as.character(source_system),
+      operation = as.character(operation),
+      sequence = as.integer(sequence),
+      wave_number = as.integer(wave_number),
+      announced_utc = as.character(announced_utc),
+      probable_launch_time = as.character(probable_launch_time),
+      incident_day = as.Date(incident_day),
+      target_text = as.character(target_text),
+      landing_countries = as.character(landing_countries),
+      target_country_guess = as.character(target_country_guess),
+      weapon_payload = as.character(weapon_payload),
+      ballistic_flag = as.logical(ballistic_flag),
+      drone_flag = as.logical(drone_flag),
+      cruise_flag = as.logical(cruise_flag),
+      cluster_flag = as.logical(cluster_flag),
+      target_energy_flag = as.logical(target_energy_flag),
+      target_port_flag = as.logical(target_port_flag),
+      target_industrial_flag = as.logical(target_industrial_flag),
+      target_military_flag = as.logical(target_military_flag),
+      target_lat = as.numeric(target_lat),
+      target_lon = as.numeric(target_lon),
+      source_urls = as.character(source_urls),
+      description = as.character(description)
+    )
+}
+
 tp4 <- read_csv_if_exists(paths$tp4_csv)
-gdelt <- bind_rows(
-  tibble(
-    query_id = character(),
-    seendate = character(),
-    title = character(),
-    url = character(),
-    domain = character()
-  ),
-  read_csv_if_exists(paths$gdelt_csv)
-  ) %>%
-  mutate(
-    article_key = make_article_key(query_id, seendate, url, title),
-    seen_date = as.Date(substr(seendate, 1, 8), format = "%Y%m%d"),
-    title_text = str_to_lower(title %||% "")
-  )
+tp4 <- coerce_incident_schema(tp4)
+acled <- read_csv_if_exists(paths$acled_csv)
+
+if (nrow(acled) > 0) {
+  acled <- acled %>%
+    select(any_of(names(tp4))) %>%
+    coerce_incident_schema()
+
+  tp4 <- bind_rows(tp4, acled) %>%
+    distinct(incident_day, target_text, target_lat, target_lon, .keep_all = TRUE)
+  message("Combined TP4 + ACLED incidents: ", nrow(tp4))
+}
+
+# Load scraped incidents (from 06_scrape_incidents.R) and normalize to TP4 schema
+scraped <- read_csv_if_exists(paths$scraped_csv)
+if (nrow(scraped) > 0) {
+  scraped <- scraped %>%
+    mutate(
+      source_system = coalesce(source_system, "scraped"),
+      operation = NA_character_,
+      sequence = NA_integer_,
+      wave_number = NA_integer_,
+      announced_utc = NA_character_,
+      probable_launch_time = NA_character_,
+      landing_countries = target_country_guess,
+      weapon_payload = strike_type,
+      ballistic_flag = strike_type == "ballistic_missile",
+      drone_flag = strike_type == "drone",
+      cruise_flag = strike_type == "cruise_missile",
+      cluster_flag = FALSE,
+      target_energy_flag = energy_relevant,
+      target_port_flag = str_detect(str_to_lower(target_text %||% ""), "port|terminal"),
+      target_industrial_flag = str_detect(str_to_lower(target_text %||% ""), "refinery|plant|complex|industrial|petrochemical"),
+      target_military_flag = str_detect(str_to_lower(target_text %||% ""), "base|airbase|military"),
+      target_lat = as.numeric(target_lat),
+      target_lon = as.numeric(target_lon)
+    ) %>%
+    select(any_of(names(tp4))) %>%
+    coerce_incident_schema()
+  tp4 <- bind_rows(tp4, scraped) %>%
+    distinct(incident_day, target_text, target_lat, target_lon, .keep_all = TRUE)
+  message("Combined TP4 + scraped incidents: ", nrow(tp4))
+}
 
 provider_sites <- load_provider_sites(provider_registry)
 provider_lines <- load_provider_lines(provider_registry)
@@ -415,7 +574,7 @@ energy_sites <- merge_energy_sites(provider_sites, asset_registry)
 energy_lines <- merge_energy_lines(provider_lines, asset_registry)
 
 if (nrow(tp4) == 0) {
-  stop("No TP4 incident staging file found. Run 01_ingest_sources.R with USE_LOCAL_TP4=TRUE and WRITE_OUTPUT=TRUE.")
+  stop("No incidents found. Run 01_ingest_sources.R (TP4) or 06_scrape_incidents.R (Wikipedia/web) first.")
 }
 
 if (nrow(energy_sites) + nrow(energy_lines) == 0) {
@@ -424,7 +583,6 @@ if (nrow(energy_sites) + nrow(energy_lines) == 0) {
 
 bundles <- lapply(seq_len(nrow(tp4)), function(i) {
   row <- tp4[i, ]
-  article_links <- match_gdelt_articles(row, gdelt)
   site_links <- match_energy_sites(row, energy_sites, settings)
 
   nearest_site <- site_links %>% slice_head(n = 1)
@@ -433,14 +591,13 @@ bundles <- lapply(seq_len(nrow(tp4)), function(i) {
   nearest_site_provider <- if (nrow(nearest_site) == 0) NA_character_ else nearest_site$primary_provider[[1]]
   nearest_site_distance <- if (nrow(nearest_site) == 0) NA_real_ else nearest_site$distance_km[[1]]
 
-  article_urls <- unique(article_links$url[!is.na(article_links$url) & article_links$url != ""])
   energy_candidate <- isTRUE(row$target_energy_flag) ||
     isTRUE(row$target_port_flag) ||
     isTRUE(row$target_industrial_flag) ||
     flag_energy_text(paste(row$target_text, row$description, nearest_site_class))
 
   confidence_tier <- case_when(
-    energy_candidate && nrow(site_links) > 0 && nrow(article_links) > 0 ~ "high",
+    energy_candidate && nrow(site_links) > 0 ~ "high",
     energy_candidate ~ "medium",
     TRUE ~ "low"
   )
@@ -460,8 +617,8 @@ bundles <- lapply(seq_len(nrow(tp4)), function(i) {
       lat = row$target_lat,
       lon = row$target_lon,
       source_osint = TRUE,
-      source_gdelt_count = nrow(article_links),
-      gdelt_urls = if (length(article_urls) == 0) NA_character_ else paste(article_urls, collapse = " | "),
+      source_gdelt_count = 0L,
+      gdelt_urls = NA_character_,
       firms_match_flag = NA,
       firms_distance_km = NA_real_,
       firms_hotspot_date = NA_character_,
@@ -472,8 +629,7 @@ bundles <- lapply(seq_len(nrow(tp4)), function(i) {
       confidence_tier = confidence_tier,
       review_status = "needs_review"
     ),
-    site_links = site_links,
-    article_links = article_links
+    site_links = site_links
   )
 })
 
@@ -484,15 +640,11 @@ incidents_confirmed <- incidents_review %>%
 incident_site_links <- bind_rows(c(list(empty_site_links()), lapply(bundles, `[[`, "site_links"))) %>%
   filter(!is.na(incident_id), !is.na(site_id))
 
-incident_article_links <- bind_rows(c(list(empty_article_links()), lapply(bundles, `[[`, "article_links"))) %>%
-  filter(!is.na(incident_id), !is.na(article_key))
-
 message("Energy sites: ", nrow(energy_sites))
 message("Energy lines: ", nrow(energy_lines))
 message("Incident review rows: ", nrow(incidents_review))
 print(utils::head(incidents_review, preview_n))
 message("Incident-site links: ", nrow(incident_site_links))
-message("Incident-GDELT links: ", nrow(incident_article_links))
 
 if (write_output) {
   write_csv_safe(incidents_review, paths$review_csv)
@@ -504,7 +656,6 @@ if (write_output) {
     unlink(paths$energy_lines_geojson)
   }
   write_csv_safe(incident_site_links, paths$site_links_csv)
-  write_csv_safe(incident_article_links, paths$article_links_csv)
   if (file.exists(paths$legacy_firms_links_csv)) {
     unlink(paths$legacy_firms_links_csv)
   }
