@@ -113,6 +113,27 @@ date_windows <- function(start_date, end_date, window_days = 7) {
   )
 }
 
+last_day_of_month <- function(year, month) {
+  next_month_year <- ifelse(month == 12, year + 1L, year)
+  next_month <- ifelse(month == 12, 1L, month + 1L)
+  as.integer(format(as.Date(sprintf("%04d-%02d-01", next_month_year, next_month)) - 1, "%d"))
+}
+
+shift_date_to_year <- function(x, year) {
+  dates <- as.Date(x)
+  years <- rep(as.integer(year), length.out = length(dates))
+  months <- as.integer(format(dates, "%m"))
+  days <- as.integer(format(dates, "%d"))
+  max_days <- mapply(last_day_of_month, years, months)
+
+  as.Date(sprintf(
+    "%04d-%02d-%02d",
+    years,
+    months,
+    pmin(days, max_days)
+  ))
+}
+
 normalize_key_text <- function(x) {
   value <- as.character(x %||% "")
   value <- str_replace_all(value, "([a-z0-9])([A-Z])", "\\1_\\2")
@@ -134,6 +155,87 @@ make_firms_hotspot_id <- function(acq_date, latitude, longitude) {
   lat_value <- ifelse(is.na(latitude), "na", formatC(as.numeric(latitude), format = "f", digits = 4))
   lon_value <- ifelse(is.na(longitude), "na", formatC(as.numeric(longitude), format = "f", digits = 4))
   paste0("firms_", date_value, "_", lat_value, "_", lon_value)
+}
+
+attach_firms_grid <- function(data, lon_col = "longitude", lat_col = "latitude", grid_km = 2, grid_crs = 6933) {
+  grid_columns <- tibble::tibble(
+    cell_id = character(),
+    cell_x = integer(),
+    cell_y = integer(),
+    xmin_m = double(),
+    ymin_m = double(),
+    xmax_m = double(),
+    ymax_m = double(),
+    cell_center_lon = double(),
+    cell_center_lat = double()
+  )
+
+  if (nrow(data) == 0) {
+    return(dplyr::bind_cols(tibble::as_tibble(data), grid_columns))
+  }
+
+  pts <- sf::st_as_sf(tibble::as_tibble(data), coords = c(lon_col, lat_col), crs = 4326, remove = FALSE)
+  xy <- sf::st_coordinates(sf::st_transform(pts, grid_crs))
+  grid_size_m <- as.numeric(grid_km) * 1000
+
+  cell_x <- floor(xy[, 1] / grid_size_m)
+  cell_y <- floor(xy[, 2] / grid_size_m)
+  xmin_m <- cell_x * grid_size_m
+  ymin_m <- cell_y * grid_size_m
+  xmax_m <- xmin_m + grid_size_m
+  ymax_m <- ymin_m + grid_size_m
+
+  center_pts <- sf::st_as_sf(
+    tibble::tibble(
+      x = xmin_m + (grid_size_m / 2),
+      y = ymin_m + (grid_size_m / 2)
+    ),
+    coords = c("x", "y"),
+    crs = grid_crs
+  )
+  center_xy <- sf::st_coordinates(sf::st_transform(center_pts, 4326))
+
+  dplyr::bind_cols(
+    tibble::as_tibble(data),
+    tibble::tibble(
+      cell_id = sprintf("cell_%sm_%s_%s", as.integer(grid_size_m), cell_x, cell_y),
+      cell_x = as.integer(cell_x),
+      cell_y = as.integer(cell_y),
+      xmin_m = as.numeric(xmin_m),
+      ymin_m = as.numeric(ymin_m),
+      xmax_m = as.numeric(xmax_m),
+      ymax_m = as.numeric(ymax_m),
+      cell_center_lon = as.numeric(center_xy[, 1]),
+      cell_center_lat = as.numeric(center_xy[, 2])
+    )
+  )
+}
+
+firms_grid_cells_as_sf <- function(data, grid_crs = 6933, target_crs = 4326) {
+  if (nrow(data) == 0) {
+    return(sf::st_sf(tibble::as_tibble(data), geometry = sf::st_sfc(crs = target_crs)))
+  }
+
+  polygons <- lapply(seq_len(nrow(data)), function(i) {
+    coords <- matrix(
+      c(
+        data$xmin_m[[i]], data$ymin_m[[i]],
+        data$xmax_m[[i]], data$ymin_m[[i]],
+        data$xmax_m[[i]], data$ymax_m[[i]],
+        data$xmin_m[[i]], data$ymax_m[[i]],
+        data$xmin_m[[i]], data$ymin_m[[i]]
+      ),
+      ncol = 2,
+      byrow = TRUE
+    )
+    sf::st_polygon(list(coords))
+  })
+
+  sf::st_sf(
+    tibble::as_tibble(data),
+    geometry = sf::st_sfc(polygons, crs = grid_crs)
+  ) %>%
+    sf::st_transform(target_crs)
 }
 
 build_asset_class_registry <- function() {
@@ -288,10 +390,19 @@ project_settings <- function() {
       "petrochem", "petroleum", "tanker", "port", "aramco",
       "lng", "lpg", "storage tank", "depot", "export"
     ),
-    firms_sensor = "VIIRS_SNPP_SP",
+    firms_conflict_start = as.Date(Sys.getenv("FIRMS_CONFLICT_START", unset = "2026-02-28")),
+    firms_reference_years = as.integer(env_csv("FIRMS_REFERENCE_YEARS", c("2024", "2025"))),
+    firms_grid_km = as.numeric(Sys.getenv("FIRMS_GRID_KM", unset = "2")),
+    firms_anomaly_z = as.numeric(Sys.getenv("FIRMS_ANOMALY_Z", unset = "3")),
+    firms_anomaly_lift = as.numeric(Sys.getenv("FIRMS_ANOMALY_LIFT", unset = "3")),
+    firms_anomaly_min_hotspots = as.numeric(Sys.getenv("FIRMS_ANOMALY_MIN_HOTSPOTS", unset = "4")),
+    firms_preconflict_days = as.integer(Sys.getenv("FIRMS_PRECONFLICT_DAYS", unset = "30")),
+    firms_seasonal_window_days = as.integer(Sys.getenv("FIRMS_SEASONAL_WINDOW_DAYS", unset = "3")),
+    firms_sensor = Sys.getenv("FIRMS_SENSOR", unset = "VIIRS_SNPP_NRT"),
     firms_chunk_days = 10,
     firms_match_days = 2,
     firms_match_km = 15,
+    firms_site_match_km = as.numeric(Sys.getenv("FIRMS_SITE_MATCH_KM", unset = "5")),
     incident_site_match_km = 50,
     overpass_endpoints = env_csv(
       "OVERPASS_ENDPOINTS",

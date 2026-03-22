@@ -38,18 +38,21 @@ Supported local formats are `gpkg`, `geojson`, `json`, `shp`, `gdb`, `csv`, `par
 ## Scripts
 
 - `01_ingest_sources.R`
-  Reads local TP4 OSINT data, optionally downloads GDELT and FIRMS, and normalizes OGIM / GEM / optional OSM provider files into provider-native site and line layers.
+  Reads local TP4 OSINT data, optionally downloads GDELT, and normalizes OGIM / GEM / optional OSM provider files into provider-native site and line layers.
 - `02_build_incidents.R`
-  Builds merged `energy_sites` and `energy_lines`, then links incidents to the merged site layer plus FIRMS and GDELT evidence.
+  Builds merged `energy_sites` and `energy_lines`, then links incidents to the merged site layer plus GDELT evidence. FIRMS fields remain as deprecated placeholders.
 - `03_make_maps.R`
   Compiles `output/map_inputs.gpkg` and renders maps from the compiled package.
+- `05_firms_anomaly.R`
+  Owns all FIRMS download, pre-conflict and historical baseline handling, 2 km grid anomaly scoring, and facility anomaly rollups.
 
 ## Workflow
 
 1. Put provider files under `data_raw/providers/` or `data_raw/Geodata/`
 2. Run `Rscript 01_ingest_sources.R`
 3. Run `Rscript 02_build_incidents.R`
-4. Run `Rscript 03_make_maps.R`
+4. Run `Rscript 05_firms_anomaly.R`
+5. Run `Rscript 03_make_maps.R`
 
 ## Important flags
 
@@ -62,9 +65,11 @@ Supported local formats are `gpkg`, `geojson`, `json`, `shp`, `gdb`, `csv`, `par
 - `DOWNLOAD_GDELT=TRUE`
   Refresh GDELT article discovery.
 - `DOWNLOAD_FIRMS=TRUE`
-  Refresh FIRMS hotspot data.
+  Deprecated. `01_ingest_sources.R` now fails fast and points to `05_firms_anomaly.R`.
+- `REFRESH_FIRMS=TRUE`
+  Refresh FIRMS conflict, pre-conflict, and historical baseline data in `05_firms_anomaly.R`.
 - `MAP_MODE=infrastructure`
-  Default map. Other modes are `sites` and `validation`.
+  Default map. Other modes now include `sites`, `candidate_sites`, `firms_anomaly_grid`, `firms_anomaly_sites`, and `validation`.
 
 ## Processed outputs
 
@@ -76,14 +81,22 @@ Supported local formats are `gpkg`, `geojson`, `json`, `shp`, `gdb`, `csv`, `par
 - `data_processed/incidents_review.csv`
 - `data_processed/incidents_confirmed.csv`
 - `data_processed/incident_site_links.csv`
-- `data_processed/incident_firms_links.csv`
 - `data_processed/incident_article_links.csv`
+- `data_processed/firms_hotspots_raw.csv`
+- `data_processed/firms_hotspots_preconflict_raw.csv`
+- `data_processed/firms_hotspots_historical_raw.csv`
+- `data_processed/firms_grid_daily.csv`
+- `data_processed/firms_grid_anomalies.csv`
+- `data_processed/firms_facility_anomalies.csv`
 
 ## Final outputs
 
 - `output/map_inputs.gpkg`
 - `output/energy_infrastructure_map.pdf`
 - optional `output/energy_facilities_map.pdf`
+- optional `output/energy_candidate_sites_map.pdf`
+- optional `output/energy_firms_anomaly_grid_map.pdf`
+- optional `output/energy_firms_anomaly_sites_map.pdf`
 - optional `output/incident_validation_map.pdf`
 
 ## GeoPackage layers
@@ -94,9 +107,11 @@ Always expected:
 - `energy_lines`
 - `incidents`
 - `firms_hotspots`
+- `firms_grid_anomalies`
+- `firms_anomalous_hotspots`
+- `firms_facility_anomalies`
 - `gdelt_articles`
 - `incident_site_links`
-- `incident_firms_links`
 - `incident_article_links`
 - `provider_intake_log`
 

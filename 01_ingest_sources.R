@@ -16,7 +16,6 @@ write_output <- env_flag("WRITE_OUTPUT", TRUE)
 use_ee_ogim <- env_flag("USE_EE_OGIM", FALSE)
 enable_osm_gapfill <- env_flag("ENABLE_OSM_GAPFILL", FALSE)
 preview_n <- 5
-firms_map_key <- "a8199de2124bd9a01c91965155fd45fe"
 
 settings <- project_settings()
 provider_registry <- build_provider_registry()
@@ -28,7 +27,6 @@ paths <- list(
   tp4_csv = project_path("data_processed", "tp4_incidents_raw.csv"),
   gdelt_csv = project_path("data_processed", "gdelt_articles_raw.csv"),
   gdelt_log = project_path("data_processed", "gdelt_query_log.csv"),
-  firms_csv = project_path("data_processed", "firms_hotspots_raw.csv"),
   provider_log_csv = project_path("data_processed", "provider_intake_log.csv"),
   legacy_osm_csv = project_path("data_processed", "osm_energy_assets_raw.csv")
 )
@@ -150,35 +148,6 @@ fetch_gdelt_articles <- function(query_id, query, window_start, window_end) {
       ),
     log = tibble(query_id = query_id, window_start = window_start, window_end = window_end, article_count = nrow(articles))
   )
-}
-
-fetch_firms_hotspots <- function(settings) {
-  map_key <- firms_map_key
-  if (map_key == "") {
-    stop("Set firms_map_key at the top of 01_ingest_sources.R before downloading NASA FIRMS data.")
-  }
-
-  bbox <- with(settings$bbox, sprintf("%s,%s,%s,%s", west, south, east, north))
-  windows <- date_windows(settings$study_start, settings$study_end, settings$firms_chunk_days)
-
-  bind_rows(lapply(seq_len(nrow(windows)), function(i) {
-    row <- windows[i, ]
-    url <- sprintf(
-      "https://firms.modaps.eosdis.nasa.gov/api/area/csv/%s/%s/%s/%s/%s",
-      map_key,
-      settings$firms_sensor,
-      bbox,
-      settings$firms_chunk_days,
-      as.character(row$window_start)
-    )
-
-    readr::read_csv(url, show_col_types = FALSE) %>%
-      mutate(
-        source_sensor = settings$firms_sensor,
-        query_window_start = as.character(row$window_start),
-        query_window_end = as.character(row$window_end)
-      )
-  }))
 }
 
 empty_provider_sites <- function() {
@@ -565,8 +534,11 @@ write_provider_outputs <- function(source_dataset, sites, lines) {
 tp4_incidents <- tibble()
 gdelt_articles <- read_csv_if_exists(paths$gdelt_csv)
 gdelt_log <- read_csv_if_exists(paths$gdelt_log)
-firms_hotspots <- read_csv_if_exists(paths$firms_csv)
 provider_log <- empty_provider_intake_log()
+
+if (download_firms) {
+  stop("FIRMS download has moved to 05_firms_anomaly.R. Run REFRESH_FIRMS=TRUE Rscript --vanilla 05_firms_anomaly.R instead.")
+}
 
 if (use_local_tp4) {
   tp4_incidents <- flatten_tp4_incidents(paths$tp4_json)
@@ -585,11 +557,6 @@ if (download_gdelt) {
   gdelt_articles <- bind_rows(lapply(gdelt_results, function(x) bind_rows(lapply(x, `[[`, "articles"))))
   gdelt_log <- bind_rows(lapply(gdelt_results, function(x) bind_rows(lapply(x, `[[`, "log"))))
   message("GDELT articles loaded: ", nrow(gdelt_articles))
-}
-
-if (download_firms) {
-  firms_hotspots <- fetch_firms_hotspots(settings)
-  message("FIRMS hotspots loaded: ", nrow(firms_hotspots))
 }
 
 provider_specs <- provider_registry
@@ -614,7 +581,6 @@ if (write_output) {
   write_csv_safe(tp4_incidents, paths$tp4_csv)
   write_csv_safe(gdelt_articles, paths$gdelt_csv)
   write_csv_safe(gdelt_log, paths$gdelt_log)
-  write_csv_safe(firms_hotspots, paths$firms_csv)
   write_csv_safe(provider_log, paths$provider_log_csv)
 
   for (dataset_id in names(provider_results)) {

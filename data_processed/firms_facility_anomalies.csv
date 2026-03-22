@@ -1,0 +1,251 @@
+site_id,asset_class,asset_label,name,primary_provider,anomaly_day_count,anomaly_cell_count,anomaly_hotspot_count,first_anomaly_date,latest_anomaly_date,nearest_anomaly_km,max_current_hotspot_count,max_absolute_lift,max_robust_z_preconflict,max_robust_z_seasonal,baseline_mode,attribution_mode,lat,lon
+site_1058,extraction_site,Extraction Site,MANSUREH,OGIM,1,1,27,2026-03-10,2026-03-10,1.593945904099504,27,17.5,3.5651654429477175,4.721435316336167,hybrid,shared_cell,31.124176374772613,49.30683538845125
+site_1065,extraction_site,Extraction Site,MARGHAM,OGIM,2,1,16,2026-03-11,2026-03-16,0,10,9,6.070416835289357,10,hybrid,shared_cell,24.975053615717716,55.614337650237424
+site_1089,extraction_site,Extraction Site,MELEIHA,OGIM,1,1,7,2026-03-22,2026-03-22,0,7,5,3.3724537973829762,4.046944556859572,hybrid,shared_cell,30.770832500086556,27.106920525796916
+site_11,refinery,Refinery,BANDAR ABBAS,OGIM,1,1,15,2026-03-04,2026-03-04,1.7672793469645176,15,12,8.768379873195737,4.046944556859572,hybrid,shared_cell,27.17152,56.0781
+site_1186,extraction_site,Extraction Site,N/A,OGIM,1,1,4,2026-02-28,2026-02-28,0,4,3,3,4,hybrid,shared_cell,23.29333,54.24509
+site_1188,extraction_site,Extraction Site,N/A,OGIM,3,1,24,2026-03-06,2026-03-21,1.9898150904016236,11,10,6.7449075947659525,11,hybrid,shared_cell,23.30825,54.15465
+site_130,petroleum_terminal,Petroleum Terminal,N/A,OGIM,1,1,4,2026-03-05,2026-03-05,1.279443429539648,4,4,4,4,hybrid,shared_cell,24.13809,52.73042
+site_1567,extraction_site,Extraction Site,N/A,OGIM,1,1,4,2026-03-20,2026-03-20,0,4,4,4,4,hybrid,cell_contains_site,24.00177,49.07891
+site_1589,extraction_site,Extraction Site,N/A,OGIM,1,1,4,2026-03-15,2026-03-15,1.5130460064992182,4,4,4,4,hybrid,shared_cell,24.0445,49.08067
+site_1596,extraction_site,Extraction Site,N/A,OGIM,1,1,4,2026-03-15,2026-03-15,0,4,4,4,4,hybrid,shared_cell,24.05305,49.086
+site_1597,extraction_site,Extraction Site,N/A,OGIM,1,1,4,2026-03-15,2026-03-15,1.8103375930708274,4,4,4,4,hybrid,shared_cell,24.04664,49.11347
+site_1602,extraction_site,Extraction Site,N/A,OGIM,1,1,4,2026-03-15,2026-03-15,0,4,4,4,4,hybrid,shared_cell,24.0558,49.09853
+site_1603,extraction_site,Extraction Site,N/A,OGIM,1,1,4,2026-03-15,2026-03-15,1.512303566623599,4,4,4,4,hybrid,shared_cell,24.05579,49.10886
+site_1605,extraction_site,Extraction Site,N/A,OGIM,1,1,4,2026-03-11,2026-03-11,1.3250640483466718,4,3.5,3.5,4,hybrid,shared_cell,24.06134,54.33066
+site_1617,extraction_site,Extraction Site,N/A,OGIM,1,1,4,2026-03-11,2026-03-11,1.3357163928784836,4,3.5,3.5,4,hybrid,shared_cell,24.07278,54.30682
+site_1618,extraction_site,Extraction Site,N/A,OGIM,1,1,4,2026-03-11,2026-03-11,1.425967846487315,4,3.5,3.5,4,hybrid,shared_cell,24.0677,54.33334
+site_1619,extraction_site,Extraction Site,N/A,OGIM,1,1,4,2026-03-11,2026-03-11,1.8367044692873147,4,3.5,3.5,4,hybrid,shared_cell,24.06628,54.33763
+site_162,petroleum_terminal,Petroleum Terminal,N/A,OGIM,1,1,8,2026-03-14,2026-03-14,0,8,7,4.721435316336167,4.721435316336167,hybrid,shared_cell,25.93025,49.68687
+site_163,petroleum_terminal,Petroleum Terminal,N/A,OGIM,1,1,8,2026-03-14,2026-03-14,1.4423625916167317,8,7,4.721435316336167,4.721435316336167,hybrid,shared_cell,25.93615,49.70956
+site_164,petroleum_terminal,Petroleum Terminal,N/A,OGIM,2,1,14,2026-02-28,2026-03-01,1.6778967608103166,7,6,4.046944556859572,4.046944556859572,hybrid,near_cell_centroid,25.9531,56.0503
+site_165,petroleum_terminal,Petroleum Terminal,N/A,OGIM,4,2,26,2026-02-28,2026-03-07,0,9,9,9,9,hybrid,shared_cell,25.97221,49.23168
+site_171,petroleum_terminal,Petroleum Terminal,N/A,OGIM,2,2,13,2026-03-04,2026-03-05,0,5,5,5,5,hybrid,shared_cell,26.78938,50.01104
+site_176,petroleum_terminal,Petroleum Terminal,N/A,OGIM,2,1,11,2026-03-17,2026-03-21,1.8810960293837249,7,6,6,7,hybrid,shared_cell,27.54259,52.56067
+site_182,petroleum_terminal,Petroleum Terminal,N/A,OGIM,1,1,7,2026-03-20,2026-03-20,0,7,7,7,7,hybrid,shared_cell,28.88362,47.726
+site_189,petroleum_terminal,Petroleum Terminal,N/A,OGIM,1,1,4,2026-03-20,2026-03-20,1.3890483485965104,4,4,4,4,hybrid,shared_cell,28.95518,47.95315
+site_193,petroleum_terminal,Petroleum Terminal,N/A,OGIM,1,1,10,2026-03-20,2026-03-20,0,10,10,10,10,hybrid,shared_cell,29.01901,47.58372
+site_195,petroleum_terminal,Petroleum Terminal,N/A,OGIM,1,1,5,2026-03-10,2026-03-10,1.152875730259326,5,5,5,5,hybrid,shared_cell,29.01844,48.15252
+site_2,refinery,Refinery,AL-JUBAIL,OGIM,1,1,6,2026-03-04,2026-03-04,1.2653491361631424,6,5,3.3724537973829762,6,hybrid,shared_cell,27.03793,49.56826
+site_203,petroleum_terminal,Petroleum Terminal,N/A,OGIM,5,1,48,2026-03-12,2026-03-21,1.4389870335408543,17,16,10.791852151625523,17,hybrid,shared_cell,29.21616,50.33175
+site_2073,extraction_site,Extraction Site,N/A,OGIM,1,1,4,2026-03-02,2026-03-02,1.806749651780672,4,4,4,4,hybrid,shared_cell,24.77279,49.20016
+site_208,petroleum_terminal,Petroleum Terminal,N/A,OGIM,2,1,16,2026-03-20,2026-03-21,1.3364617347441772,12,12,12,12,hybrid,shared_cell,29.81796,47.76091
+site_2084,extraction_site,Extraction Site,N/A,OGIM,1,1,4,2026-03-02,2026-03-02,0,4,4,4,4,hybrid,shared_cell,24.78473,49.19385
+site_2085,extraction_site,Extraction Site,N/A,OGIM,1,1,4,2026-03-02,2026-03-02,0,4,4,4,4,hybrid,shared_cell,24.78071,49.20193
+site_2086,extraction_site,Extraction Site,N/A,OGIM,1,1,4,2026-03-02,2026-03-02,1.480746206115242,4,4,4,4,hybrid,shared_cell,24.78414,49.21321
+site_2091,extraction_site,Extraction Site,N/A,OGIM,1,1,4,2026-03-02,2026-03-02,0,4,4,4,4,hybrid,shared_cell,24.78962,49.20819
+site_2098,extraction_site,Extraction Site,N/A,OGIM,1,1,4,2026-03-02,2026-03-02,1.709413976150016,4,4,4,4,hybrid,shared_cell,24.80297,49.1971
+site_210,petroleum_terminal,Petroleum Terminal,N/A,OGIM,2,1,18,2026-03-20,2026-03-21,1.7804376400306092,14,14,14,14,hybrid,shared_cell,29.86235,47.77153
+site_2192,extraction_site,Extraction Site,N/A,OGIM,1,1,8,2026-03-15,2026-03-15,1.7665314365175135,8,7,4.721435316336167,8,hybrid,shared_cell,24.88736,49.18116
+site_2204,extraction_site,Extraction Site,N/A,OGIM,1,1,8,2026-03-15,2026-03-15,0,8,7,4.721435316336167,8,hybrid,shared_cell,24.89815,49.20163
+site_2215,extraction_site,Extraction Site,N/A,OGIM,1,1,8,2026-03-15,2026-03-15,1.9795391694100493,8,7,4.721435316336167,8,hybrid,shared_cell,24.90804,49.20468
+site_2216,extraction_site,Extraction Site,N/A,OGIM,1,1,8,2026-03-15,2026-03-15,1.9503358451111859,8,7,4.721435316336167,8,hybrid,shared_cell,24.90573,49.20987
+site_2288,extraction_site,Extraction Site,N/A,OGIM,2,1,16,2026-03-11,2026-03-16,1.7013435665505363,10,9,6.070416835289357,10,hybrid,shared_cell,24.96382,55.61973
+site_2299,extraction_site,Extraction Site,N/A,OGIM,2,1,16,2026-03-11,2026-03-16,1.830521075062232,10,9,6.070416835289357,10,hybrid,shared_cell,24.96888,55.60896
+site_2300,extraction_site,Extraction Site,N/A,OGIM,2,1,16,2026-03-11,2026-03-16,0,10,9,6.070416835289357,10,hybrid,shared_cell,24.97341,55.61536
+site_2301,extraction_site,Extraction Site,N/A,OGIM,2,1,16,2026-03-11,2026-03-16,1.4170624366738531,10,9,6.070416835289357,10,hybrid,shared_cell,24.96577,55.62571
+site_2316,extraction_site,Extraction Site,N/A,OGIM,2,1,16,2026-03-11,2026-03-16,1.1667952759870643,10,9,6.070416835289357,10,hybrid,shared_cell,24.9808,55.61289
+site_2317,extraction_site,Extraction Site,N/A,OGIM,2,1,16,2026-03-11,2026-03-16,0,10,9,6.070416835289357,10,hybrid,shared_cell,24.97848,55.62038
+site_2318,extraction_site,Extraction Site,N/A,OGIM,2,1,16,2026-03-11,2026-03-16,0,10,9,6.070416835289357,10,hybrid,shared_cell,24.98024,55.62626
+site_2331,extraction_site,Extraction Site,N/A,OGIM,2,1,16,2026-03-11,2026-03-16,1.8927425922423653,10,9,6.070416835289357,10,hybrid,shared_cell,24.99405,55.6212
+site_2332,extraction_site,Extraction Site,N/A,OGIM,2,1,16,2026-03-11,2026-03-16,1.1545866589380729,10,9,6.070416835289357,10,hybrid,shared_cell,24.98772,55.62683
+site_246,processing_facility,Processing Facility,ASAB FACILITIES,OGIM,1,1,4,2026-02-28,2026-02-28,0,4,3,3,4,hybrid,shared_cell,23.29135,54.22543
+site_247,processing_facility,Processing Facility,ASAB FACILITIES,OGIM,3,1,24,2026-03-06,2026-03-21,0,11,10,6.7449075947659525,11,hybrid,shared_cell,23.31318,54.17449
+site_248,processing_facility,Processing Facility,ASAB FACILITIES,OGIM,1,1,4,2026-02-28,2026-02-28,1.6644711187142325,4,3,3,4,hybrid,shared_cell,23.31222,54.23694
+site_26,refinery,Refinery,KIRKUK,OGIM,1,1,7,2026-03-03,2026-03-03,1.2500250855824515,7,6,4.046944556859572,4.046944556859572,hybrid,shared_cell,35.52841,44.33475
+site_269,processing_facility,Processing Facility,MARGHAM FACILITIES,OGIM,2,1,16,2026-03-11,2026-03-16,0,10,9,6.070416835289357,10,hybrid,shared_cell,24.97752,55.61767
+site_276,processing_facility,Processing Facility,N/A,OGIM,1,1,8,2026-03-15,2026-03-15,0,8,7,4.721435316336167,8,hybrid,shared_cell,24.88699,49.2045
+site_285,processing_facility,Processing Facility,N/A,OGIM,1,1,4,2026-03-15,2026-03-15,1.8095958825556773,4,4,4,4,hybrid,shared_cell,25.44964,50.78324
+site_29,refinery,Refinery,MINA ABDULLA,OGIM,1,1,5,2026-03-10,2026-03-10,1.6325258859061793,5,5,5,5,hybrid,shared_cell,29.00391,48.15339
+site_293,processing_facility,Processing Facility,RUMAITHA FACILITIES,OGIM,1,1,4,2026-03-11,2026-03-11,0,4,3.5,3.5,4,hybrid,shared_cell,24.06506,54.3244
+site_302,processing_facility,Processing Facility,ZAULIYAH GAS PLANT,OGIM,1,1,7,2026-03-06,2026-03-06,0,7,5,3.3724537973829762,6,hybrid,shared_cell,20.37507,55.93239
+site_31,refinery,Refinery,MINA AL-AHMADI,OGIM,2,2,19,2026-03-04,2026-03-20,1.5121535851104377,8,7.5,7.5,8,hybrid,shared_cell,29.06123,48.1297
+site_3120,extraction_site,Extraction Site,N/A,OGIM,1,1,5,2026-03-05,2026-03-05,1.5218734637634945,5,5,5,5,hybrid,shared_cell,25.74444,49.26702
+site_3138,extraction_site,Extraction Site,N/A,OGIM,1,1,5,2026-03-05,2026-03-05,1.9628660490910463,5,5,5,5,hybrid,shared_cell,25.75613,49.27754
+site_3168,extraction_site,Extraction Site,N/A,OGIM,1,1,4,2026-02-28,2026-02-28,1.5103962562497064,4,4,4,4,hybrid,shared_cell,25.77922,49.45373
+site_3250,extraction_site,Extraction Site,N/A,OGIM,3,1,13,2026-02-28,2026-03-07,1.98219045364976,5,5,5,5,hybrid,shared_cell,25.94862,49.2452
+site_3258,extraction_site,Extraction Site,N/A,OGIM,2,1,13,2026-02-28,2026-03-05,0,9,9,9,9,hybrid,shared_cell,25.96722,49.21071
+site_3259,extraction_site,Extraction Site,N/A,OGIM,3,1,13,2026-02-28,2026-03-07,0,5,5,5,5,hybrid,shared_cell,25.96534,49.2408
+site_3260,extraction_site,Extraction Site,N/A,OGIM,3,1,13,2026-02-28,2026-03-07,1.188590584008211,5,5,5,5,hybrid,shared_cell,25.96531,49.25248
+site_3264,extraction_site,Extraction Site,N/A,OGIM,2,1,13,2026-02-28,2026-03-05,1.2372324860213424,9,9,9,9,hybrid,shared_cell,25.97609,49.21944
+site_3322,extraction_site,Extraction Site,N/A,OGIM,1,1,6,2026-03-06,2026-03-06,1.6860539755328936,6,5,3.3724537973829762,6,hybrid,shared_cell,27.536183095886503,52.6281110493281
+site_35,refinery,Refinery,PERSIAN GULF STAR,OGIM,1,1,15,2026-03-04,2026-03-04,1.362031020975094,15,12,8.768379873195737,4.046944556859572,hybrid,shared_cell,27.15966,56.05833
+site_367,extraction_site,Extraction Site,AJEEL,OGIM,1,1,13,2026-03-03,2026-03-03,0,13,9,3.0352084176446783,4.946265569495031,hybrid,shared_cell,34.88142986444642,43.81383986886841
+site_3930,extraction_site,Extraction Site,UMM GUDAIR,OGIM,1,1,7,2026-03-20,2026-03-20,1.9690085661681784,7,7,7,7,hybrid,shared_cell,28.879387029551665,47.71015635576836
+site_4020,extraction_site,Extraction Site,ZAULIYAH,OGIM,1,1,7,2026-03-06,2026-03-06,0,7,5,3.3724537973829762,6,hybrid,shared_cell,20.383221499999895,55.941818169804705
+site_4129,offshore_platform,Offshore Platform,FATEH WHP,OGIM,1,1,7,2026-03-06,2026-03-06,0,7,7,7,7,hybrid,shared_cell,25.60882,54.42175
+site_4130,offshore_platform,Offshore Platform,FATEH WHP,OGIM,1,1,7,2026-03-06,2026-03-06,0,7,7,7,7,hybrid,shared_cell,25.60502,54.43013
+site_4148,offshore_platform,Offshore Platform,FOROOZAN,OGIM,2,1,29,2026-03-05,2026-03-10,1.237545223806359,16,13,4.384189936597869,15.5,hybrid,shared_cell,28.48701,49.72131
+site_4149,offshore_platform,Offshore Platform,FOROOZAN,OGIM,3,2,33,2026-03-05,2026-03-20,0,16,13,4.384189936597869,15.5,hybrid,shared_cell,28.50139,49.70346
+site_4150,offshore_platform,Offshore Platform,FOROOZAN,OGIM,3,2,33,2026-03-05,2026-03-20,1.4863713716782403,16,13,4.384189936597869,15.5,hybrid,shared_cell,28.50952,49.71091
+site_42,refinery,Refinery,SHUAIBA,OGIM,1,1,5,2026-03-10,2026-03-10,1.9493467630192618,5,5,5,5,hybrid,shared_cell,29.03122,48.14654
+site_45,refinery,Refinery,TEHRAN,OGIM,2,1,11,2026-03-07,2026-03-09,0,7,7,7,7,hybrid,shared_cell,35.53887,51.42795
+site_4649,other_energy_site,Other Energy Site,KHURAIS,OGIM,1,1,13,2026-03-20,2026-03-20,1.1668382265887967,13,13,13,13,hybrid,shared_cell,25.26433,48.10155
+site_4681,other_energy_site,Other Energy Site,N/A,OGIM,1,2,9,2026-03-11,2026-03-11,0,5,5,5,5,hybrid,cell_contains_site,16.93165,53.98746
+site_4684,other_energy_site,Other Energy Site,N/A,OGIM,2,1,30,2026-03-01,2026-03-06,0,18,14,6.295247088448222,18,hybrid,cell_contains_site,18.01292,54.57274
+site_469,extraction_site,Extraction Site,ASAB,OGIM,1,1,4,2026-02-28,2026-02-28,0,4,3,3,4,hybrid,shared_cell,23.29231099878085,54.22937762540309
+site_4690,other_energy_site,Other Energy Site,N/A,OGIM,1,1,9,2026-03-17,2026-03-17,0,9,6,4.046944556859572,3.372453797382976,hybrid,cell_contains_site,18.32052,55.10412
+site_4716,other_energy_site,Other Energy Site,N/A,OGIM,1,1,7,2026-03-06,2026-03-06,0,7,5,3.3724537973829762,6,hybrid,shared_cell,20.37559,55.93475
+site_4759,other_energy_site,Other Energy Site,N/A,OGIM,1,1,6,2026-03-12,2026-03-12,0,6,3.5,3.5,5,hybrid,cell_contains_site,21.89129,56.8473
+site_4763,other_energy_site,Other Energy Site,N/A,OGIM,2,1,16,2026-03-01,2026-03-12,0,9,7,4.721435316336167,4.721435316336167,hybrid,cell_contains_site,21.93735,57.07408
+site_4775,other_energy_site,Other Energy Site,N/A,OGIM,4,3,23,2026-03-01,2026-03-17,0,7,6,5,7,hybrid,shared_cell,22.31952,56.4795
+site_4776,other_energy_site,Other Energy Site,N/A,OGIM,2,2,12,2026-03-01,2026-03-17,0,7,6,5,7,hybrid,shared_cell,22.32883,56.47059
+site_4777,other_energy_site,Other Energy Site,N/A,OGIM,3,2,18,2026-03-01,2026-03-12,0,7,6,4.5,7,hybrid,shared_cell,22.32804,56.48932
+site_4795,other_energy_site,Other Energy Site,N/A,OGIM,2,1,10,2026-03-16,2026-03-17,0,6,5.5,6,5.5,hybrid,cell_contains_site,22.87685,55.37339
+site_4809,other_energy_site,Other Energy Site,N/A,OGIM,1,1,9,2026-03-01,2026-03-01,0,9,6,4.046944556859572,4.046944556859572,hybrid,cell_contains_site,23.19084,55.46022
+site_4816,other_energy_site,Other Energy Site,N/A,OGIM,1,1,4,2026-02-28,2026-02-28,0,4,3,3,4,hybrid,shared_cell,23.2943,54.2409
+site_4817,other_energy_site,Other Energy Site,N/A,OGIM,3,1,24,2026-03-06,2026-03-21,0,11,10,6.7449075947659525,11,hybrid,shared_cell,23.31186,54.17938
+site_4847,other_energy_site,Other Energy Site,N/A,OGIM,4,1,18,2026-03-04,2026-03-21,1.2180637737333408,6,5.5,5.5,6,hybrid,shared_cell,23.95115,38.26334
+site_4848,other_energy_site,Other Energy Site,N/A,OGIM,4,1,18,2026-03-04,2026-03-21,0,6,5.5,5.5,6,hybrid,shared_cell,23.94971,38.27873
+site_4873,other_energy_site,Other Energy Site,N/A,OGIM,1,1,4,2026-03-11,2026-03-11,0,4,3.5,3.5,4,hybrid,shared_cell,24.06235,54.31999
+site_4880,other_energy_site,Other Energy Site,N/A,OGIM,1,1,7,2026-02-28,2026-02-28,1.6246412706601052,7,5,3.3724537973829762,3.3724537973829762,hybrid,shared_cell,24.12281,52.6944
+site_4881,other_energy_site,Other Energy Site,N/A,OGIM,1,1,8,2026-03-16,2026-03-16,1.9825050549641605,8,8,8,8,hybrid,shared_cell,24.11671,52.72278
+site_4882,other_energy_site,Other Energy Site,N/A,OGIM,2,2,12,2026-03-05,2026-03-16,0,8,8,8,8,hybrid,shared_cell,24.12011,52.75042
+site_4883,other_energy_site,Other Energy Site,N/A,OGIM,1,1,7,2026-02-28,2026-02-28,0,7,5,3.3724537973829762,3.3724537973829762,hybrid,shared_cell,24.13144,52.70337
+site_4884,other_energy_site,Other Energy Site,N/A,OGIM,1,1,4,2026-03-05,2026-03-05,0,4,4,4,4,hybrid,shared_cell,24.13478,52.73418
+site_4942,other_energy_site,Other Energy Site,N/A,OGIM,1,1,4,2026-03-02,2026-03-02,1.5869343410840613,4,4,4,4,hybrid,shared_cell,24.79149,49.18271
+site_4963,other_energy_site,Other Energy Site,N/A,OGIM,1,1,8,2026-03-15,2026-03-15,1.178237984429823,8,7,4.721435316336167,8,hybrid,shared_cell,24.88297,49.19249
+site_4966,other_energy_site,Other Energy Site,N/A,OGIM,1,1,8,2026-03-15,2026-03-15,1.1466443968491462,8,7,4.721435316336167,8,hybrid,shared_cell,24.89038,49.21048
+site_4969,other_energy_site,Other Energy Site,N/A,OGIM,1,1,4,2026-03-06,2026-03-06,1.171210977415957,4,4,4,4,hybrid,near_cell_centroid,24.9016,53.03098
+site_4971,other_energy_site,Other Energy Site,N/A,OGIM,1,1,11,2026-03-21,2026-03-21,0,11,10,6.7449075947659525,11,hybrid,shared_cell,24.92366,51.56237
+site_4972,other_energy_site,Other Energy Site,N/A,OGIM,1,1,11,2026-03-21,2026-03-21,1.7907350960794859,11,10,6.7449075947659525,11,hybrid,shared_cell,24.9395,51.57117
+site_4976,other_energy_site,Other Energy Site,N/A,OGIM,2,1,16,2026-03-11,2026-03-16,0,10,9,6.070416835289357,10,hybrid,shared_cell,24.97993,55.61908
+site_4982,other_energy_site,Other Energy Site,N/A,OGIM,1,2,8,2026-02-28,2026-02-28,0,4,4,4,4,hybrid,cell_contains_site,25.01765,55.07302
+site_5000,other_energy_site,Other Energy Site,N/A,OGIM,2,2,25,2026-03-04,2026-03-05,0,13,13,13,13,hybrid,cell_contains_site,25.17983,56.34445
+site_5006,other_energy_site,Other Energy Site,N/A,OGIM,1,1,13,2026-03-20,2026-03-20,0,13,13,13,13,hybrid,shared_cell,25.25211,48.1017
+site_5025,other_energy_site,Other Energy Site,N/A,OGIM,1,1,4,2026-03-15,2026-03-15,1.669183329947056,4,4,4,4,hybrid,shared_cell,25.44899,50.78722
+site_5033,other_energy_site,Other Energy Site,N/A,OGIM,1,1,12,2026-03-21,2026-03-21,1.1456857423456295,12,11,7.4193983542425475,11.5,hybrid,near_cell_centroid,25.53246,53.14888
+site_5043,other_energy_site,Other Energy Site,N/A,OGIM,1,1,7,2026-03-06,2026-03-06,0,7,7,7,7,hybrid,shared_cell,25.60004,54.42531
+site_5068,other_energy_site,Other Energy Site,N/A,OGIM,1,1,4,2026-03-20,2026-03-20,1.6024832756322889,4,4,4,4,hybrid,near_cell_centroid,25.71187,49.49835
+site_5070,other_energy_site,Other Energy Site,N/A,OGIM,1,1,5,2026-03-05,2026-03-05,0,5,5,5,5,hybrid,shared_cell,25.73449,49.27781
+site_5075,other_energy_site,Other Energy Site,N/A,OGIM,1,1,4,2026-02-28,2026-02-28,0,4,4,4,4,hybrid,shared_cell,25.77631,49.47006
+site_5082,other_energy_site,Other Energy Site,N/A,OGIM,1,1,10,2026-03-05,2026-03-05,1.6108428893065154,10,10,10,10,hybrid,shared_cell,25.90476,51.50747
+site_5083,other_energy_site,Other Energy Site,N/A,OGIM,1,1,10,2026-03-05,2026-03-05,0,10,10,10,10,hybrid,shared_cell,25.90017,51.52352
+site_5092,other_energy_site,Other Energy Site,N/A,OGIM,1,1,8,2026-03-14,2026-03-14,0,8,7,4.721435316336167,4.721435316336167,hybrid,shared_cell,25.93083,49.70041
+site_5094,other_energy_site,Other Energy Site,N/A,OGIM,1,1,8,2026-03-14,2026-03-14,1.9652090638446826,8,7,4.721435316336167,4.721435316336167,hybrid,shared_cell,25.93733,49.71488
+site_5099,other_energy_site,Other Energy Site,N/A,OGIM,4,2,26,2026-02-28,2026-03-07,0,9,9,9,9,hybrid,shared_cell,25.9643,49.23043
+site_5153,other_energy_site,Other Energy Site,N/A,OGIM,1,1,4,2026-03-21,2026-03-21,1.8514039211060989,4,4,4,4,hybrid,shared_cell,26.68429,50.1087
+site_5154,other_energy_site,Other Energy Site,N/A,OGIM,1,1,4,2026-03-21,2026-03-21,1.3338424878685904,4,4,4,4,hybrid,shared_cell,26.69222,50.0891
+site_5172,other_energy_site,Other Energy Site,N/A,OGIM,1,1,4,2026-03-04,2026-03-04,0,4,4,4,4,hybrid,shared_cell,26.78116,49.99939
+site_5174,other_energy_site,Other Energy Site,N/A,OGIM,2,2,13,2026-03-04,2026-03-05,0,5,5,5,5,hybrid,shared_cell,26.78814,50.01772
+site_5193,other_energy_site,Other Energy Site,N/A,OGIM,1,1,6,2026-03-04,2026-03-04,1.6166873563787252,6,5,3.3724537973829762,6,hybrid,shared_cell,27.03832,49.56029
+site_5194,other_energy_site,Other Energy Site,N/A,OGIM,8,2,64,2026-03-04,2026-03-21,1.1991296742304458,17,17,17,17,hybrid,shared_cell,27.05408,49.56119
+site_5195,other_energy_site,Other Energy Site,N/A,OGIM,1,1,6,2026-03-04,2026-03-04,1.0147289548541414,6,5,3.3724537973829762,6,hybrid,shared_cell,27.04727,49.58221
+site_5197,other_energy_site,Other Energy Site,N/A,OGIM,8,1,58,2026-03-04,2026-03-21,0,17,17,17,17,hybrid,shared_cell,27.06748,49.57469
+site_5201,other_energy_site,Other Energy Site,N/A,OGIM,1,1,15,2026-03-04,2026-03-04,0,15,12,8.768379873195737,4.046944556859572,hybrid,shared_cell,27.16856,56.05377
+site_5202,other_energy_site,Other Energy Site,N/A,OGIM,1,1,15,2026-03-04,2026-03-04,1.9770234123349781,15,12,8.768379873195737,4.046944556859572,hybrid,shared_cell,27.18093,56.07704
+site_5211,other_energy_site,Other Energy Site,N/A,OGIM,1,1,4,2026-03-11,2026-03-11,1.7142574538042552,4,3,3,3.5,hybrid,near_cell_centroid,27.50171,52.64328
+site_5212,other_energy_site,Other Energy Site,N/A,OGIM,1,1,6,2026-03-06,2026-03-06,1.2052257031687577,6,5,3.3724537973829762,6,hybrid,shared_cell,27.51303,52.62048
+site_5216,other_energy_site,Other Energy Site,N/A,OGIM,2,2,13,2026-03-09,2026-03-21,0,5,5,5,5,hybrid,cell_contains_site,27.53699,49.18874
+site_5218,other_energy_site,Other Energy Site,N/A,OGIM,2,1,11,2026-03-17,2026-03-21,1.3175954176908258,7,6,6,7,hybrid,shared_cell,27.5541,52.54422
+site_5219,other_energy_site,Other Energy Site,N/A,OGIM,2,1,11,2026-03-17,2026-03-21,1.2621661785753517,7,6,6,7,hybrid,shared_cell,27.54807,52.56005
+site_5220,other_energy_site,Other Energy Site,N/A,OGIM,4,1,25,2026-02-28,2026-03-15,1.3290544947143774,13,13,13,13,hybrid,shared_cell,27.54734,52.58015
+site_5221,other_energy_site,Other Energy Site,N/A,OGIM,6,3,43,2026-02-28,2026-03-21,0,13,13,13,13,hybrid,shared_cell,27.56414,52.56037
+site_5224,other_energy_site,Other Energy Site,N/A,OGIM,1,1,7,2026-02-28,2026-02-28,1.6605578023584981,7,6,4.046944556859572,7,hybrid,shared_cell,27.58169,52.54062
+site_5228,other_energy_site,Other Energy Site,N/A,OGIM,2,1,34,2026-03-05,2026-03-06,0,18,13,4.384189936597869,3.642250101173614,hybrid,shared_cell,27.68432,52.24902
+site_5229,other_energy_site,Other Energy Site,N/A,OGIM,3,3,45,2026-03-05,2026-03-21,0,18,13,4.384189936597869,4.046944556859572,hybrid,shared_cell,27.68873,52.23441
+site_5231,other_energy_site,Other Energy Site,N/A,OGIM,1,1,4,2026-03-05,2026-03-05,1.6434257931625817,4,4,4,4,hybrid,shared_cell,27.71434,52.22262
+site_5232,other_energy_site,Other Energy Site,N/A,OGIM,2,1,13,2026-03-05,2026-03-21,1.5104182902859595,7,6,4.046944556859572,6.5,hybrid,near_cell_centroid,27.71907,52.17842
+site_5247,other_energy_site,Other Energy Site,N/A,OGIM,1,1,6,2026-03-21,2026-03-21,0,6,5,3.3724537973829762,6,hybrid,cell_contains_site,27.93014,52.19547
+site_525,extraction_site,Extraction Site,BAI HASSAN,OGIM,2,1,17,2026-03-03,2026-03-05,1.7117295996747843,10,8,5.395926075812762,5.395926075812762,hybrid,shared_cell,35.62449720763888,44.00240109643828
+site_5252,other_energy_site,Other Energy Site,N/A,OGIM,1,1,4,2026-03-20,2026-03-20,0,4,4,4,4,hybrid,cell_contains_site,28.01762,51.99745
+site_5264,other_energy_site,Other Energy Site,N/A,OGIM,1,2,8,2026-03-04,2026-03-04,0,4,4,4,4,hybrid,cell_contains_site,28.30867,49.5209
+site_5278,other_energy_site,Other Energy Site,N/A,OGIM,3,2,33,2026-03-05,2026-03-20,0,16,13,4.384189936597869,15.5,hybrid,shared_cell,28.49417,49.71457
+site_5303,other_energy_site,Other Energy Site,N/A,OGIM,1,1,7,2026-03-20,2026-03-20,0,7,7,7,7,hybrid,shared_cell,28.88371,47.73262
+site_5307,other_energy_site,Other Energy Site,N/A,OGIM,1,1,4,2026-03-20,2026-03-20,0,4,4,4,4,hybrid,shared_cell,28.93744,47.94953
+site_5308,other_energy_site,Other Energy Site,N/A,OGIM,1,1,4,2026-03-20,2026-03-20,1.0872766525210604,4,4,4,4,hybrid,shared_cell,28.94311,47.96627
+site_5309,other_energy_site,Other Energy Site,N/A,OGIM,1,1,4,2026-03-20,2026-03-20,0,4,4,4,4,hybrid,shared_cell,28.95089,47.95114
+site_5319,other_energy_site,Other Energy Site,N/A,OGIM,1,1,6,2026-03-20,2026-03-20,0,6,5.5,6,5.5,hybrid,cell_contains_site,29.01193,47.6668
+site_5320,other_energy_site,Other Energy Site,N/A,OGIM,3,2,15,2026-03-10,2026-03-20,0,6,6,6,6,hybrid,cell_contains_site,29.00703,47.74573
+site_5322,other_energy_site,Other Energy Site,N/A,OGIM,1,1,5,2026-03-10,2026-03-10,0,5,5,5,5,hybrid,shared_cell,29.00706,48.14467
+site_5323,other_energy_site,Other Energy Site,N/A,OGIM,1,1,10,2026-03-20,2026-03-20,0,10,10,10,10,hybrid,shared_cell,29.02244,47.58576
+site_5329,other_energy_site,Other Energy Site,N/A,OGIM,1,1,5,2026-03-10,2026-03-10,1.4046621141370925,5,5,5,5,hybrid,shared_cell,29.02689,48.14156
+site_5331,other_energy_site,Other Energy Site,N/A,OGIM,2,2,19,2026-03-04,2026-03-20,0,8,7.5,7.5,8,hybrid,shared_cell,29.05021,48.13634
+site_5332,other_energy_site,Other Energy Site,N/A,OGIM,1,1,5,2026-03-04,2026-03-04,1.4854789277494014,5,5,5,5,hybrid,shared_cell,29.06273,48.11613
+site_5336,other_energy_site,Other Energy Site,N/A,OGIM,5,2,52,2026-03-12,2026-03-21,0,17,16,10.791852151625523,17,hybrid,shared_cell,29.21543,50.3133
+site_5337,other_energy_site,Other Energy Site,N/A,OGIM,5,1,48,2026-03-12,2026-03-21,0,17,16,10.791852151625523,17,hybrid,shared_cell,29.21639,50.32659
+site_5372,other_energy_site,Other Energy Site,N/A,OGIM,1,1,4,2026-03-10,2026-03-10,1.205912440211277,4,3.5,4,3.5,hybrid,near_cell_centroid,29.76164,50.36979
+site_5381,other_energy_site,Other Energy Site,N/A,OGIM,2,1,16,2026-03-20,2026-03-21,1.578663935954137,12,12,12,12,hybrid,shared_cell,29.8193,47.76386
+site_5382,other_energy_site,Other Energy Site,N/A,OGIM,2,1,16,2026-03-20,2026-03-21,0,12,12,12,12,hybrid,shared_cell,29.82504,47.75379
+site_5389,other_energy_site,Other Energy Site,N/A,OGIM,2,1,18,2026-03-20,2026-03-21,1.789749662809462,14,14,14,14,hybrid,shared_cell,29.86441,47.77233
+site_5390,other_energy_site,Other Energy Site,N/A,OGIM,2,1,18,2026-03-20,2026-03-21,1.088579788672094,14,14,14,14,hybrid,shared_cell,29.85766,47.80046
+site_5395,other_energy_site,Other Energy Site,N/A,OGIM,1,1,5,2026-03-20,2026-03-20,0,5,5,5,5,hybrid,cell_contains_site,29.88379,47.79012
+site_5401,other_energy_site,Other Energy Site,N/A,OGIM,1,1,7,2026-03-05,2026-03-05,0,7,5.5,3.7096991771212737,4.046944556859572,hybrid,cell_contains_site,29.917,50.87855
+site_5405,other_energy_site,Other Energy Site,N/A,OGIM,1,1,6,2026-03-05,2026-03-05,0,6,4.5,4.5,3.3724537973829762,hybrid,cell_contains_site,29.9417,50.83967
+site_5424,other_energy_site,Other Energy Site,N/A,OGIM,1,1,6,2026-03-11,2026-03-11,1.2283704318942916,6,6,6,6,hybrid,near_cell_centroid,30.03823,50.63696
+site_5438,other_energy_site,Other Energy Site,N/A,OGIM,2,2,17,2026-03-05,2026-03-06,0,10,7,4.721435316336167,6.070416835289357,hybrid,shared_cell,30.15479,50.4224
+site_5441,other_energy_site,Other Energy Site,N/A,OGIM,2,2,17,2026-03-05,2026-03-06,1.598435874043339,10,7,4.721435316336167,6.070416835289357,hybrid,shared_cell,30.15739,50.4072
+site_5443,other_energy_site,Other Energy Site,N/A,OGIM,1,1,7,2026-03-06,2026-03-06,1.3249825109966753,7,5,3.3724537973829762,4.046944556859572,hybrid,shared_cell,30.17027,50.4097
+site_5444,other_energy_site,Other Energy Site,N/A,OGIM,1,1,7,2026-03-06,2026-03-06,1.6949907168892475,7,5,3.3724537973829762,4.046944556859572,hybrid,shared_cell,30.16787,50.43879
+site_5482,other_energy_site,Other Energy Site,N/A,OGIM,1,1,7,2026-03-20,2026-03-20,0,7,6,4.046944556859572,4.046944556859572,hybrid,cell_contains_site,30.30041,50.73315
+site_5497,other_energy_site,Other Energy Site,N/A,OGIM,1,1,4,2026-03-09,2026-03-09,1.177711756854893,4,4,4,4,hybrid,near_cell_centroid,30.35388,47.6593
+site_5529,other_energy_site,Other Energy Site,N/A,OGIM,1,1,6,2026-03-09,2026-03-09,1.466726126737944,6,5,3.3724537973829762,6,hybrid,near_cell_centroid,30.4194,47.60827
+site_5531,other_energy_site,Other Energy Site,N/A,OGIM,2,1,9,2026-03-04,2026-03-05,0,5,5,5,5,hybrid,shared_cell,30.43619,50.50712
+site_5533,other_energy_site,Other Energy Site,N/A,OGIM,1,1,8,2026-03-10,2026-03-10,0,8,6,4.046944556859572,4.721435316336167,hybrid,cell_contains_site,30.44769,49.83529
+site_5534,other_energy_site,Other Energy Site,N/A,OGIM,2,1,9,2026-03-04,2026-03-05,1.3494384332469294,5,5,5,5,hybrid,shared_cell,30.44597,50.49674
+site_5539,other_energy_site,Other Energy Site,N/A,OGIM,1,1,6,2026-03-21,2026-03-21,0,6,5,3.3724537973829762,3.3724537973829762,hybrid,cell_contains_site,30.47663,47.60205
+site_5542,other_energy_site,Other Energy Site,N/A,OGIM,1,1,10,2026-03-05,2026-03-05,0,10,7,4.721435316336167,3.822114303700706,hybrid,shared_cell,30.48412,50.484610000000004
+site_5546,other_energy_site,Other Energy Site,N/A,OGIM,1,1,10,2026-03-05,2026-03-05,1.6865101947431353,10,7,4.721435316336167,3.822114303700706,hybrid,shared_cell,30.49147,50.46644
+site_5547,other_energy_site,Other Energy Site,N/A,OGIM,1,1,4,2026-03-09,2026-03-09,1.5255790199388763,4,4,4,4,hybrid,near_cell_centroid,30.49506,47.31677
+site_5549,other_energy_site,Other Energy Site,N/A,OGIM,1,1,10,2026-03-05,2026-03-05,1.2451435946492486,10,7,4.721435316336167,3.822114303700706,hybrid,shared_cell,30.50151,50.48425
+site_5552,other_energy_site,Other Energy Site,N/A,OGIM,1,1,4,2026-03-20,2026-03-20,0,4,4,4,4,hybrid,cell_contains_site,30.50775,49.17041
+site_5568,other_energy_site,Other Energy Site,N/A,OGIM,4,2,21,2026-03-04,2026-03-11,0,8,5.5,5.5,4.046944556859572,hybrid,cell_contains_site,30.56267,50.01505
+site_5592,other_energy_site,Other Energy Site,N/A,OGIM,3,1,12,2026-03-03,2026-03-16,1.493028546372767,4,3,3,4,hybrid,near_cell_centroid,30.69459,27.72622
+site_5593,other_energy_site,Other Energy Site,N/A,OGIM,1,1,4,2026-03-02,2026-03-02,1.6728459359308265,4,3.5,4,3.5,hybrid,near_cell_centroid,30.68659,47.32972
+site_5597,other_energy_site,Other Energy Site,N/A,OGIM,2,2,12,2026-03-05,2026-03-10,0,6,5,4.5,4.5,hybrid,cell_contains_site,30.70832,49.53935
+site_5608,other_energy_site,Other Energy Site,N/A,OGIM,1,1,4,2026-03-10,2026-03-10,1.1358390786834374,4,4,4,4,hybrid,near_cell_centroid,30.75224,47.66523
+site_5609,other_energy_site,Other Energy Site,N/A,OGIM,9,4,163,2026-02-28,2026-03-21,0,15,12,12,12,hybrid,cell_contains_site,30.75169,48.28028
+site_5610,other_energy_site,Other Energy Site,N/A,OGIM,1,1,7,2026-03-22,2026-03-22,0,7,5,3.3724537973829762,4.046944556859572,hybrid,shared_cell,30.76013,27.10367
+site_5612,other_energy_site,Other Energy Site,N/A,OGIM,1,1,7,2026-03-22,2026-03-22,0,7,5,3.3724537973829762,4.046944556859572,hybrid,shared_cell,30.76984,27.10505
+site_5614,other_energy_site,Other Energy Site,N/A,OGIM,2,1,9,2026-03-04,2026-03-20,1.259108042217335,5,4,4,5,hybrid,near_cell_centroid,30.77063,49.76449
+site_5618,other_energy_site,Other Energy Site,N/A,OGIM,1,1,6,2026-03-10,2026-03-10,1.2464824151791154,6,5,3.3724537973829762,5,hybrid,near_cell_centroid,30.79233,49.78932
+site_5627,other_energy_site,Other Energy Site,N/A,OGIM,1,1,6,2026-03-05,2026-03-05,0,6,6,6,6,hybrid,shared_cell,30.8348,49.76104
+site_5631,other_energy_site,Other Energy Site,N/A,OGIM,2,2,14,2026-03-05,2026-03-10,0,8,6,6,7,hybrid,shared_cell,30.8467,49.75538
+site_5634,other_energy_site,Other Energy Site,N/A,OGIM,1,1,4,2026-03-16,2026-03-16,0,4,4,4,4,hybrid,cell_contains_site,30.86333,27.60109
+site_5638,other_energy_site,Other Energy Site,N/A,OGIM,1,1,8,2026-03-05,2026-03-05,0,8,7,4.721435316336167,7.5,hybrid,cell_contains_site,30.89192,49.61223
+site_5640,other_energy_site,Other Energy Site,N/A,OGIM,1,1,6,2026-03-21,2026-03-21,1.1241022463672337,6,5,3.3724537973829762,3.3724537973829762,hybrid,near_cell_centroid,30.90011,49.67629
+site_5642,other_energy_site,Other Energy Site,N/A,OGIM,2,1,14,2026-03-04,2026-03-20,1.3296508052484095,7,5,5,6.5,hybrid,near_cell_centroid,30.9225,48.8594
+site_5662,other_energy_site,Other Energy Site,N/A,OGIM,8,2,124,2026-02-28,2026-03-11,0,21,18.5,12.815324430055309,8.768379873195737,hybrid,cell_contains_site,31.00336,48.13978
+site_5673,other_energy_site,Other Energy Site,N/A,OGIM,1,1,7,2026-03-09,2026-03-09,0,7,5,4.046944556859572,3.3724537973829762,hybrid,cell_contains_site,31.02773,47.70552
+site_5691,other_energy_site,Other Energy Site,N/A,OGIM,1,2,42,2026-03-10,2026-03-10,0,27,17.5,7.4193983542425475,8.093889113719143,hybrid,shared_cell,31.13469,49.32003
+site_5696,other_energy_site,Other Energy Site,N/A,OGIM,1,1,16,2026-03-10,2026-03-10,0,16,10.5,4.721435316336167,3.5410764872521248,hybrid,cell_contains_site,31.21187,48.95405
+site_5699,other_energy_site,Other Energy Site,N/A,OGIM,1,1,13,2026-03-05,2026-03-05,1.9916631200773711,13,9,3.0352084176446783,5.171095822653896,hybrid,shared_cell,31.22193,48.97891
+site_5703,other_energy_site,Other Energy Site,N/A,OGIM,1,1,13,2026-03-05,2026-03-05,0,13,9,3.0352084176446783,5.171095822653896,hybrid,shared_cell,31.2403,48.9875
+site_5711,other_energy_site,Other Energy Site,N/A,OGIM,1,1,9,2026-03-10,2026-03-10,0,9,7,4.721435316336167,5.395926075812762,hybrid,cell_contains_site,31.30059,49.11986
+site_5725,other_energy_site,Other Energy Site,N/A,OGIM,2,3,22,2026-03-09,2026-03-10,1.3303972725527404,14,9,4,7.4193983542425475,hybrid,near_cell_centroid,31.40725,48.64796
+site_5726,other_energy_site,Other Energy Site,N/A,OGIM,2,1,21,2026-03-04,2026-03-09,0,12,11,7.4193983542425475,11.5,hybrid,cell_contains_site,31.43438,47.8366
+site_5738,other_energy_site,Other Energy Site,N/A,OGIM,2,1,13,2026-02-28,2026-03-04,0,8,6.5,6.5,4.721435316336167,hybrid,cell_contains_site,31.69318,47.25494
+site_5760,other_energy_site,Other Energy Site,N/A,OGIM,9,1,69,2026-03-04,2026-03-18,0,14,14,14,14,hybrid,cell_contains_site,32.06436,49.09773
+site_5770,other_energy_site,Other Energy Site,N/A,OGIM,1,1,5,2026-03-04,2026-03-04,1.758794140650494,5,5,5,5,hybrid,shared_cell,32.16076,49.06592
+site_5772,other_energy_site,Other Energy Site,N/A,OGIM,1,1,5,2026-03-04,2026-03-04,0,5,5,5,5,hybrid,shared_cell,32.17594,49.05848
+site_5777,other_energy_site,Other Energy Site,N/A,OGIM,2,1,14,2026-03-09,2026-03-10,0,7,5,3.3724537973829762,3.3724537973829762,hybrid,cell_contains_site,32.29979,49.09114
+site_5784,other_energy_site,Other Energy Site,N/A,OGIM,2,1,21,2026-03-09,2026-03-10,1.5897148919517528,12,9,4.721435316336167,4.721435316336167,hybrid,shared_cell,32.49078,47.21025
+site_5785,other_energy_site,Other Energy Site,N/A,OGIM,2,1,21,2026-03-09,2026-03-10,0,12,9,4.721435316336167,4.721435316336167,hybrid,shared_cell,32.50588,47.20655
+site_5793,other_energy_site,Other Energy Site,N/A,OGIM,1,1,8,2026-03-03,2026-03-03,0,8,5,4.721435316336167,3.3724537973829762,hybrid,shared_cell,32.99197,46.18402
+site_5794,other_energy_site,Other Energy Site,N/A,OGIM,1,1,8,2026-03-03,2026-03-03,0,8,5,4.721435316336167,3.3724537973829762,hybrid,shared_cell,32.99727,46.20176
+site_5821,other_energy_site,Other Energy Site,N/A,OGIM,1,1,5,2026-03-16,2026-03-16,0,5,5,5,5,hybrid,cell_contains_site,33.72164,46.29913
+site_5823,other_energy_site,Other Energy Site,N/A,OGIM,1,1,4,2026-03-02,2026-03-02,0,4,4,4,4,hybrid,shared_cell,33.99713,49.46926
+site_5825,other_energy_site,Other Energy Site,N/A,OGIM,1,1,4,2026-03-02,2026-03-02,1.6271779109150408,4,4,4,4,hybrid,shared_cell,34.00825,49.45457
+site_5841,other_energy_site,Other Energy Site,N/A,OGIM,1,1,8,2026-03-03,2026-03-03,0,8,6,4.046944556859572,7.5,hybrid,cell_contains_site,34.86353,44.0227
+site_5842,other_energy_site,Other Energy Site,N/A,OGIM,1,1,13,2026-03-03,2026-03-03,1.9559138257960893,13,9,3.0352084176446783,4.946265569495031,hybrid,shared_cell,34.87177,43.80131
+site_5844,other_energy_site,Other Energy Site,N/A,OGIM,1,2,19,2026-03-03,2026-03-03,0,13,9,3.3724537973829762,6,hybrid,shared_cell,34.89509,43.80628
+site_5857,other_energy_site,Other Energy Site,N/A,OGIM,1,1,12,2026-03-03,2026-03-03,0,12,10,3.3724537973829762,11.5,hybrid,shared_cell,35.25432,44.42209
+site_5858,other_energy_site,Other Energy Site,N/A,OGIM,1,1,12,2026-03-03,2026-03-03,0,12,10,3.3724537973829762,11.5,hybrid,shared_cell,35.24708,44.43005
+site_5865,other_energy_site,Other Energy Site,N/A,OGIM,1,1,6,2026-03-03,2026-03-03,0,6,5,3.3724537973829762,3.3724537973829762,hybrid,shared_cell,35.40844,44.22319
+site_5867,other_energy_site,Other Energy Site,N/A,OGIM,1,1,6,2026-03-03,2026-03-03,1.6058312185632782,6,5,3.3724537973829762,3.3724537973829762,hybrid,shared_cell,35.41913,44.2198
+site_5871,other_energy_site,Other Energy Site,N/A,OGIM,1,1,7,2026-03-03,2026-03-03,1.4117002426514207,7,6,4.046944556859572,4.046944556859572,hybrid,shared_cell,35.53112,44.3399
+site_5872,other_energy_site,Other Energy Site,N/A,OGIM,2,1,11,2026-03-07,2026-03-09,1.4116090975225546,7,7,7,7,hybrid,shared_cell,35.53422,51.42344
+site_5873,other_energy_site,Other Energy Site,N/A,OGIM,1,1,4,2026-03-03,2026-03-03,1.825798593020909,4,3.5,4,3.5,hybrid,shared_cell,35.55499,44.26737
+site_5875,other_energy_site,Other Energy Site,N/A,OGIM,1,2,8,2026-03-03,2026-03-03,0,4,4,4,4,hybrid,shared_cell,35.56365,44.28381
+site_5877,other_energy_site,Other Energy Site,N/A,OGIM,2,1,17,2026-03-03,2026-03-05,0,10,8,5.395926075812762,5.395926075812762,hybrid,shared_cell,35.62906,44.00921
+site_5883,other_energy_site,Other Energy Site,N/A,OGIM,1,1,7,2026-03-03,2026-03-03,0,7,6,4.046944556859572,4.046944556859572,hybrid,cell_contains_site,35.7725,43.99602
+site_5962,other_energy_site,Other Energy Site,N/A,OGIM,1,2,14,2026-03-08,2026-03-08,0,8,7,8,7,hybrid,shared_cell,36.93648,42.13046
+site_5963,other_energy_site,Other Energy Site,N/A,OGIM,1,1,4,2026-03-03,2026-03-03,0,4,4,4,4,hybrid,cell_contains_site,36.94171,42.17194
+site_5966,other_energy_site,Other Energy Site,N/A,OGIM,1,2,14,2026-03-08,2026-03-08,0,8,7,8,7,hybrid,shared_cell,36.95003,42.13185
+site_5992,other_energy_site,Other Energy Site,N/A,OGIM,1,1,6,2026-03-07,2026-03-07,0,6,5,3.3724537973829762,5.5,hybrid,shared_cell,37.11819,62.36368
+site_5996,other_energy_site,Other Energy Site,N/A,OGIM,1,1,6,2026-03-07,2026-03-07,1.6986784635960681,6,5,3.3724537973829762,5.5,hybrid,shared_cell,37.14235,62.36712
+site_6,refinery,Refinery,ARAK,OGIM,1,1,4,2026-03-02,2026-03-02,0,4,4,4,4,hybrid,shared_cell,34.00805,49.47678
+site_6033,other_energy_site,Other Energy Site,Ruwais FSRU,GEM,1,1,4,2026-03-05,2026-03-05,1.5716503015788672,4,4,4,4,hybrid,shared_cell,24.1483,52.7389
+site_698,extraction_site,Extraction Site,FAHUD,OGIM,4,3,23,2026-03-01,2026-03-17,0,7,6,5,7,hybrid,shared_cell,22.323484499999857,56.48412804171825
+site_716,extraction_site,Extraction Site,FATEH,OGIM,1,1,7,2026-03-06,2026-03-06,0,7,7,7,7,hybrid,shared_cell,25.606121422326545,54.428083378119055
+site_73,lng_facility,LNG / LPG Facility,RUWAIS FSRU,OGIM,1,1,4,2026-03-05,2026-03-05,1.5716503015788672,4,4,4,4,hybrid,shared_cell,24.1483,52.7389

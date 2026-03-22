@@ -16,14 +16,13 @@ provider_registry <- build_provider_registry()
 paths <- list(
   tp4_csv = project_path("data_processed", "tp4_incidents_raw.csv"),
   gdelt_csv = project_path("data_processed", "gdelt_articles_raw.csv"),
-  firms_csv = project_path("data_processed", "firms_hotspots_raw.csv"),
   review_csv = project_path("data_processed", "incidents_review.csv"),
   confirmed_csv = project_path("data_processed", "incidents_confirmed.csv"),
   energy_sites_csv = project_path("data_processed", "energy_sites.csv"),
   energy_lines_geojson = project_path("data_processed", "energy_lines.geojson"),
   site_links_csv = project_path("data_processed", "incident_site_links.csv"),
-  firms_links_csv = project_path("data_processed", "incident_firms_links.csv"),
-  article_links_csv = project_path("data_processed", "incident_article_links.csv")
+  article_links_csv = project_path("data_processed", "incident_article_links.csv"),
+  legacy_firms_links_csv = project_path("data_processed", "incident_firms_links.csv")
 )
 
 empty_provider_sites <- function() {
@@ -75,18 +74,6 @@ empty_site_links <- function() {
     asset_class = character(),
     asset_label = character(),
     primary_provider = character(),
-    distance_km = double(),
-    link_rank = integer()
-  )
-}
-
-empty_firms_links <- function() {
-  tibble(
-    incident_id = character(),
-    hotspot_id = character(),
-    acq_date = character(),
-    latitude = double(),
-    longitude = double(),
     distance_km = double(),
     link_rank = integer()
   )
@@ -405,39 +392,6 @@ match_energy_sites <- function(incident_row, energy_sites, settings) {
     )
 }
 
-match_firms_hotspots <- function(incident_row, firms_hotspots, settings) {
-  if (nrow(firms_hotspots) == 0 || is.na(incident_row$target_lat) || is.na(incident_row$target_lon) || is.na(incident_row$incident_day)) {
-    return(empty_firms_links())
-  }
-
-  candidates <- firms_hotspots %>%
-    filter(!is.na(acq_date), abs(as.numeric(acq_date - as.Date(incident_row$incident_day))) <= settings$firms_match_days)
-
-  if (nrow(candidates) == 0) {
-    return(empty_firms_links())
-  }
-
-  distances <- haversine_km(incident_row$target_lat, incident_row$target_lon, candidates$latitude, candidates$longitude)
-
-  candidates %>%
-    mutate(distance_km = distances) %>%
-    filter(is.finite(distance_km), distance_km <= settings$firms_match_km) %>%
-    arrange(distance_km, acq_date) %>%
-    mutate(
-      incident_id = incident_row$incident_id,
-      link_rank = row_number()
-    ) %>%
-    transmute(
-      incident_id,
-      hotspot_id,
-      acq_date = as.character(acq_date),
-      latitude,
-      longitude,
-      distance_km,
-      link_rank
-    )
-}
-
 tp4 <- read_csv_if_exists(paths$tp4_csv)
 gdelt <- bind_rows(
   tibble(
@@ -448,24 +402,11 @@ gdelt <- bind_rows(
     domain = character()
   ),
   read_csv_if_exists(paths$gdelt_csv)
-) %>%
+  ) %>%
   mutate(
     article_key = make_article_key(query_id, seendate, url, title),
     seen_date = as.Date(substr(seendate, 1, 8), format = "%Y%m%d"),
     title_text = str_to_lower(title %||% "")
-  )
-
-firms <- bind_rows(
-  tibble(
-    acq_date = character(),
-    latitude = double(),
-    longitude = double()
-  ),
-  read_csv_if_exists(paths$firms_csv)
-) %>%
-  mutate(
-    hotspot_id = make_firms_hotspot_id(acq_date, latitude, longitude),
-    acq_date = as.Date(acq_date)
   )
 
 provider_sites <- load_provider_sites(provider_registry)
@@ -485,15 +426,12 @@ bundles <- lapply(seq_len(nrow(tp4)), function(i) {
   row <- tp4[i, ]
   article_links <- match_gdelt_articles(row, gdelt)
   site_links <- match_energy_sites(row, energy_sites, settings)
-  firms_links <- match_firms_hotspots(row, firms, settings)
 
   nearest_site <- site_links %>% slice_head(n = 1)
   nearest_site_name <- if (nrow(nearest_site) == 0) NA_character_ else nearest_site$site_name[[1]]
   nearest_site_class <- if (nrow(nearest_site) == 0) NA_character_ else nearest_site$asset_label[[1]]
   nearest_site_provider <- if (nrow(nearest_site) == 0) NA_character_ else nearest_site$primary_provider[[1]]
   nearest_site_distance <- if (nrow(nearest_site) == 0) NA_real_ else nearest_site$distance_km[[1]]
-  nearest_firms_distance <- if (nrow(firms_links) == 0) NA_real_ else firms_links$distance_km[[1]]
-  nearest_firms_date <- if (nrow(firms_links) == 0) NA_character_ else firms_links$acq_date[[1]]
 
   article_urls <- unique(article_links$url[!is.na(article_links$url) & article_links$url != ""])
   energy_candidate <- isTRUE(row$target_energy_flag) ||
@@ -502,7 +440,7 @@ bundles <- lapply(seq_len(nrow(tp4)), function(i) {
     flag_energy_text(paste(row$target_text, row$description, nearest_site_class))
 
   confidence_tier <- case_when(
-    energy_candidate && nrow(firms_links) > 0 ~ "high",
+    energy_candidate && nrow(site_links) > 0 && nrow(article_links) > 0 ~ "high",
     energy_candidate ~ "medium",
     TRUE ~ "low"
   )
@@ -524,9 +462,9 @@ bundles <- lapply(seq_len(nrow(tp4)), function(i) {
       source_osint = TRUE,
       source_gdelt_count = nrow(article_links),
       gdelt_urls = if (length(article_urls) == 0) NA_character_ else paste(article_urls, collapse = " | "),
-      firms_match_flag = nrow(firms_links) > 0,
-      firms_distance_km = nearest_firms_distance,
-      firms_hotspot_date = nearest_firms_date,
+      firms_match_flag = NA,
+      firms_distance_km = NA_real_,
+      firms_hotspot_date = NA_character_,
       energy_site_name = nearest_site_name,
       energy_site_class = nearest_site_class,
       energy_site_provider = nearest_site_provider,
@@ -535,7 +473,6 @@ bundles <- lapply(seq_len(nrow(tp4)), function(i) {
       review_status = "needs_review"
     ),
     site_links = site_links,
-    firms_links = firms_links,
     article_links = article_links
   )
 })
@@ -547,9 +484,6 @@ incidents_confirmed <- incidents_review %>%
 incident_site_links <- bind_rows(c(list(empty_site_links()), lapply(bundles, `[[`, "site_links"))) %>%
   filter(!is.na(incident_id), !is.na(site_id))
 
-incident_firms_links <- bind_rows(c(list(empty_firms_links()), lapply(bundles, `[[`, "firms_links"))) %>%
-  filter(!is.na(incident_id), !is.na(hotspot_id))
-
 incident_article_links <- bind_rows(c(list(empty_article_links()), lapply(bundles, `[[`, "article_links"))) %>%
   filter(!is.na(incident_id), !is.na(article_key))
 
@@ -558,7 +492,6 @@ message("Energy lines: ", nrow(energy_lines))
 message("Incident review rows: ", nrow(incidents_review))
 print(utils::head(incidents_review, preview_n))
 message("Incident-site links: ", nrow(incident_site_links))
-message("Incident-FIRMS links: ", nrow(incident_firms_links))
 message("Incident-GDELT links: ", nrow(incident_article_links))
 
 if (write_output) {
@@ -571,8 +504,10 @@ if (write_output) {
     unlink(paths$energy_lines_geojson)
   }
   write_csv_safe(incident_site_links, paths$site_links_csv)
-  write_csv_safe(incident_firms_links, paths$firms_links_csv)
   write_csv_safe(incident_article_links, paths$article_links_csv)
+  if (file.exists(paths$legacy_firms_links_csv)) {
+    unlink(paths$legacy_firms_links_csv)
+  }
   message("Incident and infrastructure outputs written to data_processed/")
 } else {
   message("Preview only. Set WRITE_OUTPUT=TRUE to save energy_sites, energy_lines, and incident link tables.")
