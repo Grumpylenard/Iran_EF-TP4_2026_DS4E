@@ -1,0 +1,202 @@
+---
+title: "Iran War Visualization: Energy Infrastructure Analysis"
+subtitle: "Infrastructure Mapping, Anomaly Detection, and Incident Validation"
+author: 
+  - name: "[Author Name]"
+    affiliation: "[Institution]"
+date: today
+format:
+  pdf:
+    documentclass: article
+    geometry: 
+      - paper=a1paper
+      - orientation=landscape  
+      - margin=0.5in
+      - left=0.7in
+      - right=2.5in
+    fontsize: 14pt
+    include-in-header:
+      text: |
+        \usepackage{multicol}
+        \usepackage{graphicx}
+        \usepackage{tikz}
+        \usepackage{xcolor}
+        \usepackage{fancyhdr}
+        \usepackage{geometry}
+        \usepackage[font=small,labelfont=bf]{caption}
+        \usepackage{titlesec}
+        \usepackage{enumitem}
+        
+        % Custom colors
+        \definecolor{headerblue}{RGB}{41,128,185}
+        \definecolor{lightgray}{RGB}{245,245,245}
+        \definecolor{darkgray}{RGB}{64,64,64}
+        \definecolor{babyblue}{RGB}{235,245,255}
+        
+        % Custom spacing
+        \setlength{\columnsep}{0.8cm}
+        \setlength{\parskip}{0.3em}
+        
+        % Header setup
+        \pagestyle{fancy}
+        \fancyhf{}
+        \renewcommand{\headrulewidth}{0pt}
+        
+        % Title formatting
+        \titleformat{\section}{\large\bfseries\color{headerblue}}{\thesection}{1em}{}
+        \titleformat{\subsection}{\normalsize\bfseries\color{darkgray}}{\thesubsection}{1em}{}
+        
+        % Custom commands for poster layout
+        \newcommand{\postergrid}[1]{%
+          \begin{minipage}[t]{\textwidth}
+            #1
+          \end{minipage}
+        }
+        
+        \newcommand{\postercolumn}[2]{%
+          \begin{minipage}[t]{#1\textwidth}
+            #2
+          \end{minipage}
+        }
+        
+        \newcommand{\placeholderbox}[3]{%
+          \begin{center}
+            \tikz \draw[lightgray, thick] (0,0) rectangle (#1,#2) node[pos=.5, color=darkgray] {\textbf{#3}};
+          \end{center}
+        }
+        
+pdf-engine: pdflatex
+execute:
+  echo: false
+  warning: false
+  message: false
+---
+
+```{=latex}
+% Set background color
+\pagecolor{babyblue}
+
+% Title Section
+\begin{center}
+{\Huge\bfseries\color{headerblue} Iran War Visualization: Energy Infrastructure Analysis}\\[0.3cm]
+{\Large Infrastructure Mapping, Anomaly Detection, and Incident Validation}\\[0.5cm]
+{\large [Author Name] -- [Institution]}\\[0.2cm]
+{\normalsize \today}
+\end{center}
+
+\vspace{0.3cm}
+
+% Main Content Area (left side, leaving right margin for sources)
+\begin{minipage}[c]{0.75\textwidth}
+\vfill
+
+% Upper Row - Maps (3 columns)
+\section*{Energy Infrastructure Analysis}
+
+\begin{minipage}[t]{0.32\textwidth}
+\centering
+\placeholderbox{6cm}{6cm}{Map 1\\Placeholder}
+\vspace{0.3cm}
+\subsection*{Description 1}
+[Placeholder text for map 1 description. This will contain details about what the visualization shows and key findings.]
+
+\subsection*{Methodology 1}
+[Placeholder text for map 1 methodology. This will explain the data sources and analysis approach used.]
+\end{minipage}
+\hfill
+\begin{minipage}[t]{0.32\textwidth}
+\centering
+\placeholderbox{6cm}{6cm}{Map 2\\Placeholder}
+\vspace{0.3cm}
+\subsection*{Description 2}
+[Placeholder text for map 2 description. This will contain details about what the visualization shows and key findings.]
+
+\subsection*{Methodology 2}
+[Placeholder text for map 2 methodology. This will explain the data sources and analysis approach used.]
+\end{minipage}
+\hfill
+\begin{minipage}[t]{0.32\textwidth}
+\centering
+\placeholderbox{6cm}{6cm}{Map 3\\Placeholder}
+\vspace{0.3cm}
+\subsection*{Description 3}
+[Placeholder text for map 3 description. This will contain details about what the visualization shows and key findings.]
+
+\subsection*{Methodology 3}
+[Placeholder text for map 3 methodology. This will explain the data sources and analysis approach used.]
+\end{minipage}
+
+\vspace{0.8cm}
+
+% Lower Row - Graphs/Plots (3 columns)
+\section*{Analysis Results}
+
+\begin{minipage}[t]{0.32\textwidth}
+\centering
+\placeholderbox{6cm}{4cm}{Graph 1\\Placeholder}
+\vspace{0.3cm}
+\subsection*{Description 4}
+[Placeholder text for graph 1 description. This will contain details about what the visualization shows and key findings.]
+
+\subsection*{Methodology 4}
+[Placeholder text for graph 1 methodology. This will explain the data sources and analysis approach used.]
+\end{minipage}
+\hfill
+\begin{minipage}[t]{0.32\textwidth}
+\centering
+\placeholderbox{6cm}{4cm}{Graph 2\\Placeholder}
+\vspace{0.3cm}
+\subsection*{Description 5}
+[Placeholder text for graph 2 description. This will contain details about what the visualization shows and key findings.]
+
+\subsection*{Methodology 5}
+[Placeholder text for graph 2 methodology. This will explain the data sources and analysis approach used.]
+\end{minipage}
+\hfill
+\begin{minipage}[t]{0.32\textwidth}
+\centering
+\placeholderbox{6cm}{4cm}{Graph 3\\Placeholder}
+\vspace{0.3cm}
+\subsection*{Description 6}
+[Placeholder text for graph 3 description. This will contain details about what the visualization shows and key findings.]
+
+\subsection*{Methodology 6}
+[Placeholder text for graph 3 methodology. This will explain the data sources and analysis approach used.]
+\vfill
+\end{minipage}
+\hfill
+% Right margin for sources
+\begin{minipage}[t]{0.22\textwidth}
+\section{Sources \& References}
+\small
+
+\subsection{Tools \& Software}
+\begin{itemize}[leftmargin=0.5em, itemsep=0.1em]
+\item R Statistical Software
+\item GDAL/OGR Geospatial Libraries
+\item Earth Engine API
+\item Quarto Publishing System
+\end{itemize}
+
+\subsection{Contact}
+\textbf{[Author Name]}\\
+[Institution]\\
+[Email]\\
+[Website/GitHub]
+
+\vspace{0.5cm}
+
+\subsection{Data Sources}
+\begin{itemize}[leftmargin=0.5em, itemsep=0.1em]
+\item OGIM v1.1 Infrastructure Database
+\item GEM Energy Trackers (GOIT, GGIT, GOGET, GChI)
+\item KAPSARC GCC Oil Fields
+\item GDELT Global Events Database
+\item FIRMS Fire/Hotspot Data
+\item OpenStreetMap (Gap-fill only)
+\end{itemize}
+
+\end{minipage}
+
+```
+

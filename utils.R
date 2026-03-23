@@ -100,6 +100,19 @@ first_non_missing_num <- function(x) {
   if (length(values) == 0) NA_real_ else values[[1]]
 }
 
+coerce_numeric_vector <- function(x) {
+  if (is.numeric(x)) {
+    return(as.numeric(x))
+  }
+
+  suppressWarnings(
+    readr::parse_number(
+      as.character(x),
+      locale = readr::locale(grouping_mark = ",")
+    )
+  )
+}
+
 to_gdelt_datetime <- function(x, end_of_day = FALSE) {
   stamp <- if (isTRUE(end_of_day)) "235959" else "000000"
   paste0(format(as.Date(x), "%Y%m%d"), stamp)
@@ -264,6 +277,7 @@ build_provider_registry <- function() {
     "ggit", "GEM", 2L, "gem", "(?i)ggit.*\\.(gpkg|geojson|json|shp|gdb|csv|parquet|xlsx|xls)$", "pipeline", NA_character_,
     "goget", "GEM", 2L, "gem", "(?i)goget.*\\.(gpkg|geojson|json|shp|gdb|csv|parquet|xlsx|xls)$", "extraction_site", "site",
     "gchi", "GEM", 2L, "gem", "(?i)(gchi|global[_-]?chem|chemicals).*\\.(gpkg|geojson|json|shp|gdb|csv|parquet|xlsx|xls)$", "petrochemical", "site",
+    "kapsarc", "KAPSARC", 2L, "kapsarc", "(?i)(kapsarc|gcc.*oil.*field|oil.*field).*\\.(gpkg|geojson|json|shp|gdb|csv|parquet|xlsx|xls)$", "extraction_site", "site",
     "gogi", "NETL", 3L, "gogi", "(?i)gogi.*\\.(gpkg|geojson|json|shp|gdb|csv|parquet|xlsx|xls)$", NA_character_, NA_character_,
     "osm_gapfill", "OSM", 4L, "osm", "(?i)osm.*\\.(gpkg|geojson|json|shp|gdb|csv|parquet|xlsx|xls)$", NA_character_, "site"
   )
@@ -303,14 +317,14 @@ extract_text_field <- function(data, patterns, default = NA_character_) {
 extract_numeric_field <- function(data, patterns, default = NA_real_) {
   col <- match_column_name(data, patterns)
   if (is.na(col)) return(rep(default, nrow(data)))
-  suppressWarnings(as.numeric(data[[col]]))
+  coerce_numeric_vector(data[[col]])
 }
 
 infer_source_id <- function(data, source_dataset) {
   candidate <- extract_text_field(
     data,
     c(
-      "^source_id$", "^asset_id$", "^project_id$", "^unit_id$", "^facility_id$", "^ogim_id$",
+      "^source_id$", "^asset_id$", "^project_id$", "^unit_id$", "^facility_id$", "^field_id$", "^ogim_id$",
       "^fac_id$", "^id$", "^objectid$", "^globalid$", "^gid$", "uuid"
     )
   )
@@ -328,6 +342,7 @@ classify_asset_class <- function(provider_text, source_dataset, geometry_role = 
   defaults <- dplyr::case_when(
     source_dataset %in% c("goit", "ggit") & geometry_role == "line" ~ "pipeline",
     source_dataset == "goget" ~ "extraction_site",
+    source_dataset == "kapsarc" ~ "extraction_site",
     source_dataset == "gchi" ~ "petrochemical",
     TRUE ~ NA_character_
   )
@@ -403,7 +418,7 @@ project_settings <- function() {
     firms_match_days = 2,
     firms_match_km = 15,
     firms_site_match_km = as.numeric(Sys.getenv("FIRMS_SITE_MATCH_KM", unset = "5")),
-    incident_site_match_km = 50,
+    incident_site_match_km = as.numeric(Sys.getenv("INCIDENT_SITE_MATCH_KM", unset = "2")),
     overpass_endpoints = env_csv(
       "OVERPASS_ENDPOINTS",
       c("https://overpass-api.de/api/interpreter", "https://lz4.overpass-api.de/api/interpreter")

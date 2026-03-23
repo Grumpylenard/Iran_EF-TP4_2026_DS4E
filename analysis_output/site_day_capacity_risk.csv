@@ -1,0 +1,188 @@
+incident_day,site_id,site_name,country,asset_class,product_group,capacity_kboed_equiv,n_incidents_linked,max_confidence_tier
+2026-02-13,site_62,IRAN NIOC LNG TERMINAL,IRAN,lng_facility,gas,122.58620689655172,1,high
+2026-02-13,site_91,Kangan LNG Terminal,IRAN,lng_facility,gas,47.6,1,high
+2026-02-13,site_96,Persian NIOC LNG Terminal,IRAN,lng_facility,gas,380.8,1,high
+2026-02-28,site_332,ABU EL GHARADIQ SOUTHWEST,EGYPT,extraction_site,,,1,high
+2026-02-28,site_62,IRAN NIOC LNG TERMINAL,IRAN,lng_facility,gas,122.58620689655172,2,high
+2026-02-28,site_91,Kangan LNG Terminal,IRAN,lng_facility,gas,47.6,2,high
+2026-02-28,site_96,Persian NIOC LNG Terminal,IRAN,lng_facility,gas,380.8,2,high
+2026-02-28,site_694,ERBIL,IRAQ,extraction_site,,,1,high
+2026-02-28,site_54,AQABA JORDAN FSRU,JORDAN,lng_facility,gas,86.20689655172414,1,high
+2026-02-28,site_104,Sheikh Sabah LNG Terminal,JORDAN,lng_facility,gas,130.424,1,high
+2026-02-28,site_6015,PALMYRIDE FOLDBELT,"LEBANON, SYRIA",other_energy_site,,,1,high
+2026-03-01,site_3561,PACIFIC,EGYPT,extraction_site,,,1,high
+2026-03-01,site_62,IRAN NIOC LNG TERMINAL,IRAN,lng_facility,gas,122.58620689655172,1,high
+2026-03-01,site_91,Kangan LNG Terminal,IRAN,lng_facility,gas,47.6,1,high
+2026-03-01,site_96,Persian NIOC LNG Terminal,IRAN,lng_facility,gas,380.8,1,high
+2026-03-01,site_6015,PALMYRIDE FOLDBELT,"LEBANON, SYRIA",other_energy_site,,,1,high
+2026-03-01,site_4983,N/A,QATAR,other_energy_site,,,1,high
+2026-03-01,site_46,UMM SAID,QATAR,refinery,oil,200,1,high
+2026-03-01,site_36,PORT SUDAN,SUDAN,refinery,oil,21.7,2,high
+2026-03-01,site_4991,N/A,UNITED ARAB EMIRATES,other_energy_site,,,1,high
+2026-03-02,site_55,BAHRAIN HIDD FLNG TERMINAL,BAHRAIN,lng_facility,gas,136.20689655172416,1,high
+2026-03-02,site_5121,N/A,BAHRAIN,other_energy_site,,,1,high
+2026-03-02,site_5122,N/A,BAHRAIN,other_energy_site,,,1,high
+2026-03-02,site_62,IRAN NIOC LNG TERMINAL,IRAN,lng_facility,gas,122.58620689655172,1,high
+2026-03-02,site_91,Kangan LNG Terminal,IRAN,lng_facility,gas,47.6,1,high
+2026-03-02,site_96,Persian NIOC LNG Terminal,IRAN,lng_facility,gas,380.8,1,high
+2026-03-02,site_694,ERBIL,IRAQ,extraction_site,,,1,high
+2026-03-02,site_989,KATHEER,OMAN,extraction_site,,,1,high
+2026-03-02,site_67,QATAR NORTH FIELD LNG TERMINAL,QATAR,lng_facility,gas,187.93103448275863,1,high
+2026-03-03,site_55,BAHRAIN HIDD FLNG TERMINAL,BAHRAIN,lng_facility,gas,136.20689655172416,4,high
+2026-03-03,site_6032,WIDYAN - NORTH ARABIAN GULF,"BAHRAIN, IRAN, IRAQ, KUWAIT, QATAR, SAUDI ARABIA",other_energy_site,,,1,high
+2026-03-03,site_128,EL DEKHEILA PETROLEUM TERMINAL,EGYPT,petroleum_terminal,,,1,high
+2026-03-03,site_3992,WESTERN DESERT 33,EGYPT,extraction_site,,,2,high
+2026-03-03,site_62,IRAN NIOC LNG TERMINAL,IRAN,lng_facility,gas,122.58620689655172,3,high
+2026-03-03,site_91,Kangan LNG Terminal,IRAN,lng_facility,gas,47.6,3,high
+2026-03-03,site_96,Persian NIOC LNG Terminal,IRAN,lng_facility,gas,380.8,3,high
+2026-03-03,site_29,MINA ABDULLA,KUWAIT,refinery,oil,240,1,high
+2026-03-03,site_206,N/A,KUWAIT,petroleum_terminal,,,1,high
+2026-03-03,site_5327,N/A,KUWAIT,other_energy_site,,,1,high
+2026-03-03,site_5331,N/A,KUWAIT,other_energy_site,,,1,high
+2026-03-03,site_251,ABU TUBUL GAS PLANT,OMAN,processing_facility,,,1,high
+2026-03-03,site_4728,N/A,OMAN,other_energy_site,,,1,high
+2026-03-03,site_3708,SAHMAH,OMAN,extraction_site,,,1,high
+2026-03-03,site_4983,N/A,QATAR,other_energy_site,,,1,high
+2026-03-03,site_67,QATAR NORTH FIELD LNG TERMINAL,QATAR,lng_facility,gas,187.93103448275863,2,high
+2026-03-03,site_46,UMM SAID,QATAR,refinery,oil,200,1,high
+2026-03-03,site_4927,N/A,SAUDI ARABIA,other_energy_site,,,1,high
+2026-03-03,site_40,RIYADH,SAUDI ARABIA,refinery,oil,120,1,high
+2026-03-03,site_51,ABU DHABI FSRU,UNITED ARAB EMIRATES,lng_facility,gas,86.20689655172414,1,high
+2026-03-03,site_58,DAS ISLAND LNG TERMINAL,UNITED ARAB EMIRATES,lng_facility,gas,52.24137931034483,1,high
+2026-03-03,site_4125,DAS ISLAND PLATFORM,UNITED ARAB EMIRATES,offshore_platform,,,1,high
+2026-03-03,site_88,Fujairah LNG Terminal,UNITED ARAB EMIRATES,lng_facility,gas,442.68000000000006,1,high
+2026-03-03,site_5003,N/A,UNITED ARAB EMIRATES,other_energy_site,,,1,high
+2026-03-04,site_4983,N/A,QATAR,other_energy_site,,,1,high
+2026-03-04,site_67,QATAR NORTH FIELD LNG TERMINAL,QATAR,lng_facility,gas,187.93103448275863,2,high
+2026-03-04,site_46,UMM SAID,QATAR,refinery,oil,200,1,high
+2026-03-04,site_36,PORT SUDAN,SUDAN,refinery,oil,21.7,2,high
+2026-03-04,site_88,Fujairah LNG Terminal,UNITED ARAB EMIRATES,lng_facility,gas,442.68000000000006,1,high
+2026-03-05,site_6032,WIDYAN - NORTH ARABIAN GULF,"BAHRAIN, IRAN, IRAQ, KUWAIT, QATAR, SAUDI ARABIA",other_energy_site,,,1,high
+2026-03-05,site_62,IRAN NIOC LNG TERMINAL,IRAN,lng_facility,gas,122.58620689655172,1,high
+2026-03-05,site_91,Kangan LNG Terminal,IRAN,lng_facility,gas,47.6,1,high
+2026-03-05,site_96,Persian NIOC LNG Terminal,IRAN,lng_facility,gas,380.8,1,high
+2026-03-05,site_53,AL ZOUR LNG IMPORT TERMINAL,KUWAIT,lng_facility,gas,498.2758620689655,1,high
+2026-03-05,site_78,Al Zour LNG Terminal,KUWAIT,lng_facility,gas,523.6,1,high
+2026-03-05,site_190,N/A,KUWAIT,petroleum_terminal,,,1,high
+2026-03-05,site_36,PORT SUDAN,SUDAN,refinery,oil,21.7,1,high
+2026-03-05,site_5011,N/A,UNITED ARAB EMIRATES,other_energy_site,,,1,high
+2026-03-05,site_4412,UMM SHAIF SUPERCOMPLEX,UNITED ARAB EMIRATES,offshore_platform,,,1,high
+2026-03-06,site_128,EL DEKHEILA PETROLEUM TERMINAL,EGYPT,petroleum_terminal,,,1,high
+2026-03-06,site_62,IRAN NIOC LNG TERMINAL,IRAN,lng_facility,gas,122.58620689655172,2,high
+2026-03-06,site_91,Kangan LNG Terminal,IRAN,lng_facility,gas,47.6,2,high
+2026-03-06,site_96,Persian NIOC LNG Terminal,IRAN,lng_facility,gas,380.8,2,high
+2026-03-07,site_6032,WIDYAN - NORTH ARABIAN GULF,"BAHRAIN, IRAN, IRAQ, KUWAIT, QATAR, SAUDI ARABIA",other_energy_site,,,1,high
+2026-03-07,site_62,IRAN NIOC LNG TERMINAL,IRAN,lng_facility,gas,122.58620689655172,1,high
+2026-03-07,site_91,Kangan LNG Terminal,IRAN,lng_facility,gas,47.6,1,high
+2026-03-07,site_96,Persian NIOC LNG Terminal,IRAN,lng_facility,gas,380.8,1,high
+2026-03-07,site_4983,N/A,QATAR,other_energy_site,,,1,high
+2026-03-07,site_5090,N/A,QATAR,other_energy_site,,,1,high
+2026-03-07,site_5092,N/A,QATAR,other_energy_site,,,1,high
+2026-03-07,site_99,QatarEnergy LNG (S),QATAR,lng_facility,gas,863.9399999999999,1,high
+2026-03-07,site_71,RASGAS 1 LNG TERMINAL,QATAR,lng_facility,gas,177.58620689655174,1,high
+2026-03-07,site_72,RASGAS 1 LNG TERMINAL,QATAR,lng_facility,gas,74.82758620689656,1,high
+2026-03-07,site_46,UMM SAID,QATAR,refinery,oil,200,1,high
+2026-03-07,site_274,HABSHAN FACILITIES,UNITED ARAB EMIRATES,processing_facility,,,1,high
+2026-03-07,site_1449,N/A,UNITED ARAB EMIRATES,extraction_site,,,1,high
+2026-03-07,site_4838,N/A,UNITED ARAB EMIRATES,other_energy_site,,,1,high
+2026-03-07,site_4839,N/A,UNITED ARAB EMIRATES,other_energy_site,,,1,high
+2026-03-07,site_4840,N/A,UNITED ARAB EMIRATES,other_energy_site,,,1,high
+2026-03-08,site_55,BAHRAIN HIDD FLNG TERMINAL,BAHRAIN,lng_facility,gas,136.20689655172416,1,high
+2026-03-08,site_67,QATAR NORTH FIELD LNG TERMINAL,QATAR,lng_facility,gas,187.93103448275863,1,high
+2026-03-09,site_5123,N/A,BAHRAIN,other_energy_site,,,1,high
+2026-03-09,site_62,IRAN NIOC LNG TERMINAL,IRAN,lng_facility,gas,122.58620689655172,1,high
+2026-03-09,site_91,Kangan LNG Terminal,IRAN,lng_facility,gas,47.6,1,high
+2026-03-09,site_96,Persian NIOC LNG Terminal,IRAN,lng_facility,gas,380.8,1,high
+2026-03-09,site_3789,SHAYBAH,"SAUDI ARABIA, UNITED ARAB EMIRATES",extraction_site,,,1,high
+2026-03-10,site_387,AL ARAB 1,EGYPT,extraction_site,,,1,high
+2026-03-10,site_36,PORT SUDAN,SUDAN,refinery,oil,21.7,1,high
+2026-03-10,site_88,Fujairah LNG Terminal,UNITED ARAB EMIRATES,lng_facility,gas,442.68000000000006,1,high
+2026-03-10,site_4890,N/A,UNITED ARAB EMIRATES,other_energy_site,,,1,high
+2026-03-11,site_5115,N/A,BAHRAIN,other_energy_site,,,1,high
+2026-03-11,site_5118,N/A,BAHRAIN,other_energy_site,,,1,high
+2026-03-11,site_5119,N/A,BAHRAIN,other_energy_site,,,1,high
+2026-03-11,site_62,IRAN NIOC LNG TERMINAL,IRAN,lng_facility,gas,122.58620689655172,1,high
+2026-03-11,site_91,Kangan LNG Terminal,IRAN,lng_facility,gas,47.6,1,high
+2026-03-11,site_96,Persian NIOC LNG Terminal,IRAN,lng_facility,gas,380.8,1,high
+2026-03-11,site_3942,UNKNOWN,IRAQ,extraction_site,,,1,high
+2026-03-11,site_29,MINA ABDULLA,KUWAIT,refinery,oil,240,1,high
+2026-03-11,site_206,N/A,KUWAIT,petroleum_terminal,,,1,high
+2026-03-11,site_5327,N/A,KUWAIT,other_energy_site,,,1,high
+2026-03-11,site_5331,N/A,KUWAIT,other_energy_site,,,1,high
+2026-03-11,site_4983,N/A,QATAR,other_energy_site,,,1,high
+2026-03-11,site_46,UMM SAID,QATAR,refinery,oil,200,1,high
+2026-03-11,site_4890,N/A,UNITED ARAB EMIRATES,other_energy_site,,,1,high
+2026-03-12,site_55,BAHRAIN HIDD FLNG TERMINAL,BAHRAIN,lng_facility,gas,136.20689655172416,1,high
+2026-03-12,site_1,ABADAN,IRAN,refinery,oil,400,1,high
+2026-03-12,site_5507,N/A,IRAN,other_energy_site,,,1,high
+2026-03-12,site_5514,N/A,IRAN,other_energy_site,,,1,high
+2026-03-12,site_53,AL ZOUR LNG IMPORT TERMINAL,KUWAIT,lng_facility,gas,498.2758620689655,1,high
+2026-03-12,site_78,Al Zour LNG Terminal,KUWAIT,lng_facility,gas,523.6,1,high
+2026-03-12,site_190,N/A,KUWAIT,petroleum_terminal,,,1,high
+2026-03-12,site_5090,N/A,QATAR,other_energy_site,,,1,high
+2026-03-12,site_5092,N/A,QATAR,other_energy_site,,,1,high
+2026-03-12,site_99,QatarEnergy LNG (S),QATAR,lng_facility,gas,863.9399999999999,1,high
+2026-03-12,site_71,RASGAS 1 LNG TERMINAL,QATAR,lng_facility,gas,177.58620689655174,1,high
+2026-03-12,site_72,RASGAS 1 LNG TERMINAL,QATAR,lng_facility,gas,74.82758620689656,1,high
+2026-03-13,site_3992,WESTERN DESERT 33,EGYPT,extraction_site,,,1,high
+2026-03-13,site_90,Iran FLNG Terminal,IRAN,lng_facility,gas,11.9,1,high
+2026-03-13,site_5347,N/A,IRAN,other_energy_site,,,1,high
+2026-03-14,site_3571,PRINCE 1,EGYPT,extraction_site,,,1,high
+2026-03-14,site_90,Iran FLNG Terminal,IRAN,lng_facility,gas,11.9,1,high
+2026-03-14,site_214,N/A,IRAN,petroleum_terminal,,,1,high
+2026-03-14,site_5345,N/A,IRAN,other_energy_site,,,1,high
+2026-03-14,site_5346,N/A,IRAN,other_energy_site,,,1,high
+2026-03-14,site_87,Eilat FLNG Terminal,ISRAEL,lng_facility,gas,122.332,1,high
+2026-03-14,site_36,PORT SUDAN,SUDAN,refinery,oil,21.7,1,high
+2026-03-14,site_88,Fujairah LNG Terminal,UNITED ARAB EMIRATES,lng_facility,gas,442.68000000000006,1,high
+2026-03-16,site_801,GS 206-1A,EGYPT,extraction_site,,,1,high
+2026-03-16,site_3873,TANKA EAST,EGYPT,extraction_site,,,1,high
+2026-03-16,site_88,Fujairah LNG Terminal,UNITED ARAB EMIRATES,lng_facility,gas,442.68000000000006,1,high
+2026-03-17,site_62,IRAN NIOC LNG TERMINAL,IRAN,lng_facility,gas,122.58620689655172,2,high
+2026-03-17,site_91,Kangan LNG Terminal,IRAN,lng_facility,gas,47.6,2,high
+2026-03-17,site_96,Persian NIOC LNG Terminal,IRAN,lng_facility,gas,380.8,2,high
+2026-03-17,site_88,Fujairah LNG Terminal,UNITED ARAB EMIRATES,lng_facility,gas,442.68000000000006,1,high
+2026-03-18,site_62,IRAN NIOC LNG TERMINAL,IRAN,lng_facility,gas,122.58620689655172,4,high
+2026-03-18,site_91,Kangan LNG Terminal,IRAN,lng_facility,gas,47.6,4,high
+2026-03-18,site_96,Persian NIOC LNG Terminal,IRAN,lng_facility,gas,380.8,4,high
+2026-03-18,site_5090,N/A,QATAR,other_energy_site,,,1,high
+2026-03-18,site_5092,N/A,QATAR,other_energy_site,,,1,high
+2026-03-18,site_5095,N/A,QATAR,other_energy_site,,,1,high
+2026-03-18,site_5099,N/A,QATAR,other_energy_site,,,1,high
+2026-03-18,site_68,QATARGAS 1 RAS LAFFAN LNG TERMINAL,QATAR,lng_facility,gas,74.82758620689656,1,high
+2026-03-18,site_69,QATARGAS 2 RAS LAFFAN LNG TERMINAL,QATAR,lng_facility,gas,177.58620689655174,1,high
+2026-03-18,site_70,QATARGAS 2 RAS LAFFAN LNG TERMINAL,QATAR,lng_facility,gas,177.58620689655174,1,high
+2026-03-18,site_98,QatarEnergy LNG (N),QATAR,lng_facility,gas,971.04,1,high
+2026-03-18,site_99,QatarEnergy LNG (S),QATAR,lng_facility,gas,863.9399999999999,1,high
+2026-03-18,site_71,RASGAS 1 LNG TERMINAL,QATAR,lng_facility,gas,177.58620689655174,1,high
+2026-03-18,site_72,RASGAS 1 LNG TERMINAL,QATAR,lng_facility,gas,74.82758620689656,1,high
+2026-03-19,site_326,ABU EL GHARADIQ NORTHEAST,EGYPT,extraction_site,,,1,high
+2026-03-19,site_62,IRAN NIOC LNG TERMINAL,IRAN,lng_facility,gas,122.58620689655172,3,high
+2026-03-19,site_91,Kangan LNG Terminal,IRAN,lng_facility,gas,47.6,3,high
+2026-03-19,site_5210,N/A,IRAN,other_energy_site,,,1,high
+2026-03-19,site_35,PERSIAN GULF STAR,IRAN,refinery,oil,360,1,high
+2026-03-19,site_96,Persian NIOC LNG Terminal,IRAN,lng_facility,gas,380.8,3,high
+2026-03-19,site_93,Mina Al-Ahmadi LNG Terminal,KUWAIT,lng_facility,gas,228.48,1,high
+2026-03-19,site_4795,N/A,OMAN,other_energy_site,,,1,high
+2026-03-19,site_66,OMAN QALHAT LNG TERMINAL,OMAN,lng_facility,gas,80.51724137931035,1,high
+2026-03-19,site_4983,N/A,QATAR,other_energy_site,,,1,high
+2026-03-19,site_67,QATAR NORTH FIELD LNG TERMINAL,QATAR,lng_facility,gas,187.93103448275863,1,high
+2026-03-19,site_46,UMM SAID,QATAR,refinery,oil,200,1,high
+2026-03-19,site_274,HABSHAN FACILITIES,UNITED ARAB EMIRATES,processing_facility,,,1,high
+2026-03-19,site_1449,N/A,UNITED ARAB EMIRATES,extraction_site,,,1,high
+2026-03-19,site_4838,N/A,UNITED ARAB EMIRATES,other_energy_site,,,1,high
+2026-03-19,site_4839,N/A,UNITED ARAB EMIRATES,other_energy_site,,,1,high
+2026-03-19,site_4840,N/A,UNITED ARAB EMIRATES,other_energy_site,,,1,high
+2026-03-20,site_62,IRAN NIOC LNG TERMINAL,IRAN,lng_facility,gas,122.58620689655172,1,high
+2026-03-20,site_91,Kangan LNG Terminal,IRAN,lng_facility,gas,47.6,1,high
+2026-03-20,site_96,Persian NIOC LNG Terminal,IRAN,lng_facility,gas,380.8,1,high
+2026-03-20,site_64,MINA AL-AHMADI EXPLORER FSRU,KUWAIT,lng_facility,gas,86.20689655172414,1,high
+2026-03-20,site_65,MINA AL-AHMADI GOLAR FSRU,KUWAIT,lng_facility,gas,131.55172413793105,1,high
+2026-03-20,site_810,GURRUKBIL GROUP OF FIELDS,TURKMENISTAN,extraction_site,,,1,high
+2026-03-21,site_62,IRAN NIOC LNG TERMINAL,IRAN,lng_facility,gas,122.58620689655172,1,high
+2026-03-21,site_91,Kangan LNG Terminal,IRAN,lng_facility,gas,47.6,1,high
+2026-03-21,site_96,Persian NIOC LNG Terminal,IRAN,lng_facility,gas,380.8,1,high
+2026-03-21,site_663,EAST BAGHDAD,IRAQ,extraction_site,,,1,high
+2026-03-22,site_62,IRAN NIOC LNG TERMINAL,IRAN,lng_facility,gas,122.58620689655172,1,high
+2026-03-22,site_91,Kangan LNG Terminal,IRAN,lng_facility,gas,47.6,1,high
+2026-03-22,site_96,Persian NIOC LNG Terminal,IRAN,lng_facility,gas,380.8,1,high

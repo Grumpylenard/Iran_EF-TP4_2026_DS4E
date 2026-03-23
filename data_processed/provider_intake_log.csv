@@ -18,8 +18,9 @@ ogim,OGIM,/Users/erichoffmann/Iran_War_Visualisation/data_raw/Geodata/OGIM_v2.5.
 ogim,OGIM,/Users/erichoffmann/Iran_War_Visualisation/data_raw/Geodata/OGIM_v2.5.1.gpkg,Data_Catalog,empty,0,0,
 goit,GEM,/Users/erichoffmann/Iran_War_Visualisation/data_raw/Geodata/GEM-GOIT-Oil-NGL-Pipelines-2025-03.xlsx,Pipelines,no_geometry,0,0,
 ggit,GEM,/Users/erichoffmann/Iran_War_Visualisation/data_raw/Geodata/GEM-GGIT-Gas-Pipelines-2025-11.xlsx,Pipelines,no_geometry,0,0,
-ggit,GEM,/Users/erichoffmann/Iran_War_Visualisation/data_raw/Geodata/GEM-GGIT-LNG-Teminals-2025-09.xlsx,LNG Terminals,success,70,0,
+ggit,GEM,/Users/erichoffmann/Iran_War_Visualisation/data_raw/Geodata/GEM-GGIT-LNG-Teminals-2025-09.xlsx,LNG Terminals,success,43,0,
 goget,GEM,,,missing,0,0,no files discovered
 gchi,GEM,,,missing,0,0,no files discovered
+kapsarc,KAPSARC,,,missing,0,0,no files discovered
 gogi,NETL,,,missing,0,0,no files discovered
 osm_gapfill,OSM,,,missing,0,0,no files discovered

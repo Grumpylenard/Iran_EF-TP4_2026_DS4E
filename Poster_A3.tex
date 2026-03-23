@@ -1,0 +1,179 @@
+\documentclass[11pt]{article}
+\usepackage[a3paper,landscape,margin=0.4in,left=0.5in,right=1.5in]{geometry}
+\usepackage{multicol}
+\usepackage{graphicx}
+\usepackage{tikz}
+\usepackage{xcolor}
+\usepackage{fancyhdr}
+\usepackage[font=small,labelfont=bf]{caption}
+\usepackage{titlesec}
+\usepackage{enumitem}
+
+% Custom colors
+\definecolor{headerblue}{RGB}{41,128,185}
+\definecolor{lightgray}{RGB}{245,245,245}
+\definecolor{darkgray}{RGB}{64,64,64}
+\definecolor{babyblue}{RGB}{255,245,220}
+
+% Custom spacing - optimized for A3
+\setlength{\columnsep}{0.5cm}
+\setlength{\parskip}{0.25em}
+\setlength{\parindent}{0pt}
+
+% Header setup
+\pagestyle{fancy}
+\fancyhf{}
+\renewcommand{\headrulewidth}{0pt}
+
+% Title formatting - medium size for A3
+\titleformat{\section}{\large\bfseries\color{headerblue}}{\thesection}{0.7em}{}
+\titleformat{\subsection}{\normalsize\bfseries\color{darkgray}}{\thesubsection}{0.7em}{}
+
+% Remove section numbering
+\setcounter{secnumdepth}{0}
+
+% Custom commands for poster layout
+\newcommand{\postergrid}[1]{%
+  \begin{minipage}[t]{\textwidth}
+    #1
+  \end{minipage}
+}
+
+\newcommand{\postercolumn}[2]{%
+  \begin{minipage}[t]{#1\textwidth}
+    #2
+  \end{minipage}
+}
+
+\newcommand{\placeholderbox}[3]{%
+  \fbox{\parbox[c][#2][c]{#1}{\centering\textbf{#3}}}
+}
+
+\begin{document}
+
+% Create background using tikz overlay
+\begin{tikzpicture}[remember picture,overlay]
+  \fill[babyblue] (current page.south west) rectangle (current page.north east);
+\end{tikzpicture}
+
+% Also use pagecolor as fallback
+\pagecolor{babyblue}
+
+% Title section
+\begin{center}
+{\Large\bfseries\color{headerblue} Iran War Visualization: Energy Infrastructure Analysis}\\[0.25cm]
+{\large Infrastructure Mapping, Anomaly Detection, and Incident Validation}\\[0.3cm]
+{\normalsize [Author Name] -- [Institution]}\\[0.15cm]
+{\normalsize \today}
+\end{center}
+
+\vspace{0.15cm}
+
+% Use a vertical centering approach
+\vfill
+
+% Main layout container
+\noindent\begin{minipage}[c]{0.75\textwidth}
+
+% Upper Row - Maps (3 columns)  
+\section{Energy Infrastructure Analysis}
+\vspace{0.15cm}
+
+\noindent\begin{minipage}[t]{0.32\textwidth}
+\centering
+\placeholderbox{4.5cm}{4.5cm}{Map 1\\Placeholder}
+\vspace{0.25cm}
+\subsection{Description 1}
+[Placeholder text for map 1 description - key findings about energy infrastructure distribution]
+\subsection{Methodology 1}
+[Placeholder text for map 1 methodology - spatial analysis techniques used]
+\end{minipage}%
+\hfill%
+\begin{minipage}[t]{0.32\textwidth}
+\centering
+\placeholderbox{4.5cm}{4.5cm}{Map 2\\Placeholder}
+\vspace{0.25cm}
+\subsection{Description 2}
+[Placeholder text for map 2 description - key findings about energy infrastructure distribution]
+\subsection{Methodology 2}
+[Placeholder text for map 2 methodology - spatial analysis techniques used]
+\end{minipage}%
+\hfill%
+\begin{minipage}[t]{0.32\textwidth}
+\centering
+\placeholderbox{4.5cm}{4.5cm}{Map 3\\Placeholder}
+\vspace{0.25cm}
+\subsection{Description 3}
+[Placeholder text for map 3 description - key findings about energy infrastructure distribution]
+\subsection{Methodology 3}
+[Placeholder text for map 3 methodology - spatial analysis techniques used]
+\end{minipage}
+
+\vspace{0.4cm}
+
+% Lower Row - Graphs (3 columns)
+\section{Analysis Results}
+
+\noindent\begin{minipage}[t]{0.32\textwidth}
+\centering
+\placeholderbox{4.5cm}{3.0cm}{Graph 1\\Placeholder}
+\vspace{0.25cm}
+\subsection{Description 4}
+[Placeholder text for graph 1 description - trends and patterns identified in the analysis]
+\subsection{Methodology 4}
+[Placeholder text for graph 1 methodology - analytical techniques used]
+\end{minipage}%
+\hfill%
+\begin{minipage}[t]{0.32\textwidth}
+\centering
+\placeholderbox{4.5cm}{3.0cm}{Graph 2\\Placeholder}
+\vspace{0.25cm}
+\subsection{Description 5}
+[Placeholder text for graph 2 description - trends and patterns identified in the analysis]
+\subsection{Methodology 5}
+[Placeholder text for graph 2 methodology - analytical techniques used]
+\end{minipage}%
+\hfill%
+\begin{minipage}[t]{0.32\textwidth}
+\centering
+\placeholderbox{4.5cm}{3.0cm}{Graph 3\\Placeholder}
+\vspace{0.25cm}
+\subsection{Description 6}
+[Placeholder text for graph 3 description - trends and patterns identified in the analysis]
+\subsection{Methodology 6}
+[Placeholder text for graph 3 methodology - analytical techniques used]
+\end{minipage}
+
+\end{minipage}%
+\hfill%
+\begin{minipage}[t]{0.22\textwidth}
+
+\section{Data Sources}
+\vspace{0.15cm}
+
+\begin{itemize}[leftmargin=0.2cm,itemsep=0.15cm]
+\item OGIM v1.1 Infrastructure Mapping
+\item GEM Global Energy Monitor  
+\item KAPSARC Energy Datasets
+\item GDELT Project Database
+\item FIRMS Satellite Fire Data
+\item OSM OpenStreetMap
+\end{itemize}
+
+\vspace{0.5cm}
+
+\subsection{Contact}
+\vspace{0.15cm}
+
+{\normalsize
+\textbf{[Author]}\\
+[Institution]\\
+\texttt{[Email]}\\
+\texttt{[Website]}
+}
+
+\end{minipage}
+
+\vfill
+
+\end{document}

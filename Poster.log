@@ -1,0 +1,634 @@
+This is pdfTeX, Version 3.141592653-2.6-1.40.29 (TeX Live 2026) (preloaded format=pdflatex 2026.3.22)  23 MAR 2026 06:45
+entering extended mode
+ restricted \write18 enabled.
+ %&-line parsing enabled.
+**Poster.tex
+(./Poster.tex
+LaTeX2e <2025-11-01>
+L3 programming layer <2026-01-19>
+(/Users/erichoffmann/Library/TinyTeX/texmf-dist/tex/latex/tikzposter/tikzposter.cls
+Document Class: tikzposter 2014/01/15 v2.0 LaTeX document class for Posters
+(/Users/erichoffmann/Library/TinyTeX/texmf-dist/tex/latex/xkeyval/xkeyval.sty
+Package: xkeyval 2025/11/04 v2.10 package option processing (HA)
+ (/Users/erichoffmann/Library/TinyTeX/texmf-dist/tex/generic/xkeyval/xkeyval.tex (/Users/erichoffmann/Library/TinyTeX/texmf-dist/tex/generic/xkeyval/xkvutils.tex
+\XKV@toks=\toks17
+\XKV@tempa@toks=\toks18
+\XKV@tempb@toks=\toks19
+ (/Users/erichoffmann/Library/TinyTeX/texmf-dist/tex/generic/xkeyval/keyval.tex))
+\XKV@depth=\count275
+File: xkeyval.tex 2014/12/03 v2.7a key=value parser (HA)
+)) (/Users/erichoffmann/Library/TinyTeX/texmf-dist/tex/latex/tools/calc.sty
+Package: calc 2025/03/01 v4.3b Infix arithmetic (KKT,FJ)
+\calc@Acount=\count276
+\calc@Bcount=\count277
+\calc@Adimen=\dimen148
+\calc@Bdimen=\dimen149
+\calc@Askip=\skip49
+\calc@Bskip=\skip50
+LaTeX Info: Redefining \setlength on input line 86.
+LaTeX Info: Redefining \addtolength on input line 87.
+\calc@Ccount=\count278
+\calc@Cskip=\skip51
+) (/Users/erichoffmann/Library/TinyTeX/texmf-dist/tex/latex/base/ifthen.sty
+Package: ifthen 2024/03/16 v1.1e Standard LaTeX ifthen package (DPC)
+) (/Users/erichoffmann/Library/TinyTeX/texmf-dist/tex/latex/ae/ae.sty
+Package: ae 2001/02/12 1.3 Almost European Computer Modern
+ (/Users/erichoffmann/Library/TinyTeX/texmf-dist/tex/latex/base/fontenc.sty
+Package: fontenc 2025/07/18 v2.1d Standard LaTeX package
+)) (/Users/erichoffmann/Library/TinyTeX/texmf-dist/tex/generic/xstring/xstring.sty (/Users/erichoffmann/Library/TinyTeX/texmf-dist/tex/generic/xstring/xstring.tex
+\xs_counta=\count279
+\xs_countb=\count280
+)
+Package: xstring 2023/08/22 v1.86 String manipulations (CT)
+) (/Users/erichoffmann/Library/TinyTeX/texmf-dist/tex/latex/etoolbox/etoolbox.sty
+Package: etoolbox 2025/10/02 v2.5m e-TeX tools for LaTeX (JAW)
+\etb@tempcnta=\count281
+) (/Users/erichoffmann/Library/TinyTeX/texmf-dist/tex/latex/pgf/frontendlayer/tikz.sty (/Users/erichoffmann/Library/TinyTeX/texmf-dist/tex/latex/pgf/basiclayer/pgf.sty (/Users/erichoffmann/Library/TinyTeX/texmf-dist/tex/latex/pgf/utilities/pgfrcs.sty (/Users/erichoffmann/Library/TinyTeX/texmf-dist/tex/generic/pgf/utilities/pgfutil-common.tex
+\pgfutil@everybye=\toks20
+\pgfutil@tempdima=\dimen150
+\pgfutil@tempdimb=\dimen151
+) (/Users/erichoffmann/Library/TinyTeX/texmf-dist/tex/generic/pgf/utilities/pgfutil-latex.def
+\pgfutil@abb=\box53
+) (/Users/erichoffmann/Library/TinyTeX/texmf-dist/tex/generic/pgf/utilities/pgfrcs.code.tex (/Users/erichoffmann/Library/TinyTeX/texmf-dist/tex/generic/pgf/pgf.revision.tex)
+Package: pgfrcs 2025-08-29 v3.1.11a (3.1.11a)
+))
+Package: pgf 2025-08-29 v3.1.11a (3.1.11a)
+ (/Users/erichoffmann/Library/TinyTeX/texmf-dist/tex/latex/pgf/basiclayer/pgfcore.sty (/Users/erichoffmann/Library/TinyTeX/texmf-dist/tex/latex/graphics/graphicx.sty
+Package: graphicx 2024/12/31 v1.2e Enhanced LaTeX Graphics (DPC,SPQR)
+ (/Users/erichoffmann/Library/TinyTeX/texmf-dist/tex/latex/graphics/graphics.sty
+Package: graphics 2024/08/06 v1.4g Standard LaTeX Graphics (DPC,SPQR)
+ (/Users/erichoffmann/Library/TinyTeX/texmf-dist/tex/latex/graphics/trig.sty
+Package: trig 2023/12/02 v1.11 sin cos tan (DPC)
+) (/Users/erichoffmann/Library/TinyTeX/texmf-dist/tex/latex/graphics-cfg/graphics.cfg
+File: graphics.cfg 2016/06/04 v1.11 sample graphics configuration
+)
+Package graphics Info: Driver file: pdftex.def on input line 106.
+ (/Users/erichoffmann/Library/TinyTeX/texmf-dist/tex/latex/graphics-def/pdftex.def
+File: pdftex.def 2025/09/29 v1.2d Graphics/color driver for pdftex
+))
+\Gin@req@height=\dimen152
+\Gin@req@width=\dimen153
+) (/Users/erichoffmann/Library/TinyTeX/texmf-dist/tex/latex/pgf/systemlayer/pgfsys.sty (/Users/erichoffmann/Library/TinyTeX/texmf-dist/tex/generic/pgf/systemlayer/pgfsys.code.tex
+Package: pgfsys 2025-08-29 v3.1.11a (3.1.11a)
+ (/Users/erichoffmann/Library/TinyTeX/texmf-dist/tex/generic/pgf/utilities/pgfkeys.code.tex
+\pgfkeys@pathtoks=\toks21
+\pgfkeys@temptoks=\toks22
+ (/Users/erichoffmann/Library/TinyTeX/texmf-dist/tex/generic/pgf/utilities/pgfkeyslibraryfiltered.code.tex
+\pgfkeys@tmptoks=\toks23
+))
+\pgf@x=\dimen154
+\pgf@y=\dimen155
+\pgf@xa=\dimen156
+\pgf@ya=\dimen157
+\pgf@xb=\dimen158
+\pgf@yb=\dimen159
+\pgf@xc=\dimen160
+\pgf@yc=\dimen161
+\pgf@xd=\dimen162
+\pgf@yd=\dimen163
+\w@pgf@writea=\write3
+\r@pgf@reada=\read2
+\c@pgf@counta=\count282
+\c@pgf@countb=\count283
+\c@pgf@countc=\count284
+\c@pgf@countd=\count285
+\t@pgf@toka=\toks24
+\t@pgf@tokb=\toks25
+\t@pgf@tokc=\toks26
+\pgf@sys@id@count=\count286
+ (/Users/erichoffmann/Library/TinyTeX/texmf-dist/tex/generic/pgf/systemlayer/pgf.cfg
+File: pgf.cfg 2025-08-29 v3.1.11a (3.1.11a)
+)
+Driver file for pgf: pgfsys-pdftex.def
+ (/Users/erichoffmann/Library/TinyTeX/texmf-dist/tex/generic/pgf/systemlayer/pgfsys-pdftex.def
+File: pgfsys-pdftex.def 2025-08-29 v3.1.11a (3.1.11a)
+ (/Users/erichoffmann/Library/TinyTeX/texmf-dist/tex/generic/pgf/systemlayer/pgfsys-common-pdf.def
+File: pgfsys-common-pdf.def 2025-08-29 v3.1.11a (3.1.11a)
+))) (/Users/erichoffmann/Library/TinyTeX/texmf-dist/tex/generic/pgf/systemlayer/pgfsyssoftpath.code.tex
+File: pgfsyssoftpath.code.tex 2025-08-29 v3.1.11a (3.1.11a)
+\pgfsyssoftpath@smallbuffer@items=\count287
+\pgfsyssoftpath@bigbuffer@items=\count288
+) (/Users/erichoffmann/Library/TinyTeX/texmf-dist/tex/generic/pgf/systemlayer/pgfsysprotocol.code.tex
+File: pgfsysprotocol.code.tex 2025-08-29 v3.1.11a (3.1.11a)
+)) (/Users/erichoffmann/Library/TinyTeX/texmf-dist/tex/latex/xcolor/xcolor.sty
+Package: xcolor 2024/09/29 v3.02 LaTeX color extensions (UK)
+ (/Users/erichoffmann/Library/TinyTeX/texmf-dist/tex/latex/graphics-cfg/color.cfg
+File: color.cfg 2016/01/02 v1.6 sample color configuration
+)
+Package xcolor Info: Driver file: pdftex.def on input line 274.
+ (/Users/erichoffmann/Library/TinyTeX/texmf-dist/tex/latex/graphics/mathcolor.ltx)
+Package xcolor Info: Model `cmy' substituted by `cmy0' on input line 1349.
+Package xcolor Info: Model `hsb' substituted by `rgb' on input line 1353.
+Package xcolor Info: Model `RGB' extended on input line 1365.
+Package xcolor Info: Model `HTML' substituted by `rgb' on input line 1367.
+Package xcolor Info: Model `Hsb' substituted by `hsb' on input line 1368.
+Package xcolor Info: Model `tHsb' substituted by `hsb' on input line 1369.
+Package xcolor Info: Model `HSB' substituted by `hsb' on input line 1370.
+Package xcolor Info: Model `Gray' substituted by `gray' on input line 1371.
+Package xcolor Info: Model `wave' substituted by `hsb' on input line 1372.
+) (/Users/erichoffmann/Library/TinyTeX/texmf-dist/tex/generic/pgf/basiclayer/pgfcore.code.tex
+Package: pgfcore 2025-08-29 v3.1.11a (3.1.11a)
+ (/Users/erichoffmann/Library/TinyTeX/texmf-dist/tex/generic/pgf/math/pgfmath.code.tex (/Users/erichoffmann/Library/TinyTeX/texmf-dist/tex/generic/pgf/math/pgfmathutil.code.tex) (/Users/erichoffmann/Library/TinyTeX/texmf-dist/tex/generic/pgf/math/pgfmathparser.code.tex
+\pgfmath@dimen=\dimen164
+\pgfmath@count=\count289
+\pgfmath@box=\box54
+\pgfmath@toks=\toks27
+\pgfmath@stack@operand=\toks28
+\pgfmath@stack@operation=\toks29
+) (/Users/erichoffmann/Library/TinyTeX/texmf-dist/tex/generic/pgf/math/pgfmathfunctions.code.tex) (/Users/erichoffmann/Library/TinyTeX/texmf-dist/tex/generic/pgf/math/pgfmathfunctions.basic.code.tex) (/Users/erichoffmann/Library/TinyTeX/texmf-dist/tex/generic/pgf/math/pgfmathfunctions.trigonometric.code.tex) (/Users/erichoffmann/Library/TinyTeX/texmf-dist/tex/generic/pgf/math/pgfmathfunctions.random.code.tex) (/Users/erichoffmann/Library/TinyTeX/texmf-dist/tex/generic/pgf/math/pgfmathfunctions.comparison.code.tex) (/Users/erichoffmann/Library/TinyTeX/texmf-dist/tex/generic/pgf/math/pgfmathfunctions.base.code.tex) (/Users/erichoffmann/Library/TinyTeX/texmf-dist/tex/generic/pgf/math/pgfmathfunctions.round.code.tex) (/Users/erichoffmann/Library/TinyTeX/texmf-dist/tex/generic/pgf/math/pgfmathfunctions.misc.code.tex) (/Users/erichoffmann/Library/TinyTeX/texmf-dist/tex/generic/pgf/math/pgfmathfunctions.integerarithmetics.code.tex) (/Users/erichoffmann/Library/TinyTeX/texmf-dist/tex/generic/pgf/math/pgfmathcalc.code.tex) (/Users/erichoffmann/Library/TinyTeX/texmf-dist/tex/generic/pgf/math/pgfmathfloat.code.tex
+\c@pgfmathroundto@lastzeros=\count290
+)) (/Users/erichoffmann/Library/TinyTeX/texmf-dist/tex/generic/pgf/math/pgfint.code.tex) (/Users/erichoffmann/Library/TinyTeX/texmf-dist/tex/generic/pgf/basiclayer/pgfcorepoints.code.tex
+File: pgfcorepoints.code.tex 2025-08-29 v3.1.11a (3.1.11a)
+\pgf@picminx=\dimen165
+\pgf@picmaxx=\dimen166
+\pgf@picminy=\dimen167
+\pgf@picmaxy=\dimen168
+\pgf@pathminx=\dimen169
+\pgf@pathmaxx=\dimen170
+\pgf@pathminy=\dimen171
+\pgf@pathmaxy=\dimen172
+\pgf@xx=\dimen173
+\pgf@xy=\dimen174
+\pgf@yx=\dimen175
+\pgf@yy=\dimen176
+\pgf@zx=\dimen177
+\pgf@zy=\dimen178
+) (/Users/erichoffmann/Library/TinyTeX/texmf-dist/tex/generic/pgf/basiclayer/pgfcorepathconstruct.code.tex
+File: pgfcorepathconstruct.code.tex 2025-08-29 v3.1.11a (3.1.11a)
+\pgf@path@lastx=\dimen179
+\pgf@path@lasty=\dimen180
+) (/Users/erichoffmann/Library/TinyTeX/texmf-dist/tex/generic/pgf/basiclayer/pgfcorepathusage.code.tex
+File: pgfcorepathusage.code.tex 2025-08-29 v3.1.11a (3.1.11a)
+\pgf@shorten@end@additional=\dimen181
+\pgf@shorten@start@additional=\dimen182
+) (/Users/erichoffmann/Library/TinyTeX/texmf-dist/tex/generic/pgf/basiclayer/pgfcorescopes.code.tex
+File: pgfcorescopes.code.tex 2025-08-29 v3.1.11a (3.1.11a)
+\pgfpic=\box55
+\pgf@hbox=\box56
+\pgf@layerbox@main=\box57
+\pgf@picture@serial@count=\count291
+) (/Users/erichoffmann/Library/TinyTeX/texmf-dist/tex/generic/pgf/basiclayer/pgfcoregraphicstate.code.tex
+File: pgfcoregraphicstate.code.tex 2025-08-29 v3.1.11a (3.1.11a)
+\pgflinewidth=\dimen183
+) (/Users/erichoffmann/Library/TinyTeX/texmf-dist/tex/generic/pgf/basiclayer/pgfcoretransformations.code.tex
+File: pgfcoretransformations.code.tex 2025-08-29 v3.1.11a (3.1.11a)
+\pgf@pt@x=\dimen184
+\pgf@pt@y=\dimen185
+\pgf@pt@temp=\dimen186
+) (/Users/erichoffmann/Library/TinyTeX/texmf-dist/tex/generic/pgf/basiclayer/pgfcorequick.code.tex
+File: pgfcorequick.code.tex 2025-08-29 v3.1.11a (3.1.11a)
+) (/Users/erichoffmann/Library/TinyTeX/texmf-dist/tex/generic/pgf/basiclayer/pgfcoreobjects.code.tex
+File: pgfcoreobjects.code.tex 2025-08-29 v3.1.11a (3.1.11a)
+) (/Users/erichoffmann/Library/TinyTeX/texmf-dist/tex/generic/pgf/basiclayer/pgfcorepathprocessing.code.tex
+File: pgfcorepathprocessing.code.tex 2025-08-29 v3.1.11a (3.1.11a)
+) (/Users/erichoffmann/Library/TinyTeX/texmf-dist/tex/generic/pgf/basiclayer/pgfcorearrows.code.tex
+File: pgfcorearrows.code.tex 2025-08-29 v3.1.11a (3.1.11a)
+\pgfarrowsep=\dimen187
+) (/Users/erichoffmann/Library/TinyTeX/texmf-dist/tex/generic/pgf/basiclayer/pgfcoreshade.code.tex
+File: pgfcoreshade.code.tex 2025-08-29 v3.1.11a (3.1.11a)
+\pgf@max=\dimen188
+\pgf@sys@shading@range@num=\count292
+\pgf@shadingcount=\count293
+) (/Users/erichoffmann/Library/TinyTeX/texmf-dist/tex/generic/pgf/basiclayer/pgfcoreimage.code.tex
+File: pgfcoreimage.code.tex 2025-08-29 v3.1.11a (3.1.11a)
+) (/Users/erichoffmann/Library/TinyTeX/texmf-dist/tex/generic/pgf/basiclayer/pgfcoreexternal.code.tex
+File: pgfcoreexternal.code.tex 2025-08-29 v3.1.11a (3.1.11a)
+\pgfexternal@startupbox=\box58
+) (/Users/erichoffmann/Library/TinyTeX/texmf-dist/tex/generic/pgf/basiclayer/pgfcorelayers.code.tex
+File: pgfcorelayers.code.tex 2025-08-29 v3.1.11a (3.1.11a)
+) (/Users/erichoffmann/Library/TinyTeX/texmf-dist/tex/generic/pgf/basiclayer/pgfcoretransparency.code.tex
+File: pgfcoretransparency.code.tex 2025-08-29 v3.1.11a (3.1.11a)
+) (/Users/erichoffmann/Library/TinyTeX/texmf-dist/tex/generic/pgf/basiclayer/pgfcorepatterns.code.tex
+File: pgfcorepatterns.code.tex 2025-08-29 v3.1.11a (3.1.11a)
+) (/Users/erichoffmann/Library/TinyTeX/texmf-dist/tex/generic/pgf/basiclayer/pgfcorerdf.code.tex
+File: pgfcorerdf.code.tex 2025-08-29 v3.1.11a (3.1.11a)
+))) (/Users/erichoffmann/Library/TinyTeX/texmf-dist/tex/generic/pgf/modules/pgfmoduleshapes.code.tex
+File: pgfmoduleshapes.code.tex 2025-08-29 v3.1.11a (3.1.11a)
+\pgfnodeparttextbox=\box59
+) (/Users/erichoffmann/Library/TinyTeX/texmf-dist/tex/generic/pgf/modules/pgfmoduleplot.code.tex
+File: pgfmoduleplot.code.tex 2025-08-29 v3.1.11a (3.1.11a)
+) (/Users/erichoffmann/Library/TinyTeX/texmf-dist/tex/latex/pgf/compatibility/pgfcomp-version-0-65.sty
+Package: pgfcomp-version-0-65 2025-08-29 v3.1.11a (3.1.11a)
+\pgf@nodesepstart=\dimen189
+\pgf@nodesepend=\dimen190
+) (/Users/erichoffmann/Library/TinyTeX/texmf-dist/tex/latex/pgf/compatibility/pgfcomp-version-1-18.sty
+Package: pgfcomp-version-1-18 2025-08-29 v3.1.11a (3.1.11a)
+)) (/Users/erichoffmann/Library/TinyTeX/texmf-dist/tex/latex/pgf/utilities/pgffor.sty (/Users/erichoffmann/Library/TinyTeX/texmf-dist/tex/latex/pgf/utilities/pgfkeys.sty (/Users/erichoffmann/Library/TinyTeX/texmf-dist/tex/generic/pgf/utilities/pgfkeys.code.tex)) (/Users/erichoffmann/Library/TinyTeX/texmf-dist/tex/latex/pgf/math/pgfmath.sty (/Users/erichoffmann/Library/TinyTeX/texmf-dist/tex/generic/pgf/math/pgfmath.code.tex)) (/Users/erichoffmann/Library/TinyTeX/texmf-dist/tex/generic/pgf/utilities/pgffor.code.tex
+Package: pgffor 2025-08-29 v3.1.11a (3.1.11a)
+\pgffor@iter=\dimen191
+\pgffor@skip=\dimen192
+\pgffor@stack=\toks30
+\pgffor@toks=\toks31
+)) (/Users/erichoffmann/Library/TinyTeX/texmf-dist/tex/generic/pgf/frontendlayer/tikz/tikz.code.tex
+Package: tikz 2025-08-29 v3.1.11a (3.1.11a)
+ (/Users/erichoffmann/Library/TinyTeX/texmf-dist/tex/generic/pgf/libraries/pgflibraryplothandlers.code.tex
+File: pgflibraryplothandlers.code.tex 2025-08-29 v3.1.11a (3.1.11a)
+\pgf@plot@mark@count=\count294
+\pgfplotmarksize=\dimen193
+)
+\tikz@lastx=\dimen194
+\tikz@lasty=\dimen195
+\tikz@lastxsaved=\dimen196
+\tikz@lastysaved=\dimen197
+\tikz@lastmovetox=\dimen198
+\tikz@lastmovetoy=\dimen199
+\tikzleveldistance=\dimen256
+\tikzsiblingdistance=\dimen257
+\tikz@figbox=\box60
+\tikz@figbox@bg=\box61
+\tikz@tempbox=\box62
+\tikz@tempbox@bg=\box63
+\tikztreelevel=\count295
+\tikznumberofchildren=\count296
+\tikznumberofcurrentchild=\count297
+\tikz@fig@count=\count298
+ (/Users/erichoffmann/Library/TinyTeX/texmf-dist/tex/generic/pgf/modules/pgfmodulematrix.code.tex
+File: pgfmodulematrix.code.tex 2025-08-29 v3.1.11a (3.1.11a)
+\pgfmatrixcurrentrow=\count299
+\pgfmatrixcurrentcolumn=\count300
+\pgf@matrix@numberofcolumns=\count301
+)
+\tikz@expandcount=\count302
+ (/Users/erichoffmann/Library/TinyTeX/texmf-dist/tex/generic/pgf/frontendlayer/tikz/libraries/tikzlibrarytopaths.code.tex
+File: tikzlibrarytopaths.code.tex 2025-08-29 v3.1.11a (3.1.11a)
+))) (/Users/erichoffmann/Library/TinyTeX/texmf-dist/tex/generic/pgf/frontendlayer/tikz/libraries/tikzlibraryshapes.code.tex
+File: tikzlibraryshapes.code.tex 2025-08-29 v3.1.11a (3.1.11a)
+ (/Users/erichoffmann/Library/TinyTeX/texmf-dist/tex/generic/pgf/frontendlayer/tikz/libraries/tikzlibraryshapes.geometric.code.tex
+File: tikzlibraryshapes.geometric.code.tex 2025-08-29 v3.1.11a (3.1.11a)
+ (/Users/erichoffmann/Library/TinyTeX/texmf-dist/tex/generic/pgf/libraries/shapes/pgflibraryshapes.geometric.code.tex
+File: pgflibraryshapes.geometric.code.tex 2025-08-29 v3.1.11a (3.1.11a)
+)) (/Users/erichoffmann/Library/TinyTeX/texmf-dist/tex/generic/pgf/frontendlayer/tikz/libraries/tikzlibraryshapes.misc.code.tex
+File: tikzlibraryshapes.misc.code.tex 2025-08-29 v3.1.11a (3.1.11a)
+ (/Users/erichoffmann/Library/TinyTeX/texmf-dist/tex/generic/pgf/libraries/shapes/pgflibraryshapes.misc.code.tex
+File: pgflibraryshapes.misc.code.tex 2025-08-29 v3.1.11a (3.1.11a)
+)) (/Users/erichoffmann/Library/TinyTeX/texmf-dist/tex/generic/pgf/frontendlayer/tikz/libraries/tikzlibraryshapes.symbols.code.tex
+File: tikzlibraryshapes.symbols.code.tex 2025-08-29 v3.1.11a (3.1.11a)
+ (/Users/erichoffmann/Library/TinyTeX/texmf-dist/tex/generic/pgf/libraries/shapes/pgflibraryshapes.symbols.code.tex
+File: pgflibraryshapes.symbols.code.tex 2025-08-29 v3.1.11a (3.1.11a)
+)) (/Users/erichoffmann/Library/TinyTeX/texmf-dist/tex/generic/pgf/frontendlayer/tikz/libraries/tikzlibraryshapes.arrows.code.tex
+File: tikzlibraryshapes.arrows.code.tex 2025-08-29 v3.1.11a (3.1.11a)
+ (/Users/erichoffmann/Library/TinyTeX/texmf-dist/tex/generic/pgf/libraries/shapes/pgflibraryshapes.arrows.code.tex
+File: pgflibraryshapes.arrows.code.tex 2025-08-29 v3.1.11a (3.1.11a)
+)) (/Users/erichoffmann/Library/TinyTeX/texmf-dist/tex/generic/pgf/frontendlayer/tikz/libraries/tikzlibraryshapes.callouts.code.tex (/Users/erichoffmann/Library/TinyTeX/texmf-dist/tex/generic/pgf/libraries/shapes/pgflibraryshapes.callouts.code.tex)) (/Users/erichoffmann/Library/TinyTeX/texmf-dist/tex/generic/pgf/frontendlayer/tikz/libraries/tikzlibraryshapes.multipart.code.tex
+File: tikzlibraryshapes.multipart.code.tex 2025-08-29 v3.1.11a (3.1.11a)
+ (/Users/erichoffmann/Library/TinyTeX/texmf-dist/tex/generic/pgf/libraries/shapes/pgflibraryshapes.multipart.code.tex
+File: pgflibraryshapes.multipart.code.tex 2025-08-29 v3.1.11a (3.1.11a)
+\pgfnodepartlowerbox=\box64
+\pgfnodeparttwobox=\box65
+\pgfnodepartthreebox=\box66
+\pgfnodepartfourbox=\box67
+\pgfnodeparttwentybox=\box68
+\pgfnodepartnineteenbox=\box69
+\pgfnodeparteighteenbox=\box70
+\pgfnodepartseventeenbox=\box71
+\pgfnodepartsixteenbox=\box72
+\pgfnodepartfifteenbox=\box73
+\pgfnodepartfourteenbox=\box74
+\pgfnodepartthirteenbox=\box75
+\pgfnodeparttwelvebox=\box76
+\pgfnodepartelevenbox=\box77
+\pgfnodeparttenbox=\box78
+\pgfnodepartninebox=\box79
+\pgfnodeparteightbox=\box80
+\pgfnodepartsevenbox=\box81
+\pgfnodepartsixbox=\box82
+\pgfnodepartfivebox=\box83
+))) (/Users/erichoffmann/Library/TinyTeX/texmf-dist/tex/generic/pgf/frontendlayer/tikz/libraries/tikzlibrarydecorations.code.tex (/Users/erichoffmann/Library/TinyTeX/texmf-dist/tex/generic/pgf/modules/pgfmoduledecorations.code.tex
+\pgfdecoratedcompleteddistance=\dimen258
+\pgfdecoratedremainingdistance=\dimen259
+\pgfdecoratedinputsegmentcompleteddistance=\dimen260
+\pgfdecoratedinputsegmentremainingdistance=\dimen261
+\pgf@decorate@distancetomove=\dimen262
+\pgf@decorate@repeatstate=\count303
+\pgfdecorationsegmentamplitude=\dimen263
+\pgfdecorationsegmentlength=\dimen264
+)
+\tikz@lib@dec@box=\box84
+) (/Users/erichoffmann/Library/TinyTeX/texmf-dist/tex/generic/pgf/frontendlayer/tikz/libraries/tikzlibraryshadows.code.tex
+File: tikzlibraryshadows.code.tex 2025-08-29 v3.1.11a (3.1.11a)
+ (/Users/erichoffmann/Library/TinyTeX/texmf-dist/tex/generic/pgf/frontendlayer/tikz/libraries/tikzlibraryfadings.code.tex
+File: tikzlibraryfadings.code.tex 2025-08-29 v3.1.11a (3.1.11a)
+ (/Users/erichoffmann/Library/TinyTeX/texmf-dist/tex/generic/pgf/libraries/pgflibraryfadings.code.tex
+File: pgflibraryfadings.code.tex 2025-08-29 v3.1.11a (3.1.11a)
+))) (/Users/erichoffmann/Library/TinyTeX/texmf-dist/tex/generic/pgf/frontendlayer/tikz/libraries/tikzlibrarybackgrounds.code.tex
+File: tikzlibrarybackgrounds.code.tex 2025-08-29 v3.1.11a (3.1.11a)
+\pgf@layerbox@background=\box85
+\pgf@layerboxsaved@background=\box86
+)
+(/Users/erichoffmann/Library/TinyTeX/texmf-dist/tex/generic/pgf/frontendlayer/tikz/libraries/tikzlibrarycalc.code.tex
+File: tikzlibrarycalc.code.tex 2025-08-29 v3.1.11a (3.1.11a)
+) (/Users/erichoffmann/Library/TinyTeX/texmf-dist/tex/generic/pgf/frontendlayer/tikz/libraries/tikzlibraryfit.code.tex
+File: tikzlibraryfit.code.tex 2025-08-29 v3.1.11a (3.1.11a)
+) (/Users/erichoffmann/Library/TinyTeX/texmf-dist/tex/generic/pgf/frontendlayer/tikz/libraries/tikzlibrarydecorations.pathmorphing.code.tex (/Users/erichoffmann/Library/TinyTeX/texmf-dist/tex/generic/pgf/libraries/decorations/pgflibrarydecorations.pathmorphing.code.tex)) (/Users/erichoffmann/Library/TinyTeX/texmf-dist/tex/generic/pgf/libraries/pgflibraryarrows.code.tex
+File: pgflibraryarrows.code.tex 2025-08-29 v3.1.11a (3.1.11a)
+\arrowsize=\dimen265
+)
+\TP@innermargin=\dimen266
+\TP@visibletextwidth=\dimen267
+\TP@visibletextheight=\dimen268
+\TP@titlewidth=\dimen269
+\titlewidth=\dimen270
+\TP@titlelinewidth=\dimen271
+\titlelinewidth=\dimen272
+\titleinnersep=\dimen273
+\TP@titleinnersep=\dimen274
+\TP@titletotopverticalspace=\dimen275
+\titletotopverticalspace=\dimen276
+\TP@titletoblockverticalspace=\dimen277
+\TP@titleheight=\dimen278
+\titleheight=\dimen279
+\titlegraphicheight=\dimen280
+\titleposleft=\dimen281
+\titleposright=\dimen282
+\titlepostop=\dimen283
+\titleposbottom=\dimen284
+\TP@titlegraphictotitledistance=\dimen285
+\TP@colspace=\dimen286
+\TP@coltop=\dimen287
+\TP@colbottom=\dimen288
+\TP@colcenter=\dimen289
+\colwidth=\dimen290
+\TP@subcolspace=\dimen291
+\TP@subcoltop=\dimen292
+\TP@subcolbottom=\dimen293
+\TP@subcolcenter=\dimen294
+\subcolwidth=\dimen295
+\TP@blockverticalspace=\dimen296
+\TP@blockcenter=\dimen297
+\TP@blocktitleinnersep=\dimen298
+\blocktitleinnersep=\dimen299
+\TP@blockbodyinnersep=\dimen300
+\blockbodyinnersep=\dimen301
+\TP@blocktitlebox=\box87
+\TP@blockbodybox=\box88
+\TP@blocktitlewidth=\dimen302
+\TP@blockbodywidth=\dimen303
+\TP@blockbodyheight=\dimen304
+\TP@blocktitleheight=\dimen305
+\TP@blocktop=\dimen306
+\TP@blocktitleoffsetx=\dimen307
+\TP@blocktitleoffsety=\dimen308
+\TP@blockbodyoffsetx=\dimen309
+\TP@blockbodyoffsety=\dimen310
+\TP@blockbodyverticalshift=\dimen311
+\blocklinewidth=\dimen312
+\TP@innerblockcenter=\dimen313
+\TP@innerblocktitleinnersep=\dimen314
+\innerblocktitleinnersep=\dimen315
+\TP@innerblockbodyinnersep=\dimen316
+\innerblockbodyinnersep=\dimen317
+\TP@innerblocktitlebox=\box89
+\TP@innerblockbodybox=\box90
+\TP@innerblocktitlewidth=\dimen318
+\TP@innerblockbodywidth=\dimen319
+\TP@innerblockbodyheight=\dimen320
+\TP@innerblocktitleheight=\dimen321
+\TP@innerblocktitleoffsetx=\dimen322
+\TP@innerblocktitleoffsety=\dimen323
+\TP@innerblockbodyoffsetx=\dimen324
+\TP@innerblockbodyoffsety=\dimen325
+\TP@innerblockbodyverticalshift=\dimen326
+\innerblocklinewidth=\dimen327
+\TP@coloredbox=\box91
+\TP@coloredboxwidth=\dimen328
+\TP@coloredboxlinewidth=\dimen329
+\TP@coloredboxinnersep=\dimen330
+\TP@coloredboxheight=\dimen331
+\TP@noteinnersep=\dimen332
+\noteinnersep=\dimen333
+\TP@notetargetoffsetx=\dimen334
+\TP@notetargetoffsety=\dimen335
+\TP@noteradius=\dimen336
+\TP@notewidth=\dimen337
+\TP@noteheight=\dimen338
+\TP@notebox=\box92
+\notelinewidth=\dimen339
+ (/Users/erichoffmann/Library/TinyTeX/texmf-dist/tex/latex/extsizes/extarticle.cls
+Document Class: extarticle 1996/10/08 v1.0 Non Standard LaTeX document class
+(/Users/erichoffmann/Library/TinyTeX/texmf-dist/tex/latex/base/size10.clo
+File: size10.clo 2025/01/22 v1.4n Standard LaTeX file (size option)
+) (/Users/erichoffmann/Library/TinyTeX/texmf-dist/tex/latex/base/exscale.sty
+Package: exscale 2025/06/05 v2.1i Standard LaTeX package exscale
+LaTeX Font Info:    Redeclaring symbol font `largesymbols' on input line 57.
+LaTeX Font Info:    Overwriting symbol font `largesymbols' in version `normal'
+(Font)                  OMX/cmex/m/n --> OMX/cmex/m/n on input line 57.
+LaTeX Font Info:    Overwriting symbol font `largesymbols' in version `bold'
+(Font)                  OMX/cmex/m/n --> OMX/cmex/m/n on input line 57.
+\big@size=\dimen340
+)
+\c@part=\count304
+\c@section=\count305
+\c@subsection=\count306
+\c@subsubsection=\count307
+\c@paragraph=\count308
+\c@subparagraph=\count309
+\c@figure=\count310
+\c@table=\count311
+\abovecaptionskip=\skip52
+\belowcaptionskip=\skip53
+\bibindent=\dimen341
+) (/Users/erichoffmann/Library/TinyTeX/texmf-dist/tex/latex/geometry/geometry.sty
+Package: geometry 2026/03/07 v6.0 Page Geometry
+ (/Users/erichoffmann/Library/TinyTeX/texmf-dist/tex/generic/iftex/ifvtex.sty
+Package: ifvtex 2019/10/25 v1.7 ifvtex legacy package. Use iftex instead.
+ (/Users/erichoffmann/Library/TinyTeX/texmf-dist/tex/generic/iftex/iftex.sty
+Package: iftex 2024/12/12 v1.0g TeX engine tests
+))
+\Gm@cnth=\count312
+\Gm@cntv=\count313
+\c@Gm@tempcnt=\count314
+\Gm@bindingoffset=\dimen342
+\Gm@wd@mp=\dimen343
+\Gm@odd@mp=\dimen344
+\Gm@even@mp=\dimen345
+\Gm@layoutwidth=\dimen346
+\Gm@layoutheight=\dimen347
+\Gm@layouthoffset=\dimen348
+\Gm@layoutvoffset=\dimen349
+\Gm@dimlist=\toks32
+) (/Users/erichoffmann/Library/TinyTeX/texmf-dist/tex/latex/a0poster/a0size.sty
+File: a0size.sty 2004/01/31 v1.22b a0poster class (GK, MW)
+LaTeX Font Info:    Redeclaring symbol font `largesymbols' on input line 229.
+LaTeX Font Info:    Overwriting symbol font `largesymbols' in version `normal'
+(Font)                  OMX/cmex/m/n --> OMX/cmex/m/n on input line 229.
+LaTeX Font Info:    Overwriting symbol font `largesymbols' in version `bold'
+(Font)                  OMX/cmex/m/n --> OMX/cmex/m/n on input line 229.
+\big@size=\dimen350
+)
+\pgf@layerbox@backgroundlayer=\box93
+\pgf@layerboxsaved@backgroundlayer=\box94
+\pgf@layerbox@notelayer=\box95
+\pgf@layerboxsaved@notelayer=\box96
+ (/Users/erichoffmann/Library/TinyTeX/texmf-dist/tex/latex/tikzposter/tikzposterColorpalettes.tex) (/Users/erichoffmann/Library/TinyTeX/texmf-dist/tex/latex/tikzposter/tikzposterColorstyles.tex) (/Users/erichoffmann/Library/TinyTeX/texmf-dist/tex/latex/tikzposter/tikzposterBackgroundstyles.tex) (/Users/erichoffmann/Library/TinyTeX/texmf-dist/tex/latex/tikzposter/tikzposterTitlestyles.tex) (/Users/erichoffmann/Library/TinyTeX/texmf-dist/tex/latex/tikzposter/tikzposterBlockstyles.tex) (/Users/erichoffmann/Library/TinyTeX/texmf-dist/tex/latex/tikzposter/tikzposterInnerblockstyles.tex) (/Users/erichoffmann/Library/TinyTeX/texmf-dist/tex/latex/tikzposter/tikzposterNotestyles.tex) (/Users/erichoffmann/Library/TinyTeX/texmf-dist/tex/latex/tikzposter/tikzposterLayoutthemes.tex)
+\c@figurecounter=\count315
+)
+LaTeX Font Info:    Trying to load font information for T1+aer on input line 59.
+ (/Users/erichoffmann/Library/TinyTeX/texmf-dist/tex/latex/ae/t1aer.fd
+File: t1aer.fd 1997/11/16 Font definitions for T1/aer.
+) (/Users/erichoffmann/Library/TinyTeX/texmf-dist/tex/latex/l3backend/l3backend-pdftex.def
+File: l3backend-pdftex.def 2025-10-09 L3 backend support: PDF output (pdfTeX)
+\l__color_backend_stack_int=\count316
+) (./Poster.aux)
+\openout1 = `Poster.aux'.
+
+LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 59.
+LaTeX Font Info:    ... okay on input line 59.
+LaTeX Font Info:    Checking defaults for OMS/cmsy/m/n on input line 59.
+LaTeX Font Info:    ... okay on input line 59.
+LaTeX Font Info:    Checking defaults for OT1/cmr/m/n on input line 59.
+LaTeX Font Info:    ... okay on input line 59.
+LaTeX Font Info:    Checking defaults for T1/cmr/m/n on input line 59.
+LaTeX Font Info:    ... okay on input line 59.
+LaTeX Font Info:    Checking defaults for TS1/cmr/m/n on input line 59.
+LaTeX Font Info:    ... okay on input line 59.
+LaTeX Font Info:    Checking defaults for OMX/cmex/m/n on input line 59.
+LaTeX Font Info:    ... okay on input line 59.
+LaTeX Font Info:    Checking defaults for U/cmr/m/n on input line 59.
+LaTeX Font Info:    ... okay on input line 59.
+ (/Users/erichoffmann/Library/TinyTeX/texmf-dist/tex/latex/epstopdf-pkg/epstopdf-base.sty
+Package: epstopdf-base 2020-01-24 v2.11 Base part for package epstopdf
+Package epstopdf-base Info: Redefining graphics rule for `.eps' on input line 485.
+ (/Users/erichoffmann/Library/TinyTeX/texmf-dist/tex/latex/latexconfig/epstopdf-sys.cfg
+File: epstopdf-sys.cfg 2010/07/13 v1.3 Configuration of (r)epstopdf for TeX Live
+))
+*geometry* driver: auto-detecting
+*geometry* detected driver: pdftex
+*geometry* verbose mode - [ preamble ] result:
+* driver: pdftex
+* paper: a0paper
+* layout: <same size as paper>
+* layoutoffset:(h,v)=(0.0pt,0.0pt)
+* modes: landscape 
+* h-part:(L,W,R)=(0.0pt, 3383.03267pt, 0.0pt)
+* v-part:(T,H,B)=(0.0pt, 2392.87677pt, 0.0pt)
+* \paperwidth=3383.03267pt
+* \paperheight=2392.87677pt
+* \textwidth=3383.03267pt
+* \textheight=2392.87677pt
+* \oddsidemargin=-72.26999pt
+* \evensidemargin=-72.26999pt
+* \topmargin=-109.26999pt
+* \headheight=12.0pt
+* \headsep=25.0pt
+* \topskip=10.0pt
+* \footskip=30.0pt
+* \marginparwidth=65.0pt
+* \marginparsep=11.0pt
+* \columnsep=10.0pt
+* \skip\footins=9.0pt plus 4.0pt minus 2.0pt
+* \hoffset=0.0pt
+* \voffset=0.0pt
+* \mag=1000
+* \@twocolumnfalse
+* \@twosidefalse
+* \@mparswitchfalse
+* \@reversemarginfalse
+* (1in=72.27pt=25.4mm, 1cm=28.453pt)
+
+LaTeX Font Info:    Calculating math sizes for size <22> on input line 76.
+
+LaTeX Font Warning: Font shape `OT1/cmr/m/n' in size <22> not available
+(Font)              size <20.74> substituted on input line 76.
+
+
+LaTeX Font Warning: Font shape `OT1/cmr/m/n' in size <15.39993> not available
+(Font)              size <14.4> substituted on input line 76.
+
+
+LaTeX Font Warning: Font shape `OML/cmm/m/it' in size <22> not available
+(Font)              size <20.74> substituted on input line 76.
+
+
+LaTeX Font Warning: Font shape `OML/cmm/m/it' in size <15.39993> not available
+(Font)              size <14.4> substituted on input line 76.
+
+
+LaTeX Font Warning: Font shape `OMS/cmsy/m/n' in size <22> not available
+(Font)              size <20.74> substituted on input line 76.
+
+
+LaTeX Font Warning: Font shape `OMS/cmsy/m/n' in size <15.39993> not available
+(Font)              size <14.4> substituted on input line 76.
+
+
+LaTeX Font Warning: Font shape `OMX/cmex/m/n' in size <22> not available
+(Font)              size <20.74> substituted on input line 76.
+
+
+LaTeX Font Warning: Font shape `OMX/cmex/m/n' in size <15.39993> not available
+(Font)              size <14.4> substituted on input line 76.
+
+<poster_graphics/infrastructure_baseline_map_01.pdf, id=29, 794.97pt x 505.89pt>
+File: poster_graphics/infrastructure_baseline_map_01.pdf Graphic file (type pdf)
+<use poster_graphics/infrastructure_baseline_map_01.pdf>
+Package pdftex.def Info: poster_graphics/infrastructure_baseline_map_01.pdf  used on input line 91.
+(pdftex.def)             Requested size: 1252.06013pt x 796.7655pt.
+<poster_graphics/incident_validation_map_10.pdf, id=30, 867.24pt x 578.16pt>
+File: poster_graphics/incident_validation_map_10.pdf Graphic file (type pdf)
+<use poster_graphics/incident_validation_map_10.pdf>
+Package pdftex.def Info: poster_graphics/incident_validation_map_10.pdf  used on input line 96.
+(pdftex.def)             Requested size: 1835.29802pt x 1223.53198pt.
+<poster_graphics/capacity_at_risk_kboed_map_01.pdf, id=31, 867.24pt x 578.16pt>
+File: poster_graphics/capacity_at_risk_kboed_map_01.pdf Graphic file (type pdf)
+<use poster_graphics/capacity_at_risk_kboed_map_01.pdf>
+Package pdftex.def Info: poster_graphics/capacity_at_risk_kboed_map_01.pdf  used on input line 105.
+(pdftex.def)             Requested size: 1166.71391pt x 777.80925pt.
+<poster_graphics/fig_capacity_risk_by_country_combined_01.png, id=32, 867.24pt x 758.835pt>
+File: poster_graphics/fig_capacity_risk_by_country_combined_01.png Graphic file (type png)
+<use poster_graphics/fig_capacity_risk_by_country_combined_01.png>
+Package pdftex.def Info: poster_graphics/fig_capacity_risk_by_country_combined_01.png  used on input line 110.
+(pdftex.def)             Requested size: 747.91592pt x 654.42644pt.
+<poster_graphics/fig_capacity_risk_timeseries_02.png, id=33, 867.24pt x 520.344pt>
+File: poster_graphics/fig_capacity_risk_timeseries_02.png Graphic file (type png)
+<use poster_graphics/fig_capacity_risk_timeseries_02.png>
+Package pdftex.def Info: poster_graphics/fig_capacity_risk_timeseries_02.png  used on input line 115.
+(pdftex.def)             Requested size: 1109.79878pt x 665.87923pt.
+LaTeX Font Info:    Calculating math sizes for size <17> on input line 137.
+
+LaTeX Font Warning: Font shape `OT1/cmr/m/n' in size <8.5> not available
+(Font)              size <8> substituted on input line 137.
+
+
+LaTeX Font Warning: Font shape `OML/cmm/m/it' in size <8.5> not available
+(Font)              size <8> substituted on input line 137.
+
+
+LaTeX Font Warning: Font shape `OMS/cmsy/m/n' in size <8.5> not available
+(Font)              size <8> substituted on input line 137.
+
+
+LaTeX Font Warning: Font shape `OMX/cmex/m/n' in size <8.5> not available
+(Font)              size <8> substituted on input line 137.
+
+LaTeX Font Info:    Trying to load font information for T1+aett on input line 145.
+(/Users/erichoffmann/Library/TinyTeX/texmf-dist/tex/latex/ae/t1aett.fd
+File: t1aett.fd 1997/11/16 Font definitions for T1/aett.
+) [1
+
+{/Users/erichoffmann/Library/TinyTeX/texmf-var/fonts/map/pdftex/updmap/pdftex.map} <./poster_graphics/infrastructure_baseline_map_01.pdf> <./poster_graphics/incident_validation_map_10.pdf> <./poster_graphics/capacity_at_risk_kboed_map_01.pdf> <./poster_graphics/fig_capacity_risk_by_country_combined_01.png> <./poster_graphics/fig_capacity_risk_timeseries_02.png>] (./Poster.aux)
+ ***********
+LaTeX2e <2025-11-01>
+L3 programming layer <2026-01-19>
+ ***********
+
+
+LaTeX Font Warning: Size substitutions with differences
+(Font)              up to 1.26pt have occurred.
+
+ ) 
+Here is how much of TeX's memory you used:
+ 17162 strings out of 469454
+ 387829 string characters out of 5466402
+ 806260 words of memory out of 5000000
+ 45451 multiletter control sequences out of 15000+600000
+ 669039 words of font info for 130 fonts, out of 8000000 for 9000
+ 36 hyphenation exceptions out of 8191
+ 117i,10n,121p,1090b,859s stack positions out of 10000i,1000n,20000p,200000b,200000s
+</Users/erichoffmann/Library/TinyTeX/texmf-dist/fonts/type1/public/amsfonts/cm/cmb10.pfb></Users/erichoffmann/Library/TinyTeX/texmf-dist/fonts/type1/public/amsfonts/cm/cmr12.pfb></Users/erichoffmann/Library/TinyTeX/texmf-dist/fonts/type1/public/amsfonts/cm/cmr17.pfb></Users/erichoffmann/Library/TinyTeX/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy10.pfb></Users/erichoffmann/Library/TinyTeX/texmf-dist/fonts/type1/public/amsfonts/cm/cmtt12.pfb>
+Output written on Poster.pdf (1 page, 1088811 bytes).
+PDF statistics:
+ 104 PDF objects out of 1000 (max. 8388607)
+ 66 compressed objects within 1 object stream
+ 0 named destinations out of 1000 (max. 500000)
+ 134 words of extra memory for PDF output out of 10000 (max. 10000000)
+

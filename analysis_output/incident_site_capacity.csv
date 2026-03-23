@@ -1,0 +1,226 @@
+incident_id,incident_day,wave_number,site_id,site_name,country,asset_class,product_group,capacity_kboed_equiv,confidence_tier,distance_km,energy_relevant_flag,capacity_available_flag,capacity_source,match_quality,link_rank
+wiki_20260213_beginning_at_09_05_utc_iran_la_153,2026-02-13,,site_62,IRAN NIOC LNG TERMINAL,IRAN,lng_facility,gas,122.58620689655172,high,0,TRUE,TRUE,energy_sites_direct,energy_sites_direct,1
+wiki_20260213_beginning_at_09_05_utc_iran_la_153,2026-02-13,,site_91,Kangan LNG Terminal,IRAN,lng_facility,gas,47.6,high,1.1119492675886226e-4,TRUE,TRUE,energy_sites_direct,energy_sites_direct,2
+wiki_20260213_beginning_at_09_05_utc_iran_la_153,2026-02-13,,site_96,Persian NIOC LNG Terminal,IRAN,lng_facility,gas,380.8,high,1.1119492675886226e-4,TRUE,TRUE,energy_sites_direct,energy_sites_direct,3
+wiki_20260228_jordan_said_that_its_armed_for_157,2026-02-28,,site_104,Sheikh Sabah LNG Terminal,JORDAN,lng_facility,gas,130.424,high,0.1157155133995458,TRUE,TRUE,energy_sites_direct,energy_sites_direct,2
+wiki_20260228_thumb_damaged_residential_area_150,2026-02-28,,site_332,ABU EL GHARADIQ SOUTHWEST,EGYPT,extraction_site,,,high,0,TRUE,FALSE,unmatched,unmatched,1
+wiki_20260228_jordan_said_that_its_armed_for_157,2026-02-28,,site_54,AQABA JORDAN FSRU,JORDAN,lng_facility,gas,86.20689655172414,high,0,TRUE,TRUE,energy_sites_direct,energy_sites_direct,1
+wiki_20260228_a_shahed_type_drone_reportedly_20,2026-02-28,,site_6015,PALMYRIDE FOLDBELT,"LEBANON, SYRIA",other_energy_site,,,high,0,TRUE,FALSE,unmatched,unmatched,1
+wiki_20260228_on_28_february_2026_following__90,2026-02-28,,site_62,IRAN NIOC LNG TERMINAL,IRAN,lng_facility,gas,122.58620689655172,high,0,TRUE,TRUE,energy_sites_direct,energy_sites_direct,1
+wiki_20260228_thumb_daily_number_of_missiles_3,2026-02-28,,site_62,IRAN NIOC LNG TERMINAL,IRAN,lng_facility,gas,122.58620689655172,high,0,TRUE,TRUE,energy_sites_direct,energy_sites_direct,1
+wiki_20260228_including_erbil_international__156,2026-02-28,,site_694,ERBIL,IRAQ,extraction_site,,,high,0,TRUE,FALSE,unmatched,unmatched,1
+wiki_20260228_on_28_february_2026_following__90,2026-02-28,,site_91,Kangan LNG Terminal,IRAN,lng_facility,gas,47.6,high,1.1119492675886226e-4,TRUE,TRUE,energy_sites_direct,energy_sites_direct,2
+wiki_20260228_thumb_daily_number_of_missiles_3,2026-02-28,,site_91,Kangan LNG Terminal,IRAN,lng_facility,gas,47.6,high,1.1119492675886226e-4,TRUE,TRUE,energy_sites_direct,energy_sites_direct,2
+wiki_20260228_on_28_february_2026_following__90,2026-02-28,,site_96,Persian NIOC LNG Terminal,IRAN,lng_facility,gas,380.8,high,1.1119492675886226e-4,TRUE,TRUE,energy_sites_direct,energy_sites_direct,3
+wiki_20260228_thumb_daily_number_of_missiles_3,2026-02-28,,site_96,Persian NIOC LNG Terminal,IRAN,lng_facility,gas,380.8,high,1.1119492675886226e-4,TRUE,TRUE,energy_sites_direct,energy_sites_direct,3
+wiki_20260301_aws_reported_that_at_4_30_am_p_23,2026-03-01,,site_3561,PACIFIC,EGYPT,extraction_site,,,high,0,TRUE,FALSE,unmatched,unmatched,1
+wiki_20260301_plumes_rising_from_the_port_164,2026-03-01,,site_36,PORT SUDAN,SUDAN,refinery,oil,21.7,high,0,TRUE,TRUE,energy_sites_direct,energy_sites_direct,1
+wiki_20260301_the_port_165,2026-03-01,,site_36,PORT SUDAN,SUDAN,refinery,oil,21.7,high,0,TRUE,TRUE,energy_sites_direct,energy_sites_direct,1
+wiki_20260301_uk_military_officials_said_an__166,2026-03-01,,site_46,UMM SAID,QATAR,refinery,oil,200,high,0,TRUE,TRUE,energy_sites_direct,energy_sites_direct,1
+wiki_20260301_uk_military_officials_said_an__166,2026-03-01,,site_4983,N/A,QATAR,other_energy_site,,,high,1.166703824377593,TRUE,FALSE,unmatched,ambiguous,2
+iransm_s049,2026-03-01,,site_4991,N/A,UNITED ARAB EMIRATES,other_energy_site,,,high,1.3625946491409986,TRUE,FALSE,unmatched,ambiguous,1
+wiki_20260301_fallen_debris_caused_damage_to_47,2026-03-01,,site_6015,PALMYRIDE FOLDBELT,"LEBANON, SYRIA",other_energy_site,,,high,0,TRUE,FALSE,unmatched,unmatched,1
+wiki_20260301_iran_launched_retaliatory_miss_162,2026-03-01,,site_62,IRAN NIOC LNG TERMINAL,IRAN,lng_facility,gas,122.58620689655172,high,0,TRUE,TRUE,energy_sites_direct,energy_sites_direct,1
+wiki_20260301_iran_launched_retaliatory_miss_162,2026-03-01,,site_91,Kangan LNG Terminal,IRAN,lng_facility,gas,47.6,high,1.1119492675886226e-4,TRUE,TRUE,energy_sites_direct,energy_sites_direct,2
+wiki_20260301_iran_launched_retaliatory_miss_162,2026-03-01,,site_96,Persian NIOC LNG Terminal,IRAN,lng_facility,gas,380.8,high,1.1119492675886226e-4,TRUE,TRUE,energy_sites_direct,energy_sites_direct,3
+iransm_s097,2026-03-02,,site_5121,N/A,BAHRAIN,other_energy_site,,,high,1.048161869055918,TRUE,FALSE,unmatched,ambiguous,2
+iransm_s097,2026-03-02,,site_5122,N/A,BAHRAIN,other_energy_site,,,high,0.7988607108356948,TRUE,FALSE,unmatched,ambiguous,1
+wiki_20260302_the_united_states_embassy_in_b_97,2026-03-02,,site_55,BAHRAIN HIDD FLNG TERMINAL,BAHRAIN,lng_facility,gas,136.20689655172416,high,0,TRUE,TRUE,energy_sites_direct,energy_sites_direct,1
+wiki_20260302_three_us_f_15_fighters_crash_i_180,2026-03-02,,site_62,IRAN NIOC LNG TERMINAL,IRAN,lng_facility,gas,122.58620689655172,high,0,TRUE,TRUE,energy_sites_direct,energy_sites_direct,1
+wiki_20260302_qatar_shoots_down_two_iranian__179,2026-03-02,,site_67,QATAR NORTH FIELD LNG TERMINAL,QATAR,lng_facility,gas,187.93103448275863,high,0,TRUE,TRUE,energy_sites_direct,energy_sites_direct,1
+wiki_20260302_occurred_near_the_erbil_airpor_168,2026-03-02,,site_694,ERBIL,IRAQ,extraction_site,,,high,0,TRUE,FALSE,unmatched,unmatched,1
+wiki_20260302_three_us_f_15_fighters_crash_i_180,2026-03-02,,site_91,Kangan LNG Terminal,IRAN,lng_facility,gas,47.6,high,1.1119492675886226e-4,TRUE,TRUE,energy_sites_direct,energy_sites_direct,2
+wiki_20260302_three_us_f_15_fighters_crash_i_180,2026-03-02,,site_96,Persian NIOC LNG Terminal,IRAN,lng_facility,gas,380.8,high,1.1119492675886226e-4,TRUE,TRUE,energy_sites_direct,energy_sites_direct,3
+wiki_20260302_the_irgc_claimed_a_drone_strik_175,2026-03-02,,site_989,KATHEER,OMAN,extraction_site,,,high,0,TRUE,FALSE,unmatched,unmatched,1
+wiki_20260303_petroleum_refinery_104,2026-03-03,,site_128,EL DEKHEILA PETROLEUM TERMINAL,EGYPT,petroleum_terminal,,,high,0,TRUE,FALSE,unmatched,unmatched,1
+wiki_20260303_mina_salman_port_99,2026-03-03,,site_206,N/A,KUWAIT,petroleum_terminal,,,high,1.6178757613879666,TRUE,FALSE,unmatched,ambiguous,4
+wiki_20260303_desalination_plant_103,2026-03-03,,site_251,ABU TUBUL GAS PLANT,OMAN,processing_facility,,,high,0,TRUE,FALSE,unmatched,unmatched,1
+wiki_20260303_mina_salman_port_99,2026-03-03,,site_29,MINA ABDULLA,KUWAIT,refinery,oil,240,high,0,TRUE,TRUE,energy_sites_direct,energy_sites_direct,1
+wiki_20260303_desalination_plant_103,2026-03-03,,site_3708,SAHMAH,OMAN,extraction_site,,,high,1.9699313812797832,TRUE,FALSE,unmatched,unmatched,3
+wiki_20260303_on_3_march_2026_channel_12_isr_75,2026-03-03,,site_3992,WESTERN DESERT 33,EGYPT,extraction_site,,,high,0,TRUE,FALSE,unmatched,unmatched,1
+wiki_20260303_western_diplomats_and_other_so_191,2026-03-03,,site_3992,WESTERN DESERT 33,EGYPT,extraction_site,,,high,0,TRUE,FALSE,unmatched,unmatched,1
+wiki_20260303_the_us_embassy_in_riyadh_was_s_188,2026-03-03,,site_40,RIYADH,SAUDI ARABIA,refinery,oil,120,high,0,TRUE,TRUE,energy_sites_direct,energy_sites_direct,1
+wiki_20260303_in_the_first_land_base_199,2026-03-03,,site_4125,DAS ISLAND PLATFORM,UNITED ARAB EMIRATES,offshore_platform,,,high,1.3407921323033396,TRUE,FALSE,unmatched,ambiguous,4
+wiki_20260303_by_the_beginning_of_march_the__98,2026-03-03,,site_46,UMM SAID,QATAR,refinery,oil,200,high,0,TRUE,TRUE,energy_sites_direct,energy_sites_direct,1
+wiki_20260303_desalination_plant_103,2026-03-03,,site_4728,N/A,OMAN,other_energy_site,,,high,0.30208929432261794,TRUE,FALSE,unmatched,ambiguous,2
+wiki_20260303_the_us_embassy_in_riyadh_was_s_188,2026-03-03,,site_4927,N/A,SAUDI ARABIA,other_energy_site,,,high,0.930338119558053,TRUE,FALSE,unmatched,ambiguous,2
+wiki_20260303_by_the_beginning_of_march_the__98,2026-03-03,,site_4983,N/A,QATAR,other_energy_site,,,high,1.166703824377593,TRUE,FALSE,unmatched,ambiguous,2
+wiki_20260303_in_the_first_land_base_199,2026-03-03,,site_5003,N/A,UNITED ARAB EMIRATES,other_energy_site,,,high,0.38385367908954826,TRUE,FALSE,unmatched,ambiguous,3
+wiki_20260303_in_the_first_land_base_199,2026-03-03,,site_51,ABU DHABI FSRU,UNITED ARAB EMIRATES,lng_facility,gas,86.20689655172414,high,0,TRUE,TRUE,energy_sites_direct,energy_sites_direct,1
+wiki_20260303_mina_salman_port_99,2026-03-03,,site_5327,N/A,KUWAIT,other_energy_site,,,high,0.8133747940643028,TRUE,FALSE,unmatched,ambiguous,2
+wiki_20260303_mina_salman_port_99,2026-03-03,,site_5331,N/A,KUWAIT,other_energy_site,,,high,0.9174938121943618,TRUE,FALSE,unmatched,ambiguous,3
+wiki_20260303_according_to_sources_in_bahrai_109,2026-03-03,,site_55,BAHRAIN HIDD FLNG TERMINAL,BAHRAIN,lng_facility,gas,136.20689655172416,high,0,TRUE,TRUE,energy_sites_direct,energy_sites_direct,1
+wiki_20260303_bahrain_reported_that_the_indu_102,2026-03-03,,site_55,BAHRAIN HIDD FLNG TERMINAL,BAHRAIN,lng_facility,gas,136.20689655172416,high,0,TRUE,TRUE,energy_sites_direct,energy_sites_direct,1
+wiki_20260303_bahrain_said_that_it_had_inter_108,2026-03-03,,site_55,BAHRAIN HIDD FLNG TERMINAL,BAHRAIN,lng_facility,gas,136.20689655172416,high,0,TRUE,TRUE,energy_sites_direct,energy_sites_direct,1
+wiki_20260303_bahrain_said_that_it_intercept_106,2026-03-03,,site_55,BAHRAIN HIDD FLNG TERMINAL,BAHRAIN,lng_facility,gas,136.20689655172416,high,0,TRUE,TRUE,energy_sites_direct,energy_sites_direct,1
+wiki_20260303_in_the_first_land_base_199,2026-03-03,,site_58,DAS ISLAND LNG TERMINAL,UNITED ARAB EMIRATES,lng_facility,gas,52.24137931034483,high,0,TRUE,TRUE,energy_sites_direct,energy_sites_direct,2
+wiki_20260303_2026_iranian_strikes_on_saudi__114,2026-03-03,,site_6032,WIDYAN - NORTH ARABIAN GULF,"BAHRAIN, IRAN, IRAQ, KUWAIT, QATAR, SAUDI ARABIA",other_energy_site,,,high,0,TRUE,FALSE,unmatched,unmatched,1
+wiki_20260303_in_late_february_2026_the_unit_69,2026-03-03,,site_62,IRAN NIOC LNG TERMINAL,IRAN,lng_facility,gas,122.58620689655172,high,0,TRUE,TRUE,energy_sites_direct,energy_sites_direct,1
+wiki_20260303_iran_banned_food_exports_and_o_190,2026-03-03,,site_62,IRAN NIOC LNG TERMINAL,IRAN,lng_facility,gas,122.58620689655172,high,0,TRUE,TRUE,energy_sites_direct,energy_sites_direct,1
+wiki_20260303_iran_continued_its_strikes_on__185,2026-03-03,,site_62,IRAN NIOC LNG TERMINAL,IRAN,lng_facility,gas,122.58620689655172,high,0,TRUE,TRUE,energy_sites_direct,energy_sites_direct,1
+wiki_20260303_2026_iranian_strikes_on_qatar_113,2026-03-03,,site_67,QATAR NORTH FIELD LNG TERMINAL,QATAR,lng_facility,gas,187.93103448275863,high,0,TRUE,TRUE,energy_sites_direct,energy_sites_direct,1
+wiki_20260303_on_11_march_qatar_said_that_th_73,2026-03-03,,site_67,QATAR NORTH FIELD LNG TERMINAL,QATAR,lng_facility,gas,187.93103448275863,high,0,TRUE,TRUE,energy_sites_direct,energy_sites_direct,1
+wiki_20260303_fujairah_28,2026-03-03,,site_88,Fujairah LNG Terminal,UNITED ARAB EMIRATES,lng_facility,gas,442.68000000000006,high,0,TRUE,TRUE,energy_sites_direct,energy_sites_direct,1
+wiki_20260303_in_late_february_2026_the_unit_69,2026-03-03,,site_91,Kangan LNG Terminal,IRAN,lng_facility,gas,47.6,high,1.1119492675886226e-4,TRUE,TRUE,energy_sites_direct,energy_sites_direct,2
+wiki_20260303_iran_banned_food_exports_and_o_190,2026-03-03,,site_91,Kangan LNG Terminal,IRAN,lng_facility,gas,47.6,high,1.1119492675886226e-4,TRUE,TRUE,energy_sites_direct,energy_sites_direct,2
+wiki_20260303_iran_continued_its_strikes_on__185,2026-03-03,,site_91,Kangan LNG Terminal,IRAN,lng_facility,gas,47.6,high,1.1119492675886226e-4,TRUE,TRUE,energy_sites_direct,energy_sites_direct,2
+wiki_20260303_in_late_february_2026_the_unit_69,2026-03-03,,site_96,Persian NIOC LNG Terminal,IRAN,lng_facility,gas,380.8,high,1.1119492675886226e-4,TRUE,TRUE,energy_sites_direct,energy_sites_direct,3
+wiki_20260303_iran_banned_food_exports_and_o_190,2026-03-03,,site_96,Persian NIOC LNG Terminal,IRAN,lng_facility,gas,380.8,high,1.1119492675886226e-4,TRUE,TRUE,energy_sites_direct,energy_sites_direct,3
+wiki_20260303_iran_continued_its_strikes_on__185,2026-03-03,,site_96,Persian NIOC LNG Terminal,IRAN,lng_facility,gas,380.8,high,1.1119492675886226e-4,TRUE,TRUE,energy_sites_direct,energy_sites_direct,3
+wiki_20260304_an_attack_on_the_port_197,2026-03-04,,site_36,PORT SUDAN,SUDAN,refinery,oil,21.7,high,0,TRUE,TRUE,energy_sites_direct,energy_sites_direct,1
+wiki_20260304_israeli_airstrike_in_the_port_194,2026-03-04,,site_36,PORT SUDAN,SUDAN,refinery,oil,21.7,high,0,TRUE,TRUE,energy_sites_direct,energy_sites_direct,1
+wiki_20260304_centcom_commander_admiral_brad_182,2026-03-04,,site_46,UMM SAID,QATAR,refinery,oil,200,high,0,TRUE,TRUE,energy_sites_direct,energy_sites_direct,1
+wiki_20260304_centcom_commander_admiral_brad_182,2026-03-04,,site_4983,N/A,QATAR,other_energy_site,,,high,1.166703824377593,TRUE,FALSE,unmatched,ambiguous,2
+wiki_20260304_on_4_march_2026_qatar_said_it__76,2026-03-04,,site_67,QATAR NORTH FIELD LNG TERMINAL,QATAR,lng_facility,gas,187.93103448275863,high,0,TRUE,TRUE,energy_sites_direct,energy_sites_direct,1
+wiki_20260304_qatar_arrested_ten_individuals_203,2026-03-04,,site_67,QATAR NORTH FIELD LNG TERMINAL,QATAR,lng_facility,gas,187.93103448275863,high,0,TRUE,TRUE,energy_sites_direct,energy_sites_direct,1
+wiki_20260304_fujairah_29,2026-03-04,,site_88,Fujairah LNG Terminal,UNITED ARAB EMIRATES,lng_facility,gas,442.68000000000006,high,0,TRUE,TRUE,energy_sites_direct,energy_sites_direct,1
+wiki_20260305_one_drone_hit_the_terminal_209,2026-03-05,,site_190,N/A,KUWAIT,petroleum_terminal,,,high,0.1534768747418228,TRUE,FALSE,unmatched,ambiguous,2
+wiki_20260305_hit_by_bomb_near_port_196,2026-03-05,,site_36,PORT SUDAN,SUDAN,refinery,oil,21.7,high,0,TRUE,TRUE,energy_sites_direct,energy_sites_direct,1
+wiki_20260305_largest_sports_complex_205,2026-03-05,,site_4412,UMM SHAIF SUPERCOMPLEX,UNITED ARAB EMIRATES,offshore_platform,,,high,0,TRUE,FALSE,unmatched,unmatched,1
+wiki_20260305_largest_sports_complex_205,2026-03-05,,site_5011,N/A,UNITED ARAB EMIRATES,other_energy_site,,,high,1.3961162759425982,TRUE,FALSE,unmatched,ambiguous,2
+wiki_20260305_one_drone_hit_the_terminal_209,2026-03-05,,site_53,AL ZOUR LNG IMPORT TERMINAL,KUWAIT,lng_facility,gas,498.2758620689655,high,0,TRUE,TRUE,energy_sites_direct,energy_sites_direct,1
+wiki_20260305_saudi_arabia_reported_that_in__206,2026-03-05,,site_6032,WIDYAN - NORTH ARABIAN GULF,"BAHRAIN, IRAN, IRAQ, KUWAIT, QATAR, SAUDI ARABIA",other_energy_site,,,high,0,TRUE,FALSE,unmatched,unmatched,1
+wiki_20260305_iran_targeted_a_us_oil_tanker__208,2026-03-05,,site_62,IRAN NIOC LNG TERMINAL,IRAN,lng_facility,gas,122.58620689655172,high,0,TRUE,TRUE,energy_sites_direct,energy_sites_direct,1
+wiki_20260305_one_drone_hit_the_terminal_209,2026-03-05,,site_78,Al Zour LNG Terminal,KUWAIT,lng_facility,gas,523.6,high,1.989760747482969,TRUE,TRUE,energy_sites_direct,energy_sites_direct,3
+wiki_20260305_iran_targeted_a_us_oil_tanker__208,2026-03-05,,site_91,Kangan LNG Terminal,IRAN,lng_facility,gas,47.6,high,1.1119492675886226e-4,TRUE,TRUE,energy_sites_direct,energy_sites_direct,2
+wiki_20260305_iran_targeted_a_us_oil_tanker__208,2026-03-05,,site_96,Persian NIOC LNG Terminal,IRAN,lng_facility,gas,380.8,high,1.1119492675886226e-4,TRUE,TRUE,energy_sites_direct,energy_sites_direct,3
+wiki_20260306_petroleum_refinery_227,2026-03-06,,site_128,EL DEKHEILA PETROLEUM TERMINAL,EGYPT,petroleum_terminal,,,high,0,TRUE,FALSE,unmatched,unmatched,1
+wiki_20260306_iran_said_it_targeted_kurdish__207,2026-03-06,,site_62,IRAN NIOC LNG TERMINAL,IRAN,lng_facility,gas,122.58620689655172,high,0,TRUE,TRUE,energy_sites_direct,energy_sites_direct,1
+wiki_20260306_the_foreign_ministers_of_g7_co_57,2026-03-06,,site_62,IRAN NIOC LNG TERMINAL,IRAN,lng_facility,gas,122.58620689655172,high,0,TRUE,TRUE,energy_sites_direct,energy_sites_direct,1
+wiki_20260306_iran_said_it_targeted_kurdish__207,2026-03-06,,site_91,Kangan LNG Terminal,IRAN,lng_facility,gas,47.6,high,1.1119492675886226e-4,TRUE,TRUE,energy_sites_direct,energy_sites_direct,2
+wiki_20260306_the_foreign_ministers_of_g7_co_57,2026-03-06,,site_91,Kangan LNG Terminal,IRAN,lng_facility,gas,47.6,high,1.1119492675886226e-4,TRUE,TRUE,energy_sites_direct,energy_sites_direct,2
+wiki_20260306_iran_said_it_targeted_kurdish__207,2026-03-06,,site_96,Persian NIOC LNG Terminal,IRAN,lng_facility,gas,380.8,high,1.1119492675886226e-4,TRUE,TRUE,energy_sites_direct,energy_sites_direct,3
+wiki_20260306_the_foreign_ministers_of_g7_co_57,2026-03-06,,site_96,Persian NIOC LNG Terminal,IRAN,lng_facility,gas,380.8,high,1.1119492675886226e-4,TRUE,TRUE,energy_sites_direct,energy_sites_direct,3
+wiki_20260307_targeting_its_habshan_gas_faci_133,2026-03-07,,site_1449,N/A,UNITED ARAB EMIRATES,extraction_site,,,high,1.875140171571593,TRUE,FALSE,unmatched,ambiguous,5
+wiki_20260307_targeting_its_habshan_gas_faci_133,2026-03-07,,site_274,HABSHAN FACILITIES,UNITED ARAB EMIRATES,processing_facility,,,high,0.4011858814136812,TRUE,FALSE,unmatched,unmatched,1
+wiki_20260307_the_irgc_said_that_it_attacked_217,2026-03-07,,site_46,UMM SAID,QATAR,refinery,oil,200,high,0,TRUE,TRUE,energy_sites_direct,energy_sites_direct,1
+wiki_20260307_targeting_its_habshan_gas_faci_133,2026-03-07,,site_4838,N/A,UNITED ARAB EMIRATES,other_energy_site,,,high,0.7277819240948054,TRUE,FALSE,unmatched,ambiguous,2
+wiki_20260307_targeting_its_habshan_gas_faci_133,2026-03-07,,site_4839,N/A,UNITED ARAB EMIRATES,other_energy_site,,,high,1.1826222465041216,TRUE,FALSE,unmatched,ambiguous,4
+wiki_20260307_targeting_its_habshan_gas_faci_133,2026-03-07,,site_4840,N/A,UNITED ARAB EMIRATES,other_energy_site,,,high,0.7578504331221823,TRUE,FALSE,unmatched,ambiguous,3
+wiki_20260307_the_irgc_said_that_it_attacked_217,2026-03-07,,site_4983,N/A,QATAR,other_energy_site,,,high,1.166703824377593,TRUE,FALSE,unmatched,ambiguous,2
+wiki_20260307_ras_laffan_131,2026-03-07,,site_5090,N/A,QATAR,other_energy_site,,,high,1.439653975932632,TRUE,FALSE,unmatched,ambiguous,4
+wiki_20260307_ras_laffan_131,2026-03-07,,site_5092,N/A,QATAR,other_energy_site,,,high,1.011654773202377,TRUE,FALSE,unmatched,ambiguous,2
+wiki_20260307_saudi_arabia_said_its_air_defe_132,2026-03-07,,site_6032,WIDYAN - NORTH ARABIAN GULF,"BAHRAIN, IRAN, IRAQ, KUWAIT, QATAR, SAUDI ARABIA",other_energy_site,,,high,0,TRUE,FALSE,unmatched,unmatched,1
+wiki_20260307_south_pars_127,2026-03-07,,site_62,IRAN NIOC LNG TERMINAL,IRAN,lng_facility,gas,122.58620689655172,high,0.8570422867026646,TRUE,TRUE,energy_sites_direct,energy_sites_direct,3
+wiki_20260307_ras_laffan_131,2026-03-07,,site_71,RASGAS 1 LNG TERMINAL,QATAR,lng_facility,gas,177.58620689655174,high,0.9453505026282458,TRUE,TRUE,energy_sites_direct,energy_sites_direct,1
+wiki_20260307_ras_laffan_131,2026-03-07,,site_72,RASGAS 1 LNG TERMINAL,QATAR,lng_facility,gas,74.82758620689656,high,1.775882009283596,TRUE,TRUE,energy_sites_direct,energy_sites_direct,5
+wiki_20260307_south_pars_127,2026-03-07,,site_91,Kangan LNG Terminal,IRAN,lng_facility,gas,47.6,high,0.8569861692272519,TRUE,TRUE,energy_sites_direct,energy_sites_direct,1
+wiki_20260307_south_pars_127,2026-03-07,,site_96,Persian NIOC LNG Terminal,IRAN,lng_facility,gas,380.8,high,0.8569861692272519,TRUE,TRUE,energy_sites_direct,energy_sites_direct,2
+wiki_20260307_ras_laffan_131,2026-03-07,,site_99,QatarEnergy LNG (S),QATAR,lng_facility,gas,863.9399999999999,high,1.2909128233556533,TRUE,TRUE,energy_sites_direct,energy_sites_direct,3
+wiki_20260308_conflict_2026_iranian_strikes__87,2026-03-08,,site_55,BAHRAIN HIDD FLNG TERMINAL,BAHRAIN,lng_facility,gas,136.20689655172416,high,0,TRUE,TRUE,energy_sites_direct,energy_sites_direct,1
+wiki_20260308_conflict_2026_iranian_strikes__64,2026-03-08,,site_67,QATAR NORTH FIELD LNG TERMINAL,QATAR,lng_facility,gas,187.93103448275863,high,0,TRUE,TRUE,energy_sites_direct,energy_sites_direct,1
+wiki_20260309_drones_targeting_shaybah_oil_f_228,2026-03-09,,site_3789,SHAYBAH,"SAUDI ARABIA, UNITED ARAB EMIRATES",extraction_site,,,high,0,TRUE,FALSE,unmatched,unmatched,1
+iransm_s194,2026-03-09,,site_5123,N/A,BAHRAIN,other_energy_site,,,high,1.138947734564918,TRUE,FALSE,unmatched,ambiguous,1
+wiki_20260309_iran_continued_firing_missiles_229,2026-03-09,,site_62,IRAN NIOC LNG TERMINAL,IRAN,lng_facility,gas,122.58620689655172,high,0,TRUE,TRUE,energy_sites_direct,energy_sites_direct,1
+wiki_20260309_iran_continued_firing_missiles_229,2026-03-09,,site_91,Kangan LNG Terminal,IRAN,lng_facility,gas,47.6,high,1.1119492675886226e-4,TRUE,TRUE,energy_sites_direct,energy_sites_direct,2
+wiki_20260309_iran_continued_firing_missiles_229,2026-03-09,,site_96,Persian NIOC LNG Terminal,IRAN,lng_facility,gas,380.8,high,1.1119492675886226e-4,TRUE,TRUE,energy_sites_direct,energy_sites_direct,3
+wiki_20260310_were_hit_near_the_port_237,2026-03-10,,site_36,PORT SUDAN,SUDAN,refinery,oil,21.7,high,0,TRUE,TRUE,energy_sites_direct,energy_sites_direct,1
+wiki_20260310_on_7_march_the_ministry_of_int_80,2026-03-10,,site_387,AL ARAB 1,EGYPT,extraction_site,,,high,0,TRUE,FALSE,unmatched,unmatched,1
+wiki_20260310_at_the_ruwais_industrial_compl_35,2026-03-10,,site_4890,N/A,UNITED ARAB EMIRATES,other_energy_site,,,high,1.0457755794550312,TRUE,FALSE,unmatched,ambiguous,1
+wiki_20260310_fujairah_30,2026-03-10,,site_88,Fujairah LNG Terminal,UNITED ARAB EMIRATES,lng_facility,gas,442.68000000000006,high,0,TRUE,TRUE,energy_sites_direct,energy_sites_direct,1
+wiki_20260311_at_the_mina_salman_port_236,2026-03-11,,site_206,N/A,KUWAIT,petroleum_terminal,,,high,1.6178757613879666,TRUE,FALSE,unmatched,ambiguous,4
+wiki_20260311_at_the_mina_salman_port_236,2026-03-11,,site_29,MINA ABDULLA,KUWAIT,refinery,oil,240,high,0,TRUE,TRUE,energy_sites_direct,energy_sites_direct,1
+wiki_20260311_the_mayuree_naree_was_a_thai_o_7,2026-03-11,,site_3942,UNKNOWN,IRAQ,extraction_site,,,high,0,TRUE,FALSE,unmatched,ambiguous,1
+wiki_20260311_uae_said_that_they_intercepted_37,2026-03-11,,site_46,UMM SAID,QATAR,refinery,oil,200,high,0,TRUE,TRUE,energy_sites_direct,energy_sites_direct,1
+wiki_20260311_shut_down_its_ruwais_refinery_232,2026-03-11,,site_4890,N/A,UNITED ARAB EMIRATES,other_energy_site,,,high,1.0457755794550312,TRUE,FALSE,unmatched,ambiguous,1
+wiki_20260311_uae_said_that_they_intercepted_37,2026-03-11,,site_4983,N/A,QATAR,other_energy_site,,,high,1.166703824377593,TRUE,FALSE,unmatched,ambiguous,2
+wiki_20260311_bapco_230,2026-03-11,,site_5115,N/A,BAHRAIN,other_energy_site,,,high,1.5619504881554973,TRUE,FALSE,unmatched,ambiguous,3
+wiki_20260311_bapco_230,2026-03-11,,site_5118,N/A,BAHRAIN,other_energy_site,,,high,0.9561119706529966,TRUE,FALSE,unmatched,ambiguous,1
+wiki_20260311_bapco_230,2026-03-11,,site_5119,N/A,BAHRAIN,other_energy_site,,,high,1.4500519863427084,TRUE,FALSE,unmatched,ambiguous,2
+wiki_20260311_at_the_mina_salman_port_236,2026-03-11,,site_5327,N/A,KUWAIT,other_energy_site,,,high,0.8133747940643028,TRUE,FALSE,unmatched,ambiguous,2
+wiki_20260311_at_the_mina_salman_port_236,2026-03-11,,site_5331,N/A,KUWAIT,other_energy_site,,,high,0.9174938121943618,TRUE,FALSE,unmatched,ambiguous,3
+wiki_20260311_list_of_ships_attacked_during__8,2026-03-11,,site_62,IRAN NIOC LNG TERMINAL,IRAN,lng_facility,gas,122.58620689655172,high,0,TRUE,TRUE,energy_sites_direct,energy_sites_direct,1
+wiki_20260311_list_of_ships_attacked_during__8,2026-03-11,,site_91,Kangan LNG Terminal,IRAN,lng_facility,gas,47.6,high,1.1119492675886226e-4,TRUE,TRUE,energy_sites_direct,energy_sites_direct,2
+wiki_20260311_list_of_ships_attacked_during__8,2026-03-11,,site_96,Persian NIOC LNG Terminal,IRAN,lng_facility,gas,380.8,high,1.1119492675886226e-4,TRUE,TRUE,energy_sites_direct,energy_sites_direct,3
+wiki_20260312_a_minor_incident_involving_a_d_38,2026-03-12,,site_1,ABADAN,IRAN,refinery,oil,400,high,0,TRUE,TRUE,energy_sites_direct,energy_sites_direct,1
+wiki_20260312_iraqi_oil_terminal_242,2026-03-12,,site_190,N/A,KUWAIT,petroleum_terminal,,,high,0.1534768747418228,TRUE,FALSE,unmatched,ambiguous,2
+wiki_20260312_ras_laffan_78,2026-03-12,,site_5090,N/A,QATAR,other_energy_site,,,high,1.439653975932632,TRUE,FALSE,unmatched,ambiguous,4
+wiki_20260312_ras_laffan_78,2026-03-12,,site_5092,N/A,QATAR,other_energy_site,,,high,1.011654773202377,TRUE,FALSE,unmatched,ambiguous,2
+wiki_20260312_iraqi_oil_terminal_242,2026-03-12,,site_53,AL ZOUR LNG IMPORT TERMINAL,KUWAIT,lng_facility,gas,498.2758620689655,high,0,TRUE,TRUE,energy_sites_direct,energy_sites_direct,1
+wiki_20260312_drones_hit_bahrain_internation_241,2026-03-12,,site_55,BAHRAIN HIDD FLNG TERMINAL,BAHRAIN,lng_facility,gas,136.20689655172416,high,0,TRUE,TRUE,energy_sites_direct,energy_sites_direct,1
+wiki_20260312_a_minor_incident_involving_a_d_38,2026-03-12,,site_5507,N/A,IRAN,other_energy_site,,,high,0.34290474525131304,TRUE,FALSE,unmatched,ambiguous,2
+wiki_20260312_a_minor_incident_involving_a_d_38,2026-03-12,,site_5514,N/A,IRAN,other_energy_site,,,high,1.850039657287817,TRUE,FALSE,unmatched,ambiguous,3
+wiki_20260312_ras_laffan_78,2026-03-12,,site_71,RASGAS 1 LNG TERMINAL,QATAR,lng_facility,gas,177.58620689655174,high,0.9453505026282458,TRUE,TRUE,energy_sites_direct,energy_sites_direct,1
+wiki_20260312_ras_laffan_78,2026-03-12,,site_72,RASGAS 1 LNG TERMINAL,QATAR,lng_facility,gas,74.82758620689656,high,1.775882009283596,TRUE,TRUE,energy_sites_direct,energy_sites_direct,5
+wiki_20260312_iraqi_oil_terminal_242,2026-03-12,,site_78,Al Zour LNG Terminal,KUWAIT,lng_facility,gas,523.6,high,1.989760747482969,TRUE,TRUE,energy_sites_direct,energy_sites_direct,3
+wiki_20260312_ras_laffan_78,2026-03-12,,site_99,QatarEnergy LNG (S),QATAR,lng_facility,gas,863.9399999999999,high,1.2909128233556533,TRUE,TRUE,energy_sites_direct,energy_sites_direct,3
+wiki_20260313_an_american_boeing_kc_135_stra_243,2026-03-13,,site_3992,WESTERN DESERT 33,EGYPT,extraction_site,,,high,0,TRUE,FALSE,unmatched,unmatched,1
+iransm_s296,2026-03-13,,site_5347,N/A,IRAN,other_energy_site,,,high,1.6560734957340475,TRUE,FALSE,unmatched,ambiguous,2
+iransm_s296,2026-03-13,,site_90,Iran FLNG Terminal,IRAN,lng_facility,gas,11.9,high,0.6938747592446997,TRUE,TRUE,energy_sites_direct,energy_sites_direct,1
+wiki_20260314_kharg_244,2026-03-14,,site_214,N/A,IRAN,petroleum_terminal,,,high,1.9153334048143729,TRUE,FALSE,unmatched,ambiguous,4
+wiki_20260314_on_prince_sultan_air_base_246,2026-03-14,,site_3571,PRINCE 1,EGYPT,extraction_site,,,high,0,TRUE,FALSE,unmatched,unmatched,1
+wiki_20260314_drone_strike_impacted_the_port_40,2026-03-14,,site_36,PORT SUDAN,SUDAN,refinery,oil,21.7,high,0,TRUE,TRUE,energy_sites_direct,energy_sites_direct,1
+wiki_20260314_kharg_244,2026-03-14,,site_5345,N/A,IRAN,other_energy_site,,,high,1.7457093596040534,TRUE,FALSE,unmatched,ambiguous,3
+wiki_20260314_kharg_244,2026-03-14,,site_5346,N/A,IRAN,other_energy_site,,,high,1.6429366606680424,TRUE,FALSE,unmatched,ambiguous,2
+7e5cba2b-1b80-4c4a-bfa3-f98bb2fdf415,2026-03-14,48,site_87,Eilat FLNG Terminal,ISRAEL,lng_facility,gas,122.332,high,1.1119492664453663,TRUE,TRUE,energy_sites_direct,energy_sites_direct,1
+wiki_20260314_fujairah_248,2026-03-14,,site_88,Fujairah LNG Terminal,UNITED ARAB EMIRATES,lng_facility,gas,442.68000000000006,high,0,TRUE,TRUE,energy_sites_direct,energy_sites_direct,1
+wiki_20260314_kharg_244,2026-03-14,,site_90,Iran FLNG Terminal,IRAN,lng_facility,gas,11.9,high,1.1458580209195988,TRUE,TRUE,energy_sites_direct,energy_sites_direct,1
+wiki_20260316_tank_at_dubai_international_ai_252,2026-03-16,,site_3873,TANKA EAST,EGYPT,extraction_site,,,high,0,TRUE,FALSE,unmatched,unmatched,1
+wiki_20260316_tank_at_dubai_international_ai_252,2026-03-16,,site_801,GS 206-1A,EGYPT,extraction_site,,,high,1.3965214777494956,TRUE,FALSE,unmatched,unmatched,2
+wiki_20260316_fujairah_43,2026-03-16,,site_88,Fujairah LNG Terminal,UNITED ARAB EMIRATES,lng_facility,gas,442.68000000000006,high,0,TRUE,TRUE,energy_sites_direct,energy_sites_direct,1
+wiki_20260317_as_of_17_march_2026_iran_has_f_17,2026-03-17,,site_62,IRAN NIOC LNG TERMINAL,IRAN,lng_facility,gas,122.58620689655172,high,0,TRUE,TRUE,energy_sites_direct,energy_sites_direct,1
+wiki_20260317_the_ministry_of_defense_interc_45,2026-03-17,,site_62,IRAN NIOC LNG TERMINAL,IRAN,lng_facility,gas,122.58620689655172,high,0,TRUE,TRUE,energy_sites_direct,energy_sites_direct,1
+wiki_20260317_fujairah_44,2026-03-17,,site_88,Fujairah LNG Terminal,UNITED ARAB EMIRATES,lng_facility,gas,442.68000000000006,high,0,TRUE,TRUE,energy_sites_direct,energy_sites_direct,1
+wiki_20260317_as_of_17_march_2026_iran_has_f_17,2026-03-17,,site_91,Kangan LNG Terminal,IRAN,lng_facility,gas,47.6,high,1.1119492675886226e-4,TRUE,TRUE,energy_sites_direct,energy_sites_direct,2
+wiki_20260317_the_ministry_of_defense_interc_45,2026-03-17,,site_91,Kangan LNG Terminal,IRAN,lng_facility,gas,47.6,high,1.1119492675886226e-4,TRUE,TRUE,energy_sites_direct,energy_sites_direct,2
+wiki_20260317_as_of_17_march_2026_iran_has_f_17,2026-03-17,,site_96,Persian NIOC LNG Terminal,IRAN,lng_facility,gas,380.8,high,1.1119492675886226e-4,TRUE,TRUE,energy_sites_direct,energy_sites_direct,3
+wiki_20260317_the_ministry_of_defense_interc_45,2026-03-17,,site_96,Persian NIOC LNG Terminal,IRAN,lng_facility,gas,380.8,high,1.1119492675886226e-4,TRUE,TRUE,energy_sites_direct,energy_sites_direct,3
+wiki_20260318_ras_laffan_258,2026-03-18,,site_5090,N/A,QATAR,other_energy_site,,,high,1.439653975932632,TRUE,FALSE,unmatched,ambiguous,4
+wiki_20260318_ras_laffan_258,2026-03-18,,site_5092,N/A,QATAR,other_energy_site,,,high,1.011654773202377,TRUE,FALSE,unmatched,ambiguous,2
+wiki_20260318_the_attack_is_described_as_a_m_124,2026-03-18,,site_5095,N/A,QATAR,other_energy_site,,,high,0.7219318922743208,TRUE,FALSE,unmatched,ambiguous,4
+wiki_20260318_the_attack_is_described_as_a_m_124,2026-03-18,,site_5099,N/A,QATAR,other_energy_site,,,high,1.316587255837967,TRUE,FALSE,unmatched,ambiguous,6
+wiki_20260318_in_south_pars_gas_field_123,2026-03-18,,site_62,IRAN NIOC LNG TERMINAL,IRAN,lng_facility,gas,122.58620689655172,high,0.8570422867026646,TRUE,TRUE,energy_sites_direct,energy_sites_direct,3
+wiki_20260318_iran_launched_a_missile_barrag_256,2026-03-18,,site_62,IRAN NIOC LNG TERMINAL,IRAN,lng_facility,gas,122.58620689655172,high,0,TRUE,TRUE,energy_sites_direct,energy_sites_direct,1
+wiki_20260318_outcome_damage_affected_12_of__122,2026-03-18,,site_62,IRAN NIOC LNG TERMINAL,IRAN,lng_facility,gas,122.58620689655172,high,0,TRUE,TRUE,energy_sites_direct,energy_sites_direct,1
+wiki_20260318_south_pars_125,2026-03-18,,site_62,IRAN NIOC LNG TERMINAL,IRAN,lng_facility,gas,122.58620689655172,high,0.8570422867026646,TRUE,TRUE,energy_sites_direct,energy_sites_direct,3
+wiki_20260318_the_attack_is_described_as_a_m_124,2026-03-18,,site_68,QATARGAS 1 RAS LAFFAN LNG TERMINAL,QATAR,lng_facility,gas,74.82758620689656,high,0.7004001722128363,TRUE,TRUE,energy_sites_direct,energy_sites_direct,3
+wiki_20260318_the_attack_is_described_as_a_m_124,2026-03-18,,site_69,QATARGAS 2 RAS LAFFAN LNG TERMINAL,QATAR,lng_facility,gas,177.58620689655174,high,0.8135197461901659,TRUE,TRUE,energy_sites_direct,energy_sites_direct,5
+wiki_20260318_the_attack_is_described_as_a_m_124,2026-03-18,,site_70,QATARGAS 2 RAS LAFFAN LNG TERMINAL,QATAR,lng_facility,gas,177.58620689655174,high,0.29001751207076665,TRUE,TRUE,energy_sites_direct,energy_sites_direct,2
+wiki_20260318_ras_laffan_258,2026-03-18,,site_71,RASGAS 1 LNG TERMINAL,QATAR,lng_facility,gas,177.58620689655174,high,0.9453505026282458,TRUE,TRUE,energy_sites_direct,energy_sites_direct,1
+wiki_20260318_ras_laffan_258,2026-03-18,,site_72,RASGAS 1 LNG TERMINAL,QATAR,lng_facility,gas,74.82758620689656,high,1.775882009283596,TRUE,TRUE,energy_sites_direct,energy_sites_direct,5
+wiki_20260318_in_south_pars_gas_field_123,2026-03-18,,site_91,Kangan LNG Terminal,IRAN,lng_facility,gas,47.6,high,0.8569861692272519,TRUE,TRUE,energy_sites_direct,energy_sites_direct,1
+wiki_20260318_iran_launched_a_missile_barrag_256,2026-03-18,,site_91,Kangan LNG Terminal,IRAN,lng_facility,gas,47.6,high,1.1119492675886226e-4,TRUE,TRUE,energy_sites_direct,energy_sites_direct,2
+wiki_20260318_outcome_damage_affected_12_of__122,2026-03-18,,site_91,Kangan LNG Terminal,IRAN,lng_facility,gas,47.6,high,1.1119492675886226e-4,TRUE,TRUE,energy_sites_direct,energy_sites_direct,2
+wiki_20260318_south_pars_125,2026-03-18,,site_91,Kangan LNG Terminal,IRAN,lng_facility,gas,47.6,high,0.8569861692272519,TRUE,TRUE,energy_sites_direct,energy_sites_direct,1
+wiki_20260318_in_south_pars_gas_field_123,2026-03-18,,site_96,Persian NIOC LNG Terminal,IRAN,lng_facility,gas,380.8,high,0.8569861692272519,TRUE,TRUE,energy_sites_direct,energy_sites_direct,2
+wiki_20260318_iran_launched_a_missile_barrag_256,2026-03-18,,site_96,Persian NIOC LNG Terminal,IRAN,lng_facility,gas,380.8,high,1.1119492675886226e-4,TRUE,TRUE,energy_sites_direct,energy_sites_direct,3
+wiki_20260318_outcome_damage_affected_12_of__122,2026-03-18,,site_96,Persian NIOC LNG Terminal,IRAN,lng_facility,gas,380.8,high,1.1119492675886226e-4,TRUE,TRUE,energy_sites_direct,energy_sites_direct,3
+wiki_20260318_south_pars_125,2026-03-18,,site_96,Persian NIOC LNG Terminal,IRAN,lng_facility,gas,380.8,high,0.8569861692272519,TRUE,TRUE,energy_sites_direct,energy_sites_direct,2
+wiki_20260318_the_attack_is_described_as_a_m_124,2026-03-18,,site_98,QatarEnergy LNG (N),QATAR,lng_facility,gas,971.04,high,0,TRUE,TRUE,energy_sites_direct,energy_sites_direct,1
+wiki_20260318_ras_laffan_258,2026-03-18,,site_99,QatarEnergy LNG (S),QATAR,lng_facility,gas,863.9399999999999,high,1.2909128233556533,TRUE,TRUE,energy_sites_direct,energy_sites_direct,3
+wiki_20260319_habshan_46,2026-03-19,,site_1449,N/A,UNITED ARAB EMIRATES,extraction_site,,,high,1.875140171571593,TRUE,FALSE,unmatched,ambiguous,5
+wiki_20260319_habshan_46,2026-03-19,,site_274,HABSHAN FACILITIES,UNITED ARAB EMIRATES,processing_facility,,,high,0.4011858814136812,TRUE,FALSE,unmatched,unmatched,1
+wiki_20260319_https_www_reuters_com_world_mi_141,2026-03-19,,site_326,ABU EL GHARADIQ NORTHEAST,EGYPT,extraction_site,,,high,0,TRUE,FALSE,unmatched,unmatched,1
+wiki_20260319_unnamed_gulf_arab_countries_so_140,2026-03-19,,site_35,PERSIAN GULF STAR,IRAN,refinery,oil,360,high,0,TRUE,TRUE,energy_sites_direct,energy_sites_direct,1
+wiki_20260319_an_israeli_strike_targeted_bas_263,2026-03-19,,site_46,UMM SAID,QATAR,refinery,oil,200,high,0,TRUE,TRUE,energy_sites_direct,energy_sites_direct,1
+wiki_20260319_oman_condemned_the_attack_as_a_137,2026-03-19,,site_4795,N/A,OMAN,other_energy_site,,,high,0.36916634170360146,TRUE,FALSE,unmatched,ambiguous,2
+wiki_20260319_habshan_46,2026-03-19,,site_4838,N/A,UNITED ARAB EMIRATES,other_energy_site,,,high,0.7277819240948054,TRUE,FALSE,unmatched,ambiguous,2
+wiki_20260319_habshan_46,2026-03-19,,site_4839,N/A,UNITED ARAB EMIRATES,other_energy_site,,,high,1.1826222465041216,TRUE,FALSE,unmatched,ambiguous,4
+wiki_20260319_habshan_46,2026-03-19,,site_4840,N/A,UNITED ARAB EMIRATES,other_energy_site,,,high,0.7578504331221823,TRUE,FALSE,unmatched,ambiguous,3
+wiki_20260319_an_israeli_strike_targeted_bas_263,2026-03-19,,site_4983,N/A,QATAR,other_energy_site,,,high,1.166703824377593,TRUE,FALSE,unmatched,ambiguous,2
+wiki_20260319_unnamed_gulf_arab_countries_so_140,2026-03-19,,site_5210,N/A,IRAN,other_energy_site,,,high,1.0876069052253567,TRUE,FALSE,unmatched,ambiguous,2
+wiki_20260319_airstrikes_and_explosions_repo_261,2026-03-19,,site_62,IRAN NIOC LNG TERMINAL,IRAN,lng_facility,gas,122.58620689655172,high,0,TRUE,TRUE,energy_sites_direct,energy_sites_direct,1
+wiki_20260319_noting_that_south_pars_field_138,2026-03-19,,site_62,IRAN NIOC LNG TERMINAL,IRAN,lng_facility,gas,122.58620689655172,high,0.8570422867026646,TRUE,TRUE,energy_sites_direct,energy_sites_direct,3
+wiki_20260319_south_pars_135,2026-03-19,,site_62,IRAN NIOC LNG TERMINAL,IRAN,lng_facility,gas,122.58620689655172,high,0.8570422867026646,TRUE,TRUE,energy_sites_direct,energy_sites_direct,3
+wiki_20260319_oman_condemned_the_attack_as_a_137,2026-03-19,,site_66,OMAN QALHAT LNG TERMINAL,OMAN,lng_facility,gas,80.51724137931035,high,0,TRUE,TRUE,energy_sites_direct,energy_sites_direct,1
+wiki_20260319_in_attacking_the_gas_field_136,2026-03-19,,site_67,QATAR NORTH FIELD LNG TERMINAL,QATAR,lng_facility,gas,187.93103448275863,high,0,TRUE,TRUE,energy_sites_direct,energy_sites_direct,1
+wiki_20260319_airstrikes_and_explosions_repo_261,2026-03-19,,site_91,Kangan LNG Terminal,IRAN,lng_facility,gas,47.6,high,1.1119492675886226e-4,TRUE,TRUE,energy_sites_direct,energy_sites_direct,2
+wiki_20260319_noting_that_south_pars_field_138,2026-03-19,,site_91,Kangan LNG Terminal,IRAN,lng_facility,gas,47.6,high,0.8569861692272519,TRUE,TRUE,energy_sites_direct,energy_sites_direct,1
+wiki_20260319_south_pars_135,2026-03-19,,site_91,Kangan LNG Terminal,IRAN,lng_facility,gas,47.6,high,0.8569861692272519,TRUE,TRUE,energy_sites_direct,energy_sites_direct,1
+wiki_20260319_mina_al_ahmadi_260,2026-03-19,,site_93,Mina Al-Ahmadi LNG Terminal,KUWAIT,lng_facility,gas,228.48,high,1.4288335422213294,TRUE,TRUE,energy_sites_direct,energy_sites_direct,1
+wiki_20260319_airstrikes_and_explosions_repo_261,2026-03-19,,site_96,Persian NIOC LNG Terminal,IRAN,lng_facility,gas,380.8,high,1.1119492675886226e-4,TRUE,TRUE,energy_sites_direct,energy_sites_direct,3
+wiki_20260319_noting_that_south_pars_field_138,2026-03-19,,site_96,Persian NIOC LNG Terminal,IRAN,lng_facility,gas,380.8,high,0.8569861692272519,TRUE,TRUE,energy_sites_direct,energy_sites_direct,2
+wiki_20260319_south_pars_135,2026-03-19,,site_96,Persian NIOC LNG Terminal,IRAN,lng_facility,gas,380.8,high,0.8569861692272519,TRUE,TRUE,energy_sites_direct,energy_sites_direct,2
+wiki_20260320_iran_launched_nine_ballistic_m_271,2026-03-20,,site_62,IRAN NIOC LNG TERMINAL,IRAN,lng_facility,gas,122.58620689655172,high,0,TRUE,TRUE,energy_sites_direct,energy_sites_direct,1
+iransm_s366,2026-03-20,,site_64,MINA AL-AHMADI EXPLORER FSRU,KUWAIT,lng_facility,gas,86.20689655172414,high,1.5171441141926123,TRUE,TRUE,energy_sites_direct,energy_sites_direct,1
+iransm_s366,2026-03-20,,site_65,MINA AL-AHMADI GOLAR FSRU,KUWAIT,lng_facility,gas,131.55172413793105,high,1.5171441141926123,TRUE,TRUE,energy_sites_direct,energy_sites_direct,2
+wiki_20260320_bazan_group_refinery_265,2026-03-20,,site_810,GURRUKBIL GROUP OF FIELDS,TURKMENISTAN,extraction_site,,,high,0,TRUE,FALSE,unmatched,ambiguous,1
+wiki_20260320_iran_launched_nine_ballistic_m_271,2026-03-20,,site_91,Kangan LNG Terminal,IRAN,lng_facility,gas,47.6,high,1.1119492675886226e-4,TRUE,TRUE,energy_sites_direct,energy_sites_direct,2
+wiki_20260320_iran_launched_nine_ballistic_m_271,2026-03-20,,site_96,Persian NIOC LNG Terminal,IRAN,lng_facility,gas,380.8,high,1.1119492675886226e-4,TRUE,TRUE,energy_sites_direct,energy_sites_direct,3
+wiki_20260321_iran_said_that_an_airstrike_hi_273,2026-03-21,,site_62,IRAN NIOC LNG TERMINAL,IRAN,lng_facility,gas,122.58620689655172,high,0,TRUE,TRUE,energy_sites_direct,energy_sites_direct,1
+wiki_20260321_troops_in_baghdad_internationa_272,2026-03-21,,site_663,EAST BAGHDAD,IRAQ,extraction_site,,,high,0,TRUE,FALSE,unmatched,unmatched,1
+wiki_20260321_iran_said_that_an_airstrike_hi_273,2026-03-21,,site_91,Kangan LNG Terminal,IRAN,lng_facility,gas,47.6,high,1.1119492675886226e-4,TRUE,TRUE,energy_sites_direct,energy_sites_direct,2
+wiki_20260321_iran_said_that_an_airstrike_hi_273,2026-03-21,,site_96,Persian NIOC LNG Terminal,IRAN,lng_facility,gas,380.8,high,1.1119492675886226e-4,TRUE,TRUE,energy_sites_direct,energy_sites_direct,3
+wiki_20260322_list_of_attacks_during_the_202_280,2026-03-22,,site_62,IRAN NIOC LNG TERMINAL,IRAN,lng_facility,gas,122.58620689655172,high,0,TRUE,TRUE,energy_sites_direct,energy_sites_direct,1
+wiki_20260322_list_of_attacks_during_the_202_280,2026-03-22,,site_91,Kangan LNG Terminal,IRAN,lng_facility,gas,47.6,high,1.1119492675886226e-4,TRUE,TRUE,energy_sites_direct,energy_sites_direct,2
+wiki_20260322_list_of_attacks_during_the_202_280,2026-03-22,,site_96,Persian NIOC LNG Terminal,IRAN,lng_facility,gas,380.8,high,1.1119492675886226e-4,TRUE,TRUE,energy_sites_direct,energy_sites_direct,3

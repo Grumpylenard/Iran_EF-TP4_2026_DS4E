@@ -1,5 +1,67 @@
 lat,lon,date,location_name,target_type,source,report_url
-35.6892,51.389,2026-03-20,Tehran,missile base,CENTCOM,http://test1.com
-27.194,56.2808,2026-03-19,Bandar Abbas,weapons storage,CTP-ISW,http://test2.com
-27.2046,56.2708,2026-03-18,Hormozgan Province,radar site,CENTCOM,http://test3.com
-,,2026-03-17,Unknown Location,command center,CTP-ISW,http://test4.com
+32.7889443,41.6093983,2026-03-21,Anbar Province,missile production site,CTP-ISW,https://www.criticalthreats.org/analysis/iran-update-evening-special-report-march-21-2026
+33.3061701,44.3872213,2026-03-21,Baghdad,missile production site,CTP-ISW,https://www.criticalthreats.org/analysis/iran-update-evening-special-report-march-21-2026
+26.1551249,50.5344606,2026-03-21,Bahrain,missile production site,CTP-ISW,https://www.criticalthreats.org/analysis/iran-update-evening-special-report-march-21-2026
+32.3780257,48.4032064,2026-03-21,Dezful,missile production site,CTP-ISW,https://www.criticalthreats.org/analysis/iran-update-evening-special-report-march-21-2026
+32.3780257,48.4032064,2026-03-21,"Dezful, Khuzestan Province",missile production site,CTP-ISW,https://www.criticalthreats.org/analysis/iran-update-evening-special-report-march-21-2026
+-7.3383584,72.4718155,2026-03-21,Diego Garcia,missile production site,CTP-ISW,https://www.criticalthreats.org/analysis/iran-update-evening-special-report-march-21-2026
+31.0686612,35.0366482,2026-03-21,Dimona,missile production site,CTP-ISW,https://www.criticalthreats.org/analysis/iran-update-evening-special-report-march-21-2026
+32.6798632,51.684444,2026-03-21,Esfahan Province,missile production site,CTP-ISW,https://www.criticalthreats.org/analysis/iran-update-evening-special-report-march-21-2026
+33.0955793,44.1749775,2026-03-21,Iraq,missile production site,CTP-ISW,https://www.criticalthreats.org/analysis/iran-update-evening-special-report-march-21-2026
+30.8124247,34.8594762,2026-03-21,Israel,missile production site,CTP-ISW,https://www.criticalthreats.org/analysis/iran-update-evening-special-report-march-21-2026
+33.3272226,35.6089702,2026-03-21,Khiam,missile production site,CTP-ISW,https://www.criticalthreats.org/analysis/iran-update-evening-special-report-march-21-2026
+33.8750629,35.843409,2026-03-21,Lebanon,missile production site,CTP-ISW,https://www.criticalthreats.org/analysis/iran-update-evening-special-report-march-21-2026
+34.0478264,43.593453,2026-03-21,Salah al Din Province,missile production site,CTP-ISW,https://www.criticalthreats.org/analysis/iran-update-evening-special-report-march-21-2026
+35.6892523,51.3896004,2026-03-21,Tehran,missile production site,CTP-ISW,https://www.criticalthreats.org/analysis/iran-update-evening-special-report-march-21-2026
+33.2721211,35.1964023,2026-03-21,Tyre,missile production site,CTP-ISW,https://www.criticalthreats.org/analysis/iran-update-evening-special-report-march-21-2026
+35.9413239,50.7884216,2026-03-20,Alborz Province,missile base,CTP-ISW,https://www.criticalthreats.org/analysis/iran-update-evening-special-report-march-20-2026
+31.6653191,34.565044,2026-03-20,Ashkelon,Missile Facility,CTP-ISW,https://www.criticalthreats.org/analysis/iran-update-evening-special-report-march-19-2026
+33.3061701,44.3872213,2026-03-20,Baghdad,missile base,CTP-ISW,https://www.criticalthreats.org/analysis/iran-update-evening-special-report-march-20-2026
+33.3061701,44.3872213,2026-03-20,Baghdad,Missile Facility,CTP-ISW,https://www.criticalthreats.org/analysis/iran-update-evening-special-report-march-19-2026
+33.2636461,44.2236202,2026-03-20,Baghdad International Airport,missile base,CTP-ISW,https://www.criticalthreats.org/analysis/iran-update-evening-special-report-march-20-2026
+26.1551249,50.5344606,2026-03-20,Bahrain,missile base,CTP-ISW,https://www.criticalthreats.org/analysis/iran-update-evening-special-report-march-20-2026
+27.1901938,56.2842212,2026-03-20,Bandar Abbas,missile base,CTP-ISW,https://www.criticalthreats.org/analysis/iran-update-evening-special-report-march-20-2026
+27.1901938,56.2842212,2026-03-20,"Bandar Abbas, Hormozgan Province",missile base,CTP-ISW,https://www.criticalthreats.org/analysis/iran-update-evening-special-report-march-20-2026
+37.4729765,49.4969904,2026-03-20,Bandar Anzali Port,Missile Facility,CTP-ISW,https://www.criticalthreats.org/analysis/iran-update-evening-special-report-march-19-2026
+30.2020701,47.5274169,2026-03-20,Basra Province,Missile Facility,CTP-ISW,https://www.criticalthreats.org/analysis/iran-update-evening-special-report-march-19-2026
+33.8892265,35.5025585,2026-03-20,Beirut,Missile Facility,CTP-ISW,https://www.criticalthreats.org/analysis/iran-update-evening-special-report-march-19-2026
+29.2661428,51.2120597,2026-03-20,Borazjan,Missile Facility,CTP-ISW,https://www.criticalthreats.org/analysis/iran-update-evening-special-report-march-19-2026
+32.6707877,51.6650002,2026-03-20,Esfahan,missile base,CTP-ISW,https://www.criticalthreats.org/analysis/iran-update-evening-special-report-march-20-2026
+,,2026-03-20,"Esfahan City, Esfahan Province",missile base,CTP-ISW,https://www.criticalthreats.org/analysis/iran-update-evening-special-report-march-20-2026
+32.6798632,51.684444,2026-03-20,Esfahan Province,missile base,CTP-ISW,https://www.criticalthreats.org/analysis/iran-update-evening-special-report-march-20-2026
+29.2051447,53.4327752,2026-03-20,Fars Province,Missile Facility,CTP-ISW,https://www.criticalthreats.org/analysis/iran-update-evening-special-report-march-19-2026
+32.8191218,34.9983856,2026-03-20,Haifa,Missile Facility,CTP-ISW,https://www.criticalthreats.org/analysis/iran-update-evening-special-report-march-19-2026
+32.6475314,54.5643516,2026-03-20,Iran,missile base,CTP-ISW,https://www.criticalthreats.org/analysis/iran-update-evening-special-report-march-20-2026
+32.6475314,54.5643516,2026-03-20,Iran,Missile Facility,CTP-ISW,https://www.criticalthreats.org/analysis/iran-update-evening-special-report-march-19-2026
+33.0955793,44.1749775,2026-03-20,Iraq,missile base,CTP-ISW,https://www.criticalthreats.org/analysis/iran-update-evening-special-report-march-20-2026
+33.0955793,44.1749775,2026-03-20,Iraq,Missile Facility,CTP-ISW,https://www.criticalthreats.org/analysis/iran-update-evening-special-report-march-19-2026
+30.8124247,34.8594762,2026-03-20,Israel,missile base,CTP-ISW,https://www.criticalthreats.org/analysis/iran-update-evening-special-report-march-20-2026
+30.8124247,34.8594762,2026-03-20,Israel,Missile Facility,CTP-ISW,https://www.criticalthreats.org/analysis/iran-update-evening-special-report-march-19-2026
+27.8262811,52.3263597,2026-03-20,Jam,missile base,CTP-ISW,https://www.criticalthreats.org/analysis/iran-update-evening-special-report-march-20-2026
+27.8262811,52.3263597,2026-03-20,"Jam, Bushehr Province",missile base,CTP-ISW,https://www.criticalthreats.org/analysis/iran-update-evening-special-report-march-20-2026
+34.808461,46.4930805,2026-03-20,"Javanrud, Kermanshah Province",Missile Facility,CTP-ISW,https://www.criticalthreats.org/analysis/iran-update-evening-special-report-march-19-2026
+31.1667049,36.941628,2026-03-20,Jordan,Missile Facility,CTP-ISW,https://www.criticalthreats.org/analysis/iran-update-evening-special-report-march-19-2026
+29.571858,57.301047,2026-03-20,Kerman,missile base,CTP-ISW,https://www.criticalthreats.org/analysis/iran-update-evening-special-report-march-20-2026
+,,2026-03-20,"Kerman City, Kerman Province",missile base,CTP-ISW,https://www.criticalthreats.org/analysis/iran-update-evening-special-report-march-20-2026
+,,2026-03-20,Khazna Tapa,Missile Facility,CTP-ISW,https://www.criticalthreats.org/analysis/iran-update-evening-special-report-march-19-2026
+33.3272226,35.6089702,2026-03-20,Khiam,Missile Facility,CTP-ISW,https://www.criticalthreats.org/analysis/iran-update-evening-special-report-march-19-2026
+29.2733964,47.4979476,2026-03-20,Kuwait,Missile Facility,CTP-ISW,https://www.criticalthreats.org/analysis/iran-update-evening-special-report-march-19-2026
+33.8750629,35.843409,2026-03-20,Lebanon,missile base,CTP-ISW,https://www.criticalthreats.org/analysis/iran-update-evening-special-report-march-20-2026
+33.8750629,35.843409,2026-03-20,Lebanon,Missile Facility,CTP-ISW,https://www.criticalthreats.org/analysis/iran-update-evening-special-report-march-19-2026
+36.3436941,43.0997156,2026-03-20,Mosul,Missile Facility,CTP-ISW,https://www.criticalthreats.org/analysis/iran-update-evening-special-report-march-19-2026
+25.3336984,51.2295295,2026-03-20,Qatar,Missile Facility,CTP-ISW,https://www.criticalthreats.org/analysis/iran-update-evening-special-report-march-19-2026
+34.7191915,51.0122844,2026-03-20,Qom Province,Missile Facility,CTP-ISW,https://www.criticalthreats.org/analysis/iran-update-evening-special-report-march-19-2026
+25.6242618,42.3528328,2026-03-20,Saudi Arabia,Missile Facility,CTP-ISW,https://www.criticalthreats.org/analysis/iran-update-evening-special-report-march-19-2026
+35.2500644,54.6931847,2026-03-20,Semnan,missile base,CTP-ISW,https://www.criticalthreats.org/analysis/iran-update-evening-special-report-march-20-2026
+,,2026-03-20,"Semnan City, Semnan Province",missile base,CTP-ISW,https://www.criticalthreats.org/analysis/iran-update-evening-special-report-march-20-2026
+35.2500644,54.6931847,2026-03-20,Semnan Province,Missile Facility,CTP-ISW,https://www.criticalthreats.org/analysis/iran-update-evening-special-report-march-19-2026
+35.7735069,53.3279767,2026-03-20,Shahmirzad,missile base,CTP-ISW,https://www.criticalthreats.org/analysis/iran-update-evening-special-report-march-20-2026
+35.7735069,53.3279767,2026-03-20,"Shahmirzad, Semnan Province",missile base,CTP-ISW,https://www.criticalthreats.org/analysis/iran-update-evening-special-report-march-20-2026
+35.7480729,51.0232663,2026-03-20,Simin Dasht Industrial Town,missile base,CTP-ISW,https://www.criticalthreats.org/analysis/iran-update-evening-special-report-march-20-2026
+36.1972079,37.1618703,2026-03-20,Sultaniyeh,Missile Facility,CTP-ISW,https://www.criticalthreats.org/analysis/iran-update-evening-special-report-march-19-2026
+35.6892523,51.3896004,2026-03-20,Tehran,missile base,CTP-ISW,https://www.criticalthreats.org/analysis/iran-update-evening-special-report-march-20-2026
+35.6892523,51.3896004,2026-03-20,Tehran,Missile Facility,CTP-ISW,https://www.criticalthreats.org/analysis/iran-update-evening-special-report-march-19-2026
+35.6955215,51.0287475,2026-03-20,"Tehran City, Tehran Province",missile base,CTP-ISW,https://www.criticalthreats.org/analysis/iran-update-evening-special-report-march-20-2026
+35.5121097,51.8005344,2026-03-20,Tehran Province,missile base,CTP-ISW,https://www.criticalthreats.org/analysis/iran-update-evening-special-report-march-20-2026
+34.891501,44.6282661,2026-03-20,Tuz Khurmatu,Missile Facility,CTP-ISW,https://www.criticalthreats.org/analysis/iran-update-evening-special-report-march-19-2026
+32.0406164,54.6657189,2026-03-20,Yazd Province,Missile Facility,CTP-ISW,https://www.criticalthreats.org/analysis/iran-update-evening-special-report-march-19-2026

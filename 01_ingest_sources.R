@@ -25,6 +25,8 @@ paths <- list(
   provider_roots = settings$provider_roots,
   tp4_json = project_path("data_raw", "osint_tp4", "waves.json"),
   tp4_csv = project_path("data_processed", "tp4_incidents_raw.csv"),
+  acled_raw_csv = project_path("data_raw", "Middle-East_aggregated_data_up_to-2026-03-07.csv"),
+  acled_csv = project_path("data_processed", "acled_incidents_raw.csv"),
   gdelt_csv = project_path("data_processed", "gdelt_articles_raw.csv"),
   gdelt_log = project_path("data_processed", "gdelt_query_log.csv"),
   provider_log_csv = project_path("data_processed", "provider_intake_log.csv"),
@@ -109,6 +111,91 @@ flatten_tp4_incidents <- function(path) {
     )
 }
 
+flatten_acled_incidents <- function(path) {
+  if (!file.exists(path)) {
+    return(tibble())
+  }
+
+  readr::read_csv(path, show_col_types = FALSE) %>%
+    transmute(
+      incident_day = as.Date(WEEK, format = "%d-%B-%Y"),
+      source_admin_id = as.character(ID),
+      source_country = str_squish(as.character(COUNTRY)),
+      source_admin1 = str_squish(as.character(ADMIN1)),
+      event_type = as.character(EVENT_TYPE),
+      sub_event_type = as.character(SUB_EVENT_TYPE),
+      events = as.integer(EVENTS),
+      fatalities = as.integer(FATALITIES),
+      population_exposure = as.character(POPULATION_EXPOSURE),
+      target_lat = as.numeric(CENTROID_LATITUDE),
+      target_lon = as.numeric(CENTROID_LONGITUDE)
+    ) %>%
+    filter(
+      !is.na(incident_day),
+      incident_day >= settings$study_start,
+      incident_day <= settings$study_end,
+      sub_event_type == "Air/drone strike",
+      !is.na(target_lat),
+      !is.na(target_lon)
+    ) %>%
+    mutate(
+      incident_id = paste0("acled_", source_admin_id, "_", format(incident_day, "%Y%m%d")),
+      source_system = "acled_aggregated_csv",
+      operation = "ACLED",
+      sequence = NA_integer_,
+      wave_number = NA_integer_,
+      announced_utc = as.character(incident_day),
+      probable_launch_time = NA_character_,
+      target_text = str_trim(paste(source_admin1, source_country, "ACLED air/drone strike aggregate", sep = ", ")),
+      landing_countries = source_country,
+      target_country_guess = source_country,
+      weapon_payload = sub_event_type,
+      ballistic_flag = FALSE,
+      drone_flag = TRUE,
+      cruise_flag = FALSE,
+      cluster_flag = FALSE,
+      target_energy_flag = FALSE,
+      target_port_flag = FALSE,
+      target_industrial_flag = FALSE,
+      target_military_flag = FALSE,
+      source_urls = NA_character_,
+      description = paste(
+        "ACLED weekly aggregate:",
+        dplyr::coalesce(as.character(events), "NA"), "events,",
+        dplyr::coalesce(as.character(fatalities), "NA"), "fatalities,",
+        "admin1 =", source_admin1,
+        ifelse(!is.na(population_exposure) & nzchar(population_exposure), paste0(", population exposure = ", population_exposure), "")
+      )
+    ) %>%
+    select(
+      incident_id,
+      source_system,
+      operation,
+      sequence,
+      wave_number,
+      announced_utc,
+      probable_launch_time,
+      incident_day,
+      target_text,
+      landing_countries,
+      target_country_guess,
+      weapon_payload,
+      ballistic_flag,
+      drone_flag,
+      cruise_flag,
+      cluster_flag,
+      target_energy_flag,
+      target_port_flag,
+      target_industrial_flag,
+      target_military_flag,
+      target_lat,
+      target_lon,
+      source_urls,
+      description
+    ) %>%
+    distinct()
+}
+
 fetch_gdelt_articles <- function(query_id, query, window_start, window_end) {
   req <- httr2::request("https://api.gdeltproject.org/api/v2/doc/doc") |>
     httr2::req_url_query(
@@ -164,6 +251,20 @@ empty_provider_sites <- function() {
     name = character(),
     status = character(),
     country = character(),
+    commodity_group = character(),
+    liquid_capacity_bpd = double(),
+    liquid_throughput_bpd = double(),
+    gas_capacity_mmcfd = double(),
+    gas_throughput_mmcfd = double(),
+    lng_capacity_mtpa = double(),
+    lng_capacity_bcmy = double(),
+    oil_production_bpd = double(),
+    capacity_kbd = double(),
+    production_kbd = double(),
+    primary_output_kind = character(),
+    primary_output_value = double(),
+    primary_output_unit = character(),
+    primary_output_basis = character(),
     geometry_role = character(),
     provider_priority = integer(),
     lat = double(),
@@ -278,6 +379,353 @@ extract_site_points <- function(sf_data) {
   )
 }
 
+normalize_output_unit <- function(x) {
+  normalized <- normalize_key_text(x)
+
+  dplyr::case_when(
+    normalized %in% c("bpd", "barrels_per_day", "barrel_per_day", "bopd") ~ "bpd",
+    normalized %in% c("kbd", "kbpd", "kb_d", "kbbl_d", "thousand_barrels_per_day") ~ "kbd",
+    normalized %in% c("mmcfd", "mmscfd", "million_cubic_feet_per_day", "mmcf_d") ~ "mmcfd",
+    normalized %in% c("mtpa", "million_tonnes_per_annum", "million_tons_per_annum", "mta") ~ "mtpa",
+    normalized %in% c("bcmy", "bcm_y", "bcm_per_year", "bcm_year", "bcmy") ~ "bcmy",
+    normalized %in% c("bcfd", "bcf_d", "billion_cubic_feet_per_day") ~ "bcfd",
+    TRUE ~ ifelse(normalized == "missing", NA_character_, normalized)
+  )
+}
+
+collapse_duplicate_metric <- function(x) {
+  values <- as.numeric(x)
+  values <- values[!is.na(values)]
+
+  if (length(values) == 0) {
+    return(NA_real_)
+  }
+
+  distinct_values <- unique(values)
+  if (length(distinct_values) == 1) {
+    return(distinct_values[[1]])
+  }
+
+  sum(values)
+}
+
+sanitize_output_metric <- function(x) {
+  ifelse(!is.na(x) & x <= 0, NA_real_, x)
+}
+
+extract_provider_output_fields <- function(data) {
+  generic_capacity_value <- extract_numeric_field(
+    data,
+    c("^capacity$", "^capacity_value$", "^design_capacity$", "^nameplate_capacity$", "^output_capacity$")
+  )
+  generic_capacity_unit <- normalize_output_unit(
+    extract_text_field(data, c("^capacity_units?$", "^capacity_unit$", "^capacityunits?$"))
+  )
+
+  generic_throughput_value <- extract_numeric_field(
+    data,
+    c("^throughput$", "^throughput_value$")
+  )
+  generic_throughput_unit <- normalize_output_unit(
+    extract_text_field(data, c("^throughput_units?$", "^throughput_unit$"))
+  )
+
+  generic_production_value <- extract_numeric_field(
+    data,
+    c("^production$", "^production_value$", "^prod$", "^prod_value$")
+  )
+  generic_production_unit <- normalize_output_unit(
+    extract_text_field(data, c("^production_units?$", "^production_unit$", "^prod_units?$", "^prod_unit$"))
+  )
+
+  generic_output_value <- extract_numeric_field(
+    data,
+    c("^output$", "^output_value$")
+  )
+  generic_output_unit <- normalize_output_unit(
+    extract_text_field(data, c("^output_units?$", "^output_unit$"))
+  )
+
+  liquid_capacity_bpd <- dplyr::coalesce(
+    extract_numeric_field(
+      data,
+      c("^liq_capacity_bpd$", "^liquid_capacity_bpd$", "^liquid_capacity_bopd$", "^capacity_bpd$", "^capacitybpd$", "^oil_capacity_bpd$", "^crude_capacity_bpd$")
+    ),
+    extract_numeric_field(
+      data,
+      c("^capacity_kbd$", "^capacity_kbpd$", "^capacitykbpd$", "^liquid_capacity_kbd$", "^oil_capacity_kbd$", "^crude_capacity_kbd$")
+    ) * 1000,
+    ifelse(generic_capacity_unit == "bpd", generic_capacity_value, NA_real_),
+    ifelse(generic_capacity_unit == "kbd", generic_capacity_value * 1000, NA_real_)
+  )
+
+  liquid_throughput_bpd <- dplyr::coalesce(
+    extract_numeric_field(
+      data,
+      c("^liq_throughput_bpd$", "^liquid_throughput_bpd$", "^throughput_bpd$", "^throughputbpd$", "^liquid_throughput_bopd$")
+    ),
+    extract_numeric_field(
+      data,
+      c("^throughput_kbd$", "^throughput_kbpd$", "^throughputkbpd$", "^liquid_throughput_kbd$")
+    ) * 1000,
+    ifelse(generic_throughput_unit == "bpd", generic_throughput_value, NA_real_),
+    ifelse(generic_throughput_unit == "kbd", generic_throughput_value * 1000, NA_real_)
+  )
+
+  gas_capacity_mmcfd <- dplyr::coalesce(
+    extract_numeric_field(
+      data,
+      c("^gas_capacity_mmcfd$", "^gascapacity_mmcfd$", "^capacity_mmcfd$", "^capacitymmcfd$")
+    ),
+    ifelse(generic_capacity_unit == "mmcfd", generic_capacity_value, NA_real_)
+  )
+
+  gas_throughput_mmcfd <- dplyr::coalesce(
+    extract_numeric_field(
+      data,
+      c("^gas_throughput_mmcfd$", "^gasthroughput_mmcfd$", "^throughput_mmcfd$", "^throughputmmcfd$")
+    ),
+    ifelse(generic_throughput_unit == "mmcfd", generic_throughput_value, NA_real_)
+  )
+
+  lng_capacity_mtpa <- dplyr::coalesce(
+    extract_numeric_field(
+      data,
+      c(
+        "^tot_import_lng_terminal_capacityin_mtpa$",
+        "^tot_export_lng_terminal_capacityin_mtpa$",
+        "^tot_lng_terminal_capacityin_mtpa$",
+        "^capacityin_mtpa$",
+        "^lng_capacity_mtpa$",
+        "^capacity_mtpa$"
+      )
+    ),
+    ifelse(generic_capacity_unit == "mtpa", generic_capacity_value, NA_real_)
+  )
+
+  lng_capacity_bcmy <- dplyr::coalesce(
+    extract_numeric_field(
+      data,
+      c(
+        "^tot_import_lng_terminal_capacityin_bcm_y$",
+        "^tot_export_lng_terminal_capacityin_bcm_y$",
+        "^tot_lng_terminal_capacityin_bcm_y$",
+        "^capacityin_bcm_y$",
+        "^lng_capacity_bcm_y$",
+        "^capacity_bcm_y$",
+        "^capacitybcmy$"
+      )
+    ),
+    ifelse(generic_capacity_unit == "bcmy", generic_capacity_value, NA_real_)
+  )
+
+  oil_production_bpd <- dplyr::coalesce(
+    extract_numeric_field(
+      data,
+      c(
+        "^oil_production_bpd$",
+        "^production_oil_bpd$",
+        "^prod_oil_bpd$",
+        "^field_production_bpd$",
+        "^crude_production_bpd$",
+        "^production_bpd$",
+        "^prod_bpd$"
+      )
+    ),
+    extract_numeric_field(
+      data,
+      c("^production_kbd$", "^production_kbpd$", "^prod_kbd$", "^prod_kbpd$", "^output_kbd$", "^output_kbpd$")
+    ) * 1000,
+    ifelse(generic_production_unit == "bpd", generic_production_value, NA_real_),
+    ifelse(generic_production_unit == "kbd", generic_production_value * 1000, NA_real_),
+    ifelse(generic_output_unit == "bpd", generic_output_value, NA_real_),
+    ifelse(generic_output_unit == "kbd", generic_output_value * 1000, NA_real_)
+  )
+
+  liquid_capacity_bpd <- sanitize_output_metric(liquid_capacity_bpd)
+  liquid_throughput_bpd <- sanitize_output_metric(liquid_throughput_bpd)
+  gas_capacity_mmcfd <- sanitize_output_metric(gas_capacity_mmcfd)
+  gas_throughput_mmcfd <- sanitize_output_metric(gas_throughput_mmcfd)
+  lng_capacity_mtpa <- sanitize_output_metric(lng_capacity_mtpa)
+  lng_capacity_bcmy <- sanitize_output_metric(lng_capacity_bcmy)
+  oil_production_bpd <- sanitize_output_metric(oil_production_bpd)
+
+  tibble(
+    liquid_capacity_bpd = liquid_capacity_bpd,
+    liquid_throughput_bpd = liquid_throughput_bpd,
+    gas_capacity_mmcfd = gas_capacity_mmcfd,
+    gas_throughput_mmcfd = gas_throughput_mmcfd,
+    lng_capacity_mtpa = lng_capacity_mtpa,
+    lng_capacity_bcmy = lng_capacity_bcmy,
+    oil_production_bpd = oil_production_bpd,
+    capacity_kbd = liquid_capacity_bpd / 1000,
+    production_kbd = oil_production_bpd / 1000
+  )
+}
+
+build_provider_base_table <- function(data, source_dataset, source_layer = NA_character_) {
+  output_fields <- extract_provider_output_fields(data)
+
+  tibble(
+    source_id = infer_source_id(data, source_dataset),
+    provider_class = dplyr::coalesce(
+      extract_text_field(data, c("^category$", "^asset_type$", "^type$", "^class$", "^fac_type$", "facility_type", "project_type", "sector", "subsector", "^fuel$", "commodity", "query_asset_group", "route_type")),
+      rep(source_layer %||% NA_character_, nrow(data))
+    ),
+    subclass = extract_text_field(data, c("^subclass$", "^subtype$", "subcategory", "subsector")),
+    name = dplyr::coalesce(
+      extract_text_field(data, c("^name$", "^fac_name$", "facility_name", "asset_name", "project_name", "terminal_name", "unit_name", "field_name", "refinery_name", "pipeline_name", "segment_name")),
+      extract_text_field(data, c("operator", "company", "owner"))
+    ),
+    status = extract_text_field(data, c("^status$", "^fac_status$", "^ogim_status$", "project_status", "operating_status", "phase", "stage", "fid_status", "shelved_cancelled_status_type")),
+    country = extract_text_field(data, c("^country$", "^country_area$", "^countries$", "^countries_or_areas$", "country_name", "admin0", "nation", "start_country_or_area", "end_country_or_area", "start_country", "end_country"))
+  ) %>%
+    bind_cols(output_fields)
+}
+
+derive_commodity_group <- function(asset_class, provider_class, subclass, name, site_metrics) {
+  text <- str_to_lower(paste(asset_class, provider_class, subclass, name, sep = " "))
+
+  has_oil_metric <- !is.na(site_metrics$liquid_capacity_bpd) |
+    !is.na(site_metrics$liquid_throughput_bpd) |
+    !is.na(site_metrics$oil_production_bpd)
+  has_gas_metric <- !is.na(site_metrics$gas_capacity_mmcfd) |
+    !is.na(site_metrics$gas_throughput_mmcfd) |
+    !is.na(site_metrics$lng_capacity_mtpa) |
+    !is.na(site_metrics$lng_capacity_bcmy)
+
+  oil_text <- str_detect(text, "\\b(oil|crude|petroleum|refin|gasoline|diesel|condensate|asphalt|biofuel)\\b")
+  gas_text <- str_detect(text, "natural gas|\\bgas\\b|lng|lpg|compress")
+
+  oil_hint <- asset_class %in% c("refinery", "petroleum_terminal", "tank_battery")
+  gas_hint <- asset_class %in% c("lng_facility", "compressor_station")
+
+  dplyr::case_when(
+    (has_oil_metric | oil_text | oil_hint) & (has_gas_metric | gas_text | gas_hint) ~ "mixed",
+    has_gas_metric | gas_text | gas_hint ~ "gas",
+    has_oil_metric | oil_text | oil_hint ~ "oil",
+    TRUE ~ NA_character_
+  )
+}
+
+finalize_provider_sites <- function(site_rows) {
+  if (nrow(site_rows) == 0) {
+    return(site_rows)
+  }
+
+  site_rows %>%
+    mutate(
+      commodity_group = derive_commodity_group(
+        asset_class = asset_class,
+        provider_class = provider_class,
+        subclass = subclass,
+        name = name,
+        site_metrics = pick(
+          liquid_capacity_bpd,
+          liquid_throughput_bpd,
+          gas_capacity_mmcfd,
+          gas_throughput_mmcfd,
+          lng_capacity_mtpa,
+          lng_capacity_bcmy,
+          oil_production_bpd
+        )
+      )
+    ) %>%
+    mutate(
+      primary_output_kind = dplyr::case_when(
+        asset_class %in% c("extraction_site", "offshore_platform") & !is.na(oil_production_bpd) ~ "oil_production",
+        asset_class %in% c("extraction_site", "offshore_platform") & !is.na(liquid_capacity_bpd) ~ "liquid_capacity",
+        asset_class %in% c("extraction_site", "offshore_platform") & !is.na(gas_capacity_mmcfd) ~ "gas_capacity",
+        asset_class == "lng_facility" & !is.na(lng_capacity_mtpa) ~ "lng_capacity_mtpa",
+        asset_class == "lng_facility" & !is.na(lng_capacity_bcmy) ~ "lng_capacity_bcmy",
+        asset_class == "lng_facility" & !is.na(gas_capacity_mmcfd) ~ "gas_capacity",
+        asset_class %in% c("refinery", "petroleum_terminal", "tank_battery", "processing_facility") & !is.na(liquid_capacity_bpd) ~ "liquid_capacity",
+        asset_class %in% c("refinery", "petroleum_terminal", "tank_battery", "processing_facility") & !is.na(liquid_throughput_bpd) ~ "liquid_throughput",
+        asset_class == "compressor_station" & !is.na(gas_capacity_mmcfd) ~ "gas_capacity",
+        asset_class == "compressor_station" & !is.na(gas_throughput_mmcfd) ~ "gas_throughput",
+        !is.na(liquid_capacity_bpd) ~ "liquid_capacity",
+        !is.na(liquid_throughput_bpd) ~ "liquid_throughput",
+        !is.na(oil_production_bpd) ~ "oil_production",
+        !is.na(lng_capacity_mtpa) ~ "lng_capacity_mtpa",
+        !is.na(lng_capacity_bcmy) ~ "lng_capacity_bcmy",
+        !is.na(gas_capacity_mmcfd) ~ "gas_capacity",
+        !is.na(gas_throughput_mmcfd) ~ "gas_throughput",
+        TRUE ~ NA_character_
+      ),
+      primary_output_value = dplyr::case_when(
+        primary_output_kind == "oil_production" ~ oil_production_bpd,
+        primary_output_kind == "liquid_capacity" ~ liquid_capacity_bpd,
+        primary_output_kind == "liquid_throughput" ~ liquid_throughput_bpd,
+        primary_output_kind == "gas_capacity" ~ gas_capacity_mmcfd,
+        primary_output_kind == "gas_throughput" ~ gas_throughput_mmcfd,
+        primary_output_kind == "lng_capacity_mtpa" ~ lng_capacity_mtpa,
+        primary_output_kind == "lng_capacity_bcmy" ~ lng_capacity_bcmy,
+        TRUE ~ NA_real_
+      ),
+      primary_output_unit = dplyr::case_when(
+        primary_output_kind %in% c("oil_production", "liquid_capacity", "liquid_throughput") ~ "bpd",
+        primary_output_kind %in% c("gas_capacity", "gas_throughput") ~ "mmcfd",
+        primary_output_kind == "lng_capacity_mtpa" ~ "mtpa",
+        primary_output_kind == "lng_capacity_bcmy" ~ "bcmy",
+        TRUE ~ NA_character_
+      ),
+      primary_output_basis = dplyr::case_when(
+        primary_output_kind == "oil_production" ~ "production",
+        str_detect(primary_output_kind %||% "", "throughput") ~ "throughput",
+        !is.na(primary_output_kind) ~ "capacity",
+        TRUE ~ NA_character_
+      )
+    )
+}
+
+collapse_provider_site_rows <- function(site_rows, source_dataset, source_layer = NA_character_) {
+  if (nrow(site_rows) == 0) {
+    return(site_rows)
+  }
+
+  is_ggit_lng <- identical(source_dataset, "ggit") &&
+    str_detect(str_to_lower(source_layer %||% ""), "^lng terminals$")
+
+  if (!is_ggit_lng) {
+    return(site_rows)
+  }
+
+  site_rows %>%
+    group_by(source_id) %>%
+    summarise(
+      provider = first_non_missing_chr(provider),
+      source_dataset = first_non_missing_chr(source_dataset),
+      source_file = first_non_missing_chr(source_file),
+      source_layer = first_non_missing_chr(source_layer),
+      asset_class = first_non_missing_chr(asset_class),
+      asset_label = first_non_missing_chr(asset_label),
+      provider_class = first_non_missing_chr(provider_class),
+      subclass = first_non_missing_chr(subclass),
+      name = first_non_missing_chr(name),
+      status = first_non_missing_chr(status),
+      country = first_non_missing_chr(country),
+      commodity_group = first_non_missing_chr(commodity_group),
+      liquid_capacity_bpd = collapse_duplicate_metric(liquid_capacity_bpd),
+      liquid_throughput_bpd = collapse_duplicate_metric(liquid_throughput_bpd),
+      gas_capacity_mmcfd = collapse_duplicate_metric(gas_capacity_mmcfd),
+      gas_throughput_mmcfd = collapse_duplicate_metric(gas_throughput_mmcfd),
+      lng_capacity_mtpa = collapse_duplicate_metric(lng_capacity_mtpa),
+      lng_capacity_bcmy = collapse_duplicate_metric(lng_capacity_bcmy),
+      oil_production_bpd = collapse_duplicate_metric(oil_production_bpd),
+      capacity_kbd = collapse_duplicate_metric(capacity_kbd),
+      production_kbd = collapse_duplicate_metric(production_kbd),
+      primary_output_kind = first_non_missing_chr(primary_output_kind),
+      primary_output_value = collapse_duplicate_metric(primary_output_value),
+      primary_output_unit = first_non_missing_chr(primary_output_unit),
+      primary_output_basis = first_non_missing_chr(primary_output_basis),
+      geometry_role = first_non_missing_chr(geometry_role),
+      provider_priority = as.integer(first_non_missing_num(provider_priority)),
+      lat = first_non_missing_num(lat),
+      lon = first_non_missing_num(lon),
+      .groups = "drop"
+    )
+}
+
 normalize_provider_frame <- function(data, source_dataset, provider, provider_priority, source_file, source_layer = NA_character_) {
   if (nrow(data) == 0) {
     return(list(sites = empty_provider_sites(), lines = empty_provider_lines(), note = "empty"))
@@ -290,20 +738,7 @@ normalize_provider_frame <- function(data, source_dataset, provider, provider_pr
     site_idx <- !line_idx
 
     attr_tbl <- sf::st_drop_geometry(x)
-    base_tbl <- tibble(
-      source_id = infer_source_id(attr_tbl, source_dataset),
-      provider_class = dplyr::coalesce(
-        extract_text_field(attr_tbl, c("^category$", "^asset_type$", "^type$", "^class$", "^fac_type$", "facility_type", "project_type", "sector", "subsector", "^fuel$", "commodity", "query_asset_group", "route_type")),
-        rep(source_layer %||% NA_character_, nrow(attr_tbl))
-      ),
-      subclass = extract_text_field(attr_tbl, c("^subclass$", "^subtype$", "subcategory", "subsector")),
-      name = dplyr::coalesce(
-        extract_text_field(attr_tbl, c("^name$", "^fac_name$", "facility_name", "asset_name", "project_name", "terminal_name", "unit_name", "field_name", "refinery_name", "pipeline_name", "segment_name")),
-        extract_text_field(attr_tbl, c("operator", "company", "owner"))
-      ),
-      status = extract_text_field(attr_tbl, c("^status$", "^fac_status$", "^ogim_status$", "project_status", "operating_status", "phase", "stage", "fid_status", "shelved_cancelled_status_type")),
-      country = extract_text_field(attr_tbl, c("^country$", "^country_area$", "^countries$", "^countries_or_areas$", "country_name", "admin0", "nation", "start_country_or_area", "end_country_or_area", "start_country", "end_country"))
-    )
+    base_tbl <- build_provider_base_table(attr_tbl, source_dataset, source_layer)
 
     site_rows <- empty_provider_sites()
     if (any(site_idx)) {
@@ -315,19 +750,35 @@ normalize_provider_frame <- function(data, source_dataset, provider, provider_pr
           source_file = source_file,
           source_layer = source_layer,
           source_id = source_id,
-          asset_class = classify_asset_class(paste(provider_class, subclass, name), source_dataset, "site"),
+          asset_class = classify_asset_class(paste(provider_class, subclass, name, source_layer), source_dataset, "site"),
           provider_class = provider_class,
           subclass = subclass,
           name = dplyr::coalesce(name, provider_class, source_id),
           status = status,
           country = country,
+          commodity_group = NA_character_,
+          liquid_capacity_bpd = liquid_capacity_bpd,
+          liquid_throughput_bpd = liquid_throughput_bpd,
+          gas_capacity_mmcfd = gas_capacity_mmcfd,
+          gas_throughput_mmcfd = gas_throughput_mmcfd,
+          lng_capacity_mtpa = lng_capacity_mtpa,
+          lng_capacity_bcmy = lng_capacity_bcmy,
+          oil_production_bpd = oil_production_bpd,
+          capacity_kbd = capacity_kbd,
+          production_kbd = production_kbd,
+          primary_output_kind = NA_character_,
+          primary_output_value = NA_real_,
+          primary_output_unit = NA_character_,
+          primary_output_basis = NA_character_,
           geometry_role = "site",
           provider_priority = provider_priority,
           lat = site_points$lat,
           lon = site_points$lon
         ) %>%
         left_join(asset_registry %>% select(asset_class, asset_label), by = "asset_class") %>%
-        relocate(asset_label, .after = asset_class)
+        relocate(asset_label, .after = asset_class) %>%
+        finalize_provider_sites() %>%
+        collapse_provider_site_rows(source_dataset = source_dataset, source_layer = source_layer)
       site_rows <- bind_rows(empty_provider_sites(), site_tbl)
     }
 
@@ -340,7 +791,7 @@ normalize_provider_frame <- function(data, source_dataset, provider, provider_pr
           source_file = source_file,
           source_layer = source_layer,
           source_id = source_id,
-          asset_class = classify_asset_class(paste(provider_class, subclass, name), source_dataset, "line"),
+          asset_class = classify_asset_class(paste(provider_class, subclass, name, source_layer), source_dataset, "line"),
           provider_class = provider_class,
           subclass = subclass,
           name = dplyr::coalesce(name, provider_class, source_id),
@@ -372,22 +823,11 @@ normalize_provider_frame <- function(data, source_dataset, provider, provider_pr
     return(list(sites = empty_provider_sites(), lines = empty_provider_lines(), note = "no_geometry"))
   }
 
-  base_tbl <- tibble(
-    source_id = infer_source_id(data, source_dataset),
-    provider_class = dplyr::coalesce(
-      extract_text_field(data, c("^category$", "^asset_type$", "^type$", "^class$", "^fac_type$", "facility_type", "project_type", "sector", "subsector", "^fuel$", "commodity", "query_asset_group", "route_type")),
-      rep(source_layer %||% NA_character_, nrow(data))
-    ),
-    subclass = extract_text_field(data, c("^subclass$", "^subtype$", "subcategory", "subsector")),
-    name = dplyr::coalesce(
-      extract_text_field(data, c("^name$", "^fac_name$", "facility_name", "asset_name", "project_name", "terminal_name", "unit_name", "field_name", "refinery_name", "pipeline_name", "segment_name")),
-      extract_text_field(data, c("operator", "company", "owner"))
-    ),
-    status = extract_text_field(data, c("^status$", "^fac_status$", "^ogim_status$", "project_status", "operating_status", "phase", "stage", "fid_status", "shelved_cancelled_status_type")),
-    country = extract_text_field(data, c("^country$", "^country_area$", "^countries$", "^countries_or_areas$", "country_name", "admin0", "nation", "start_country_or_area", "end_country_or_area", "start_country", "end_country")),
-    lat = lat,
-    lon = lon
-  )
+  base_tbl <- build_provider_base_table(data, source_dataset, source_layer) %>%
+    mutate(
+      lat = lat,
+      lon = lon
+    )
 
   site_rows <- base_tbl %>%
     filter(has_coords) %>%
@@ -397,19 +837,35 @@ normalize_provider_frame <- function(data, source_dataset, provider, provider_pr
       source_file = source_file,
       source_layer = source_layer,
       source_id = source_id,
-      asset_class = classify_asset_class(paste(provider_class, subclass, name), source_dataset, "site"),
+      asset_class = classify_asset_class(paste(provider_class, subclass, name, source_layer), source_dataset, "site"),
       provider_class = provider_class,
       subclass = subclass,
       name = dplyr::coalesce(name, provider_class, source_id),
       status = status,
       country = country,
+      commodity_group = NA_character_,
+      liquid_capacity_bpd = liquid_capacity_bpd,
+      liquid_throughput_bpd = liquid_throughput_bpd,
+      gas_capacity_mmcfd = gas_capacity_mmcfd,
+      gas_throughput_mmcfd = gas_throughput_mmcfd,
+      lng_capacity_mtpa = lng_capacity_mtpa,
+      lng_capacity_bcmy = lng_capacity_bcmy,
+      oil_production_bpd = oil_production_bpd,
+      capacity_kbd = capacity_kbd,
+      production_kbd = production_kbd,
+      primary_output_kind = NA_character_,
+      primary_output_value = NA_real_,
+      primary_output_unit = NA_character_,
+      primary_output_basis = NA_character_,
       geometry_role = "site",
       provider_priority = provider_priority,
       lat = lat,
       lon = lon
     ) %>%
     left_join(asset_registry %>% select(asset_class, asset_label), by = "asset_class") %>%
-    relocate(asset_label, .after = asset_class)
+    relocate(asset_label, .after = asset_class) %>%
+    finalize_provider_sites() %>%
+    collapse_provider_site_rows(source_dataset = source_dataset, source_layer = source_layer)
 
   list(sites = bind_rows(empty_provider_sites(), site_rows), lines = empty_provider_lines(), note = "success")
 }
@@ -532,6 +988,7 @@ write_provider_outputs <- function(source_dataset, sites, lines) {
 }
 
 tp4_incidents <- tibble()
+acled_incidents <- tibble()
 gdelt_articles <- read_csv_if_exists(paths$gdelt_csv)
 gdelt_log <- read_csv_if_exists(paths$gdelt_log)
 provider_log <- empty_provider_intake_log()
@@ -544,6 +1001,12 @@ if (use_local_tp4) {
   tp4_incidents <- flatten_tp4_incidents(paths$tp4_json)
   message("TP4 incidents loaded: ", nrow(tp4_incidents))
   print(utils::head(tp4_incidents, preview_n))
+}
+
+acled_incidents <- flatten_acled_incidents(paths$acled_raw_csv)
+if (nrow(acled_incidents) > 0) {
+  message("ACLED incidents loaded: ", nrow(acled_incidents))
+  print(utils::head(acled_incidents, preview_n))
 }
 
 if (download_gdelt) {
@@ -579,6 +1042,7 @@ total_lines <- sum(vapply(provider_results, function(x) nrow(x$lines), integer(1
 
 if (write_output) {
   write_csv_safe(tp4_incidents, paths$tp4_csv)
+  write_csv_safe(acled_incidents, paths$acled_csv)
   write_csv_safe(gdelt_articles, paths$gdelt_csv)
   write_csv_safe(gdelt_log, paths$gdelt_log)
   write_csv_safe(provider_log, paths$provider_log_csv)
